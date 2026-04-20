@@ -1,0 +1,117 @@
+import type { Metadata, Viewport } from 'next'
+import { Cormorant_Garamond, Inter, DM_Mono } from 'next/font/google'
+import './globals.css'
+import Nav from '@/components/layout/Nav'
+import Footer from '@/components/layout/Footer'
+import StarField from '@/components/ui/StarField'
+
+const cormorant = Cormorant_Garamond({
+  subsets: ['latin'],
+  weight: ['300', '400', '600'],
+  style: ['normal', 'italic'],
+  variable: '--font-cormorant',
+  display: 'swap',
+})
+
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['300', '400', '500'],
+  variable: '--font-inter',
+  display: 'swap',
+})
+
+const dmMono = DM_Mono({
+  subsets: ['latin'],
+  weight: ['300', '400'],
+  variable: '--font-dm-mono',
+  display: 'swap',
+})
+
+export const metadata: Metadata = {
+  title: {
+    default: 'You Create You — The Science of Becoming You',
+    template: '%s | You Create You',
+  },
+  description:
+    'A 365-day daily practice rooted in neuroscience and ancient wisdom. Begin your conscious creation practice today.',
+  keywords: [
+    'conscious creation',
+    'identity transformation',
+    'subconscious reprogramming',
+    'manifestation',
+    'neuroscience',
+    'daily practice',
+    'self concept',
+    'consciousness tools',
+    'inner transformation',
+  ],
+  authors: [{ name: 'You Create You' }],
+  creator: 'You Create You',
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://youcreateyou.life',
+    siteName: 'You Create You',
+    title: 'You Create You — The Science of Becoming You',
+    description:
+      'A 365-day daily practice rooted in neuroscience and ancient wisdom.',
+    images: [
+      {
+        url: '/og/homepage.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'You Create You',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'You Create You — The Science of Becoming You',
+    description: 'A 365-day daily practice rooted in neuroscience and ancient wisdom.',
+    images: ['/og/homepage.jpg'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, 'max-image-preview': 'large' },
+  },
+  metadataBase: new URL('https://youcreateyou.life'),
+  icons: {
+    icon: [
+      { url: '/favicon-32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/icon-192.png',   sizes: '192x192', type: 'image/png' },
+      { url: '/icon-512.png',   sizes: '512x512', type: 'image/png' },
+      { url: '/icon.svg',       type: 'image/svg+xml' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+  },
+}
+
+export const viewport: Viewport = {
+  themeColor: '#0b091a',
+  width: 'device-width',
+  initialScale: 1,
+}
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html
+      lang="en"
+      className={`${cormorant.variable} ${inter.variable} ${dmMono.variable}`}
+    >
+      <body className="bg-space text-[#f0ecff] font-body antialiased" suppressHydrationWarning>
+        {/* Global star field — fixed, behind everything */}
+        <div className="fixed inset-0 pointer-events-none" style={{ zIndex: 0 }} aria-hidden>
+          <StarField density={1.3} connectDistance={115} showLines={true} />
+        </div>
+        <div className="relative" style={{ zIndex: 1 }}>
+          <Nav />
+          {children}
+          <Footer />
+        </div>
+      </body>
+    </html>
+  )
+}
