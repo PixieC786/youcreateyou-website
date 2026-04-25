@@ -31,8 +31,8 @@ const TOOLS = [
     phase: 'Phase III — Install the New Reality',
     name: 'Visualisation Meditation',
     tagline: 'You meet your future self here.',
-    description: 'A 20-minute guided journey into the life you\'re calling in. The most powerful tool in the practice — used daily by our most transformed community members.',
-    stages: ['Arrival', 'Descent', 'Vision', 'Meeting', 'Merge', 'Integration'],
+    description: 'A 20-minute guided journey into the life you\'re calling in — followed by Embody Your Identity, where you become the person you just saw. The most powerful sequence in the practice.',
+    stages: ['Arrival', 'Descent', 'Vision', 'Meeting', 'Merge', 'Embody'],
     color: 'rgba(179,136,255,0.1)',
   },
   {

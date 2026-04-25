@@ -5,7 +5,7 @@ import Card from '@/components/ui/Card'
 export const metadata = {
   title: 'The Practice — You Create You',
   description:
-    '19 consciousness tools across 4 phases: See Clearly, Release & Discover, Install the New Reality, and Signal & Nurture Daily. A complete system for lasting change.',
+    '20 consciousness tools across 4 phases: See Clearly, Release & Discover, Install the New Reality, and Signal & Nurture Daily. A complete system for lasting change.',
 }
 
 const ALL_TOOLS = [
@@ -17,6 +17,7 @@ const ALL_TOOLS = [
   { phase: '02', name: 'Mind-Body Connection', desc: '5-stage guided somatic release. The body holds every pattern you want to change.' },
   { phase: '02', name: 'Ego Alchemy', desc: '7-stage process for recognizing, understanding, and befriending your ego structures.' },
   { phase: '02', name: 'Identity Rebirth', desc: '6-stage ceremony for shedding old identities and consciously choosing who you become.' },
+  { phase: '02', name: 'The Love You Are', desc: '7-phase journey from root to vow. The practice of meeting yourself with unconditional love — from the inside out.' },
   { phase: '02', name: 'Purpose Compass', desc: 'Ikigai 4-question discovery + visual diagram. Find where your gifts meet the world\'s need.' },
   { phase: '02', name: 'New Chapter', desc: '5-area vision + 90-day plan + personal manifesto. Design your next season with precision.' },
   { phase: '03', name: 'Subconscious Reprogrammer', desc: 'Theta binaural beats + scene writing + breath. Rewrite your deepest programming.' },

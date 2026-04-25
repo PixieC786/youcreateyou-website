@@ -20,7 +20,7 @@ const ITEM = {
 
 const STATS = [
   { value: '20',     label: 'Consciousness Tools' },
-  { value: '20 min', label: 'Daily Practice' },
+  { value: '9 steps', label: 'Daily Practice' },
   { value: '4',      label: 'Phases of Change' },
 ]
 

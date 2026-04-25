@@ -5,7 +5,7 @@ import Button from '@/components/ui/Button'
 export const metadata = {
   title: 'Begin — You Create You',
   description:
-    'Start your You Create You practice today. Free access to all 18 consciousness tools, guided meditations, and your personal journal.',
+    'Start your You Create You practice today. Free access to all 20 consciousness tools, a 9-step daily morning practice, and your personal journal.',
 }
 
 const STEPS = [
@@ -16,13 +16,13 @@ const STEPS = [
   },
   {
     number: '02',
-    title: 'Start with Phase 1',
-    desc: 'Begin with Ancient Wisdom and Identity Rebirth. They take 20 minutes and shift something immediately.',
+    title: 'Begin your morning practice',
+    desc: 'A 9-step sequence: breathe, read, create your day, gratitude, affirm your identity out loud, meditate, embody, seal, complete. Done in 20 minutes.',
   },
   {
     number: '03',
-    title: 'Build your daily practice',
-    desc: 'Return each day. Each tool deepens the last. Most users feel a meaningful shift within 7 days.',
+    title: 'Go deeper with 20 tools',
+    desc: 'Explore consciousness tools across 4 phases. Each one deepens the last. Most users feel a meaningful shift within 7 days.',
   },
   {
     number: '04',
@@ -41,8 +41,8 @@ export default function BeginPage() {
           <br />actually changes things.
         </h1>
         <p className="font-body text-[rgba(240,236,255,0.5)] text-lg max-w-lg mx-auto leading-relaxed mb-12">
-          Free. No credit card. 20 tools ready the moment you sign up.
-          20 minutes a day is all it takes.
+          Free. No credit card. 20 tools + a 9-step morning practice
+          ready the moment you sign up.
         </p>
         <div className="max-w-md mx-auto">
           <EmailCapture
