@@ -17,7 +17,7 @@ const STEPS = [
   {
     number: '02',
     title: 'Begin your morning practice',
-    desc: 'A 9-step sequence: breathe, read, create your day, gratitude, affirm your identity out loud, meditate, embody, seal, complete. Done in 20 minutes.',
+    desc: 'A 9-step sequence: breathe, read, create your day, gratitude, affirm out loud, meditate, embody, seal, complete. One hour that reshapes who you are.',
   },
   {
     number: '03',
@@ -41,8 +41,8 @@ export default function BeginPage() {
           <br />actually changes things.
         </h1>
         <p className="font-body text-[rgba(240,236,255,0.5)] text-lg max-w-lg mx-auto leading-relaxed mb-12">
-          Free. No credit card. 20 tools + a 9-step morning practice
-          ready the moment you sign up.
+          Free. No credit card. One hour a day.
+          20 tools + a 9-step morning practice ready immediately.
         </p>
         <div className="max-w-md mx-auto">
           <EmailCapture
