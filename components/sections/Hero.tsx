@@ -147,7 +147,7 @@ export default function Hero() {
             {STATS.map(({ value, label }, i) => (
               <div key={label} className="flex items-center">
                 {i > 0 && (
-                  <span className="h-8 w-px bg-[rgba(210,175,255,0.16)] mx-8 md:mx-10" />
+                  <span className="h-8 w-px bg-[rgba(210,175,255,0.16)] mx-4 sm:mx-8 md:mx-10" />
                 )}
                 <div className="flex flex-col items-center gap-1.5">
                   <span className="font-display italic text-[1.65rem] font-light leading-none text-gradient">
