@@ -13,9 +13,9 @@ const NAV_LINKS = [
 ]
 
 const LEGAL_LINKS = [
-  { href: 'https://youcreateyou.life/privacy.html', label: 'Privacy' },
-  { href: 'https://youcreateyou.life/terms.html',   label: 'Terms' },
-  { href: 'mailto:support@youcreateyou.life',        label: 'Contact' },
+  { href: '/privacy', label: 'Privacy' },
+  { href: '/terms',   label: 'Terms' },
+  { href: 'mailto:support@youcreateyou.life', label: 'Contact' },
 ]
 
 export default function Footer() {
