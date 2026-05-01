@@ -31,7 +31,7 @@ export default function Footer() {
   }
 
   return (
-    <footer className="relative border-t border-[rgba(179,136,255,0.07)]" style={{ background: '#0b091a' }}>
+    <footer className="relative border-t border-[rgba(179,136,255,0.07)]" style={{ background: '#120d28' }}>
       {/* Top glow line */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[400px] h-px bg-gradient-to-r from-transparent via-[rgba(179,136,255,0.22)] to-transparent" />
 

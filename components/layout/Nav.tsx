@@ -41,8 +41,8 @@ export default function Nav() {
           fixed top-0 left-0 right-0 z-50
           transition-all duration-500 ease-in-out
           ${scrolled
-            ? 'bg-[rgba(11,9,26,0.88)] backdrop-blur-2xl border-b border-[rgba(179,136,255,0.07)]'
-            : 'bg-[rgba(11,9,26,0.45)] backdrop-blur-md border-b border-transparent'}
+            ? 'bg-[rgba(18,13,40,0.88)] backdrop-blur-2xl border-b border-[rgba(179,136,255,0.07)]'
+            : 'bg-[rgba(18,13,40,0.45)] backdrop-blur-md border-b border-transparent'}
         `}
       >
         <div className="container-site">
@@ -113,7 +113,7 @@ export default function Nav() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-40 bg-[rgba(11,9,26,0.97)] backdrop-blur-2xl flex flex-col md:hidden"
+            className="fixed inset-0 z-40 bg-[rgba(18,13,40,0.97)] backdrop-blur-2xl flex flex-col md:hidden"
           >
             {/* Menu header — mirror the nav bar */}
             <div className="flex items-center justify-between h-[68px] px-[clamp(20px,5vw,48px)] border-b border-[rgba(179,136,255,0.06)]">

@@ -75,7 +75,7 @@ export default function Hero() {
       {/* 5. Bottom fade into next section */}
       <div aria-hidden className="absolute bottom-0 left-0 right-0 pointer-events-none" style={{
         height: '32vh',
-        background: 'linear-gradient(to top, #0b091a 0%, rgba(11,9,26,0.65) 55%, transparent 100%)',
+        background: 'linear-gradient(to top, #120d28 0%, rgba(18,13,40,0.65) 55%, transparent 100%)',
       }} />
 
       {/* ── Content ─────────────────────────────────────────────────────── */}

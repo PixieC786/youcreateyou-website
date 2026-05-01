@@ -9,9 +9,9 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        space:   '#0b091a',
-        deep:    '#0c0a18',
-        void:    '#080614',
+        space:   '#120d28',
+        deep:    '#0f0b22',
+        void:    '#0d0920',
         surface: 'rgba(255,255,255,0.03)',
 
         // Core accent — kept, used everywhere
