@@ -31,11 +31,20 @@ export default function EmailCapture({
     e.preventDefault()
     if (!email.trim()) return
     setStatus('loading')
-    // Replace with real API call (e.g. Supabase edge function)
-    await new Promise(r => setTimeout(r, 1100))
-    setStatus('success')
-    setMessage(successText)
-    setEmail('')
+    try {
+      const res = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      })
+      if (!res.ok) throw new Error()
+      setStatus('success')
+      setMessage(successText)
+      setEmail('')
+    } catch {
+      setStatus('error')
+      setMessage('Something went wrong. Please try again.')
+    }
   }
 
   return (
