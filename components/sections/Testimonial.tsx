@@ -21,7 +21,7 @@ const TESTIMONIALS = [
     initials: 'MT',
   },
   {
-    quote: 'The Visualisation Meditation is genuinely transcendent. I use it every morning. My life has been measurably, visibly different since I started. Not metaphorically.',
+    quote: 'Creative Visualisation is genuinely transcendent. I use it every morning. My life has been measurably, visibly different since I started. Not metaphorically.',
     name: 'Amara K.',
     title: 'Coach · Toronto',
     initials: 'AK',
