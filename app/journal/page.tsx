@@ -21,7 +21,7 @@ export default function JournalPage() {
           This isn't journaling as you know it. Every prompt is calibrated to your phase,
           designed to access the subconscious, and aligned with your active practice tools.
         </p>
-        <Button href="https://app.youcreateyou.life" external variant="primary" size="lg">
+        <Button href="https://app.youcreateyou.life/journal.html" external variant="primary" size="lg">
           Open My Journal
         </Button>
       </div>

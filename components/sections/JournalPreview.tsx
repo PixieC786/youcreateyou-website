@@ -97,7 +97,7 @@ export default function JournalPreview() {
               viewport={{ once: true, margin: '-60px' }}
               transition={{ delay: 0.28, duration: 0.6, ease: EASE }}
             >
-              <Button href="https://app.youcreateyou.life" external variant="primary" size="md">
+              <Button href="https://app.youcreateyou.life/journal.html" external variant="primary" size="md">
                 Open My Journal
               </Button>
             </motion.div>
