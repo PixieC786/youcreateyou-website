@@ -26,7 +26,7 @@ const STATS = [
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-start md:justify-center overflow-hidden">
+    <section className="relative min-h-screen flex flex-col items-center md:justify-center overflow-hidden pt-[68px] md:pt-0">
 
       {/* ── Particle field (floats above stars) ─────────────────────────── */}
       <div className="absolute inset-0 pointer-events-none opacity-90" aria-hidden>
@@ -79,7 +79,7 @@ export default function Hero() {
       }} />
 
       {/* ── Content ─────────────────────────────────────────────────────── */}
-      <div className="relative z-10 container-content flex flex-col items-center text-center pt-28 pb-28 md:pt-24 md:pb-24">
+      <div className="relative z-10 container-content flex flex-col items-center text-center pt-6 pb-28 md:pt-24 md:pb-24">
 
         <motion.div
           variants={CONTAINER}
