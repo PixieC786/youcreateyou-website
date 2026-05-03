@@ -53,7 +53,7 @@ export default function PracticePage() {
           Work through them in sequence, or use them as you need.
         </p>
         <Button href="https://app.youcreateyou.life" external variant="primary" size="lg">
-          Open the App — Free
+          Open the App — 21 Days Free
         </Button>
       </div>
 
