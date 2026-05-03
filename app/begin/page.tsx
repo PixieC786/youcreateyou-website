@@ -5,14 +5,14 @@ import Button from '@/components/ui/Button'
 export const metadata = {
   title: 'Begin — You Create You',
   description:
-    'Start your You Create You practice today. Free access to all 20 consciousness tools, a 9-step daily morning practice, and your personal journal.',
+    'Start your You Create You practice today. 21 days free — all 20 consciousness tools, a 9-step daily morning practice, and your personal journal.',
 }
 
 const STEPS = [
   {
     number: '01',
-    title: 'Create your free account',
-    desc: 'Enter your email. That\'s it. No credit card, no catch. Your journey starts immediately.',
+    title: 'Start your 21-day free trial',
+    desc: 'Enter your email. No credit card needed. Your full practice unlocks immediately.',
   },
   {
     number: '02',
@@ -41,13 +41,13 @@ export default function BeginPage() {
           <br />actually changes things.
         </h1>
         <p className="font-body text-[rgba(240,236,255,0.5)] text-lg max-w-lg mx-auto leading-relaxed mb-12">
-          Free. No credit card. One hour a day.
+          21 days free. No credit card. One hour a day.
           20 tools + a 9-step morning practice ready immediately.
         </p>
         <div className="max-w-md mx-auto">
           <EmailCapture
             placeholder="Your email address"
-            ctaText="Create My Free Account"
+            ctaText="Start My 21-Day Free Trial"
             size="lg"
           />
         </div>
