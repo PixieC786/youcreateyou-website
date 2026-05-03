@@ -128,7 +128,7 @@ export default function Hero() {
           >
             <EmailCapture
               placeholder="Your email address"
-              ctaText="Begin — It's Free"
+              ctaText="Begin Free — 21 Days"
               size="lg"
             />
             <div className="flex items-center gap-6">

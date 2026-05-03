@@ -120,7 +120,7 @@ export default function FinalCTA() {
           className="font-body text-[rgba(235,228,255,0.65)] text-[clamp(1rem,1.25vw,1.1rem)] max-w-[38ch] leading-[1.85] mb-12"
         >
           Start with 20 minutes a day. 20 tools. Zero guesswork.
-          Free to begin — forever to deepen.
+          21 days free — forever to deepen.
         </motion.p>
 
         <motion.div
@@ -132,7 +132,7 @@ export default function FinalCTA() {
         >
           <EmailCapture
             placeholder="Your email address"
-            ctaText="Begin Free"
+            ctaText="Begin Free — 21 Days"
             size="lg"
           />
           <Button href="https://app.youcreateyou.life" external variant="ghost" size="sm">

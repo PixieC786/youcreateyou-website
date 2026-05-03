@@ -19,7 +19,7 @@ const INPUT_SIZE: Record<string, string> = {
 
 export default function EmailCapture({
   placeholder = 'Enter your email',
-  ctaText = 'Begin — It\'s Free',
+  ctaText = 'Begin Free — 21 Days',
   successText = 'Welcome. Your first practice is on its way.',
   size = 'md',
 }: EmailCaptureProps) {

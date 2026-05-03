@@ -173,7 +173,7 @@ export default function Nav() {
                 onClick={close}
                 className="w-full justify-center"
               >
-                Begin Your Practice — Free
+                Begin Free — 21 Days
               </Button>
               <p className="mt-4 font-mono text-[9px] tracking-[0.18em] uppercase text-[rgba(240,236,255,0.2)] text-center">
                 No credit card · Cancel anytime
