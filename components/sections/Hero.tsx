@@ -26,7 +26,7 @@ const STATS = [
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex flex-col items-center justify-start md:justify-center overflow-hidden">
 
       {/* ── Particle field (floats above stars) ─────────────────────────── */}
       <div className="absolute inset-0 pointer-events-none opacity-90" aria-hidden>
