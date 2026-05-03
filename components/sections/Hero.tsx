@@ -79,7 +79,7 @@ export default function Hero() {
       }} />
 
       {/* ── Content ─────────────────────────────────────────────────────── */}
-      <div className="relative z-10 container-content flex flex-col items-center text-center pt-20 pb-28 md:pt-24 md:pb-24">
+      <div className="relative z-10 container-content flex flex-col items-center text-center pt-28 pb-28 md:pt-24 md:pb-24">
 
         <motion.div
           variants={CONTAINER}
