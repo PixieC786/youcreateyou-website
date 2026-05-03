@@ -175,7 +175,7 @@ export default function AppShowcase() {
                   </div>
 
                   <Button href="https://app.youcreateyou.life/tools_hub.html" external variant="primary" size="sm">
-                    Try This Tool Free
+                    Try This Tool — 21 Days Free
                   </Button>
                 </div>
               </motion.div>

@@ -72,7 +72,7 @@ export default function Nav() {
             {/* Desktop CTA */}
             <div className="hidden md:block">
               <Button href="https://app.youcreateyou.life" variant="primary" size="sm" external>
-                Begin Free
+                Begin — 21 Days Free
               </Button>
             </div>
 
