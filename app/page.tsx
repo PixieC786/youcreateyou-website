@@ -5,6 +5,7 @@ import SciencePillars from '@/components/sections/SciencePillars'
 import AppShowcase from '@/components/sections/AppShowcase'
 import Testimonial from '@/components/sections/Testimonial'
 import JournalPreview from '@/components/sections/JournalPreview'
+import Pricing from '@/components/sections/Pricing'
 import FinalCTA from '@/components/sections/FinalCTA'
 
 export const metadata = {
@@ -23,6 +24,7 @@ export default function HomePage() {
       <AppShowcase />
       <Testimonial />
       <JournalPreview />
+      <Pricing />
       <FinalCTA />
     </main>
   )
