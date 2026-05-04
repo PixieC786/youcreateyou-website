@@ -13,7 +13,7 @@ export async function POST(req: NextRequest) {
       'Accept': 'application/json',
       'Authorization': `Bearer ${process.env.MAILERLITE_API_KEY}`,
     },
-    body: JSON.stringify({ email }),
+    body: JSON.stringify({ email, groups: ['186552626043684858'] }),
   })
 
   // 200 = already subscribed (treated as success), 201 = newly subscribed
