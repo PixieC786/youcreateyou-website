@@ -119,7 +119,7 @@ export default function FinalCTA() {
           transition={{ delay: 0.18, duration: 0.75, ease: EASE }}
           className="font-body text-[rgba(235,228,255,0.65)] text-[clamp(1rem,1.25vw,1.1rem)] max-w-[38ch] leading-[1.85] mb-12"
         >
-          Start with 20 minutes a day. 20 tools. Zero guesswork.
+          20 tools. Zero guesswork.
           21 days free — forever to deepen.
         </motion.p>
 
