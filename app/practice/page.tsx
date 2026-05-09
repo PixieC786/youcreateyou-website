@@ -78,6 +78,30 @@ export default function PracticePage() {
           </div>
         </section>
       ))}
+
+      {/* Frequency Check-in feature */}
+      <section className="pb-16 pt-4">
+        <div className="container-site">
+          <div className="mb-8">
+            <span className="font-mono text-[9px] tracking-[0.25em] uppercase text-[rgba(179,136,255,0.45)]">Home Screen</span>
+            <h2 className="font-display text-3xl italic font-light text-[#f0ecff] mt-2">Daily Frequency Check-in</h2>
+          </div>
+          <div className="max-w-2xl">
+            <div className="p-8 rounded-2xl border border-[rgba(179,136,255,0.18)] bg-[rgba(179,136,255,0.04)]">
+              <span className="font-mono text-[9px] tracking-[0.25em] uppercase text-[rgba(179,136,255,0.55)] mb-4 block">✦ Read My Frequency</span>
+              <h3 className="font-display text-2xl italic font-light text-[#f0ecff] mb-4">
+                45 seconds. Finger on camera. Your nervous system tells the truth.
+              </h3>
+              <p className="font-body text-[rgba(240,236,255,0.55)] leading-relaxed mb-4">
+                Place your finger over the back camera. In 45 seconds, the app reads your heart rate variability and maps it to a consciousness level — Courage, Willingness, Love, Peace, and more. Come back weekly and watch your frequency shift over time.
+              </p>
+              <p className="font-body text-[rgba(240,236,255,0.38)] text-sm leading-relaxed">
+                Every reading is saved. Over weeks and months, you build an undeniable arc — proof that the work is moving something real.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   )
 }

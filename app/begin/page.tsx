@@ -27,7 +27,7 @@ const STEPS = [
   {
     number: '04',
     title: 'Track your transformation',
-    desc: 'Your journal, your coherence score, your 33-day growth — all visible, measurable, yours.',
+    desc: 'Your journal, your coherence score, your 33-day growth, your weekly frequency reading — all visible, measurable, yours.',
   },
 ]
 

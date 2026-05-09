@@ -70,7 +70,15 @@ export default function Nav() {
             </nav>
 
             {/* Desktop CTA */}
-            <div className="hidden md:block">
+            <div className="hidden md:flex items-center gap-5">
+              <a
+                href="https://app.youcreateyou.life/frequency_reader.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-mono text-[9px] tracking-[0.2em] uppercase text-[rgba(200,138,255,0.7)] hover:text-[rgba(200,138,255,1)] transition-colors duration-200 whitespace-nowrap"
+              >
+                ✦ Read My Frequency
+              </a>
               <Button href="https://app.youcreateyou.life" variant="primary" size="sm" external>
                 Begin — 21 Days Free
               </Button>
@@ -165,6 +173,15 @@ export default function Nav() {
               transition={{ delay: 0.32, duration: 0.45, ease: EASE }}
               className="px-[clamp(20px,5vw,48px)] pb-12 pt-6 border-t border-[rgba(179,136,255,0.06)]"
             >
+              <a
+                href="https://app.youcreateyou.life/frequency_reader.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={close}
+                className="block w-full text-center font-mono text-[10px] tracking-[0.22em] uppercase text-[rgba(200,138,255,0.75)] hover:text-[rgba(200,138,255,1)] transition-colors duration-200 mb-4"
+              >
+                ✦ Read My Frequency — Free
+              </a>
               <Button
                 href="https://app.youcreateyou.life"
                 variant="primary"

@@ -131,7 +131,7 @@ export default function Hero() {
               ctaText="Begin Free — 21 Days"
               size="lg"
             />
-            <div className="flex items-center gap-6">
+            <div className="flex items-center gap-6 flex-wrap justify-center">
               <Button href="https://app.youcreateyou.life" external variant="ghost" size="md" className="text-[11px] text-[rgba(240,236,255,0.65)] tracking-[0.2em]">
                 Open the App
               </Button>
@@ -139,6 +139,15 @@ export default function Hero() {
               <Button href="#practice" variant="ghost" size="md" className="text-[11px] text-[rgba(240,236,255,0.65)] tracking-[0.2em]">
                 See the Practice
               </Button>
+              <span className="h-4 w-px bg-[rgba(210,175,255,0.2)]" />
+              <a
+                href="https://app.youcreateyou.life/frequency_reader.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-mono text-[11px] tracking-[0.2em] uppercase text-[rgba(200,138,255,0.8)] hover:text-[rgba(200,138,255,1)] transition-colors duration-200"
+              >
+                ✦ Read My Frequency
+              </a>
             </div>
           </motion.div>
 
