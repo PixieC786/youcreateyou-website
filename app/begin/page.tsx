@@ -12,7 +12,7 @@ const STEPS = [
   {
     number: '01',
     title: 'Start your 21-day free trial',
-    desc: 'Enter your email. No credit card needed. Your full practice unlocks immediately.',
+    desc: 'Enter your email. No credit card needed. Your full practice unlocks immediately — then add it to your home screen. No App Store. One tap.',
   },
   {
     number: '02',
