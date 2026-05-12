@@ -55,20 +55,11 @@ export const metadata: Metadata = {
     title: 'You Create You — The Science of Becoming You',
     description:
       'A 365-day daily practice rooted in neuroscience and ancient wisdom.',
-    images: [
-      {
-        url: '/og/homepage.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'You Create You',
-      },
-    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'You Create You — The Science of Becoming You',
     description: 'A 365-day daily practice rooted in neuroscience and ancient wisdom.',
-    images: ['/og/homepage.jpg'],
   },
   robots: {
     index: true,
