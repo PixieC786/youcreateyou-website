@@ -29,11 +29,11 @@ const dmMono = DM_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: 'You Create You — The Science of Becoming You',
+    default: 'You Create You — The version of you who has everything exists.',
     template: '%s | You Create You',
   },
   description:
-    'A 365-day daily practice rooted in neuroscience and ancient wisdom. Begin your conscious creation practice today.',
+    'Not a new you. The real one. A daily practice for rewiring your mind, reclaiming your identity, and creating the life you actually want.',
   keywords: [
     'conscious creation',
     'identity transformation',
@@ -52,14 +52,14 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://youcreateyou.life',
     siteName: 'You Create You',
-    title: 'You Create You — The Science of Becoming You',
+    title: 'You Create You — The version of you who has everything exists.',
     description:
-      'A 365-day daily practice rooted in neuroscience and ancient wisdom.',
+      'Not a new you. The real one. A daily practice for rewiring your mind, reclaiming your identity, and creating the life you actually want.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'You Create You — The Science of Becoming You',
-    description: 'A 365-day daily practice rooted in neuroscience and ancient wisdom.',
+    title: 'You Create You — The version of you who has everything exists.',
+    description: 'Not a new you. The real one. A daily practice for rewiring your mind, reclaiming your identity, and creating the life you actually want.',
   },
   robots: {
     index: true,
