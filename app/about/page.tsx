@@ -256,9 +256,6 @@ export default function AboutPage() {
             <Button href="/begin" variant="primary" size="md">
               Start Your Practice
             </Button>
-            <Button href="https://app.youcreateyou.life" external variant="ghost" size="md">
-              Open the App
-            </Button>
           </motion.div>
 
         </div>
