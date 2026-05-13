@@ -188,7 +188,7 @@ export default function AboutPage() {
             Inside YCY, you will find 20 practices — rooted in neuroscience, ancient wisdom,
             somatic work, and quantum thinking. Not theory. Not more content to consume.
             A daily practice that works on your mind, your body, your subconscious, and your
-            identity — simultaneously. Twenty minutes a day. No guru. Just you, showing up for yourself.
+            identity — simultaneously. No guru. Just you, showing up for yourself.
           </Para>
 
         </div>
