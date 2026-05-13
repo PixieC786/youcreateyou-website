@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import SectionLabel from '@/components/ui/SectionLabel'
 import Button from '@/components/ui/Button'
+import StarLifeCycle from '@/components/sections/StarLifeCycle'
 
 const EASE = [0.22, 1, 0.36, 1] as const
 
@@ -190,6 +191,14 @@ export default function AboutPage() {
             identity — simultaneously. Twenty minutes. No guru. Just you, showing up for yourself.
           </Para>
 
+        </div>
+      </section>
+
+      <StarLifeCycle />
+
+      <section className="relative z-10 pb-16">
+        <div className="container-prose mx-auto">
+
           {/* Closing philosophy */}
           <motion.div
             initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }}
@@ -254,7 +263,6 @@ export default function AboutPage() {
 
         </div>
       </section>
-
     </main>
   )
 }
