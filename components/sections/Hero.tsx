@@ -1,7 +1,6 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Button from '@/components/ui/Button'
 import EmailCapture from '@/components/ui/EmailCapture'
 import ParticleCanvas from '@/components/ui/ParticleCanvas'
 
@@ -19,9 +18,9 @@ const ITEM = {
 }
 
 const STATS = [
-  { value: '20',     label: 'Consciousness Tools' },
-  { value: 'Daily', label: 'Morning Practice' },
-  { value: '4',      label: 'Phases of Change' },
+  { value: '20', label: 'Tools for the Inner World' },
+  { value: '9',  label: 'Steps to a New Identity' },
+  { value: '21', label: 'Days to Feel the Shift' },
 ]
 
 export default function Hero() {
@@ -35,47 +34,37 @@ export default function Hero() {
 
       {/* ── Atmospheric depth ────────────────────────────────────────────── */}
 
-      {/* 1. Deep nebula floor */}
-      <div aria-hidden className="absolute inset-0 pointer-events-none" style={{
-        background: 'radial-gradient(ellipse 100% 70% at 50% 65%, rgba(90,35,175,0.28) 0%, rgba(60,20,130,0.1) 55%, transparent 75%)',
-      }} />
-
-      {/* 2. Crown bloom — the "galaxy above" feel */}
+      {/* Warm rose drift — left */}
       <div aria-hidden className="absolute pointer-events-none" style={{
-        top: '-8%', left: '50%', transform: 'translateX(-50%)',
-        width: '90vw', height: '80vh',
-        background: 'radial-gradient(ellipse at center, rgba(160,85,255,0.32) 0%, rgba(130,60,230,0.14) 40%, transparent 68%)',
-        filter: 'blur(36px)',
-      }} />
-
-      {/* 3. Warm luminous headline halo — direct glow behind text */}
-      <div aria-hidden className="absolute pointer-events-none" style={{
-        top: '18%', left: '50%', transform: 'translateX(-50%)',
-        width: '60vw', height: '50vh',
-        background: 'radial-gradient(ellipse at center, rgba(220,170,255,0.16) 0%, rgba(190,130,255,0.07) 50%, transparent 72%)',
-        filter: 'blur(22px)',
-      }} />
-
-      {/* 4. Side orbs — breathing depth */}
-      <div aria-hidden className="absolute pointer-events-none" style={{
-        left: '2%', top: '20%',
-        width: '40vw', height: '40vw',
-        background: 'radial-gradient(circle, rgba(150,85,255,0.15) 0%, transparent 70%)',
+        left: '-5%', top: '10%',
+        width: '55vw', height: '55vw',
+        background: 'radial-gradient(ellipse, rgba(255,148,185,0.11) 0%, transparent 68%)',
         filter: 'blur(55px)',
+        animation: 'breathe 13s ease-in-out 1s infinite',
+      }} />
+
+      {/* Warm gold drift — right */}
+      <div aria-hidden className="absolute pointer-events-none" style={{
+        right: '-5%', top: '20%',
+        width: '48vw', height: '48vw',
+        background: 'radial-gradient(ellipse, rgba(255,198,120,0.09) 0%, transparent 70%)',
+        filter: 'blur(60px)',
+        animation: 'breathe 15s ease-in-out 3s infinite',
+      }} />
+
+      {/* Soft lavender center bloom */}
+      <div aria-hidden className="absolute pointer-events-none" style={{
+        left: '50%', top: '8%', transform: 'translateX(-50%)',
+        width: '65vw', height: '65vh',
+        background: 'radial-gradient(ellipse, rgba(210,155,255,0.16) 0%, rgba(185,120,245,0.08) 45%, transparent 72%)',
+        filter: 'blur(42px)',
         animation: 'breathe 9s ease-in-out infinite',
       }} />
-      <div aria-hidden className="absolute pointer-events-none" style={{
-        right: '2%', bottom: '18%',
-        width: '36vw', height: '36vw',
-        background: 'radial-gradient(circle, rgba(210,155,255,0.13) 0%, transparent 70%)',
-        filter: 'blur(55px)',
-        animation: 'breathe 12s ease-in-out 1.8s infinite',
-      }} />
 
-      {/* 5. Bottom fade into next section */}
+      {/* Bottom fade */}
       <div aria-hidden className="absolute bottom-0 left-0 right-0 pointer-events-none" style={{
         height: '32vh',
-        background: 'linear-gradient(to top, #120d28 0%, rgba(18,13,40,0.65) 55%, transparent 100%)',
+        background: 'linear-gradient(to top, #07050f 0%, rgba(7,5,15,0.7) 55%, transparent 100%)',
       }} />
 
       {/* ── Content ─────────────────────────────────────────────────────── */}
@@ -87,15 +76,95 @@ export default function Hero() {
           animate="show"
           className="flex flex-col items-center w-full"
         >
-          {/* Eyebrow badge — warmer, more luminous */}
-          <motion.div variants={ITEM} className="mb-5 md:mb-6">
+          {/* Eyebrow badge */}
+          <motion.div variants={ITEM} className="mb-8 md:mb-10">
             <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full border border-[rgba(210,175,255,0.25)] bg-[rgba(210,175,255,0.07)]"
               style={{ boxShadow: '0 0 20px rgba(180,120,255,0.1), inset 0 1px 0 rgba(255,255,255,0.06)' }}
             >
               <span className="w-1.5 h-1.5 rounded-full bg-[rgba(220,185,255,0.9)] animate-breathe" style={{ boxShadow: '0 0 6px rgba(210,175,255,0.8)' }} />
               <span className="font-mono text-[10px] tracking-[0.28em] uppercase text-[rgba(220,185,255,0.82)]">
-                Consciousness · Neuroscience · Transformation
+                You already know who you&apos;re becoming
               </span>
+            </div>
+          </motion.div>
+
+          {/* THE EMERGENCE */}
+          <motion.div variants={ITEM} className="mb-6 md:mb-8 relative flex items-center justify-center" aria-hidden>
+
+            {/* Far outer — electric violet aurora */}
+            <div className="absolute rounded-full pointer-events-none" style={{
+              width:'600px', height:'600px',
+              background:'radial-gradient(circle, rgba(160,60,255,0.22) 0%, rgba(200,80,255,0.12) 40%, rgba(255,100,200,0.06) 70%, transparent 85%)',
+              filter:'blur(55px)',
+              animation:'breathe 14s ease-in-out 2s infinite',
+            }}/>
+
+            {/* Mid — vivid magenta-violet */}
+            <div className="absolute rounded-full pointer-events-none" style={{
+              width:'440px', height:'440px',
+              background:'radial-gradient(circle, rgba(185,60,255,0.38) 0%, rgba(255,60,200,0.2) 42%, rgba(120,40,255,0.08) 68%, transparent 83%)',
+              filter:'blur(28px)',
+              animation:'breathe 9s ease-in-out 1s infinite',
+            }}/>
+
+            {/* Vivid rings — electric violet, hot pink, bright purple */}
+            {[
+              { size: 400, color: 'rgba(180,60,255,0.35)',  delay: 0,   dur: 9  },
+              { size: 330, color: 'rgba(255,60,190,0.28)',  delay: 1.5, dur: 7  },
+              { size: 262, color: 'rgba(140,40,255,0.22)',  delay: 3,   dur: 11 },
+            ].map((r, i) => (
+              <div key={i} className="absolute rounded-full pointer-events-none" style={{
+                width:`${r.size}px`, height:`${r.size}px`,
+                border:`1.5px solid ${r.color}`,
+                animation:`breathe ${r.dur}s ease-in-out ${r.delay}s infinite`,
+              }}/>
+            ))}
+
+            {/* The Emergence — electric violet core */}
+            <div className="relative rounded-full" style={{
+              width:'240px', height:'240px',
+              background:`radial-gradient(circle,
+                rgba(255,255,255,0.98)  0%,
+                rgba(235,180,255,0.88)  10%,
+                rgba(195,80,255,0.75)   22%,
+                rgba(255,60,200,0.52)   38%,
+                rgba(150,40,255,0.28)   55%,
+                rgba(100,20,200,0.1)    72%,
+                transparent             86%
+              )`,
+              filter:'blur(2px)',
+              boxShadow:`
+                0 0 50px rgba(190,70,255,0.85),
+                0 0 100px rgba(255,60,200,0.5),
+                0 0 180px rgba(140,40,255,0.25)
+              `,
+              animation:'breathe 7s ease-in-out infinite',
+            }}>
+              {/* Inner bright layers */}
+              {[
+                { size: 150, bg: 'rgba(255,255,255,0.82) 0%, rgba(220,140,255,0.6) 40%, transparent 80%', dur: 6,  delay: 0   },
+                { size: 90,  bg: 'rgba(255,255,255,0.92) 0%, rgba(255,120,230,0.7) 38%, transparent 78%', dur: 8,  delay: 1   },
+                { size: 46,  bg: 'rgba(255,255,255,0.98) 0%, rgba(210,100,255,0.85) 50%, transparent 80%', dur: 5, delay: 2   },
+              ].map((l, i) => (
+                <div key={i} className="absolute inset-0 flex items-center justify-center">
+                  <div style={{
+                    width:`${l.size}px`, height:`${l.size}px`,
+                    borderRadius:'50%',
+                    background:`radial-gradient(circle, ${l.bg})`,
+                    animation:`breathe ${l.dur}s ease-in-out ${l.delay}s infinite`,
+                  }}/>
+                </div>
+              ))}
+
+              {/* The spark — blinding white with violet corona */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div style={{
+                  width:'11px', height:'11px', borderRadius:'50%',
+                  background:'#ffffff',
+                  boxShadow:'0 0 18px rgba(255,255,255,1), 0 0 40px rgba(220,140,255,1), 0 0 80px rgba(190,60,255,0.75)',
+                  animation:'breathe 4s ease-in-out 0.5s infinite',
+                }}/>
+              </div>
             </div>
           </motion.div>
 
@@ -112,16 +181,16 @@ export default function Hero() {
             <span className="text-gradient">exists.</span>
           </motion.h1>
 
-          {/* Sub-headline — warmer, more readable */}
+          {/* Sub-headline — identity mirror */}
           <motion.p
             variants={ITEM}
-            className="font-body text-[rgba(235,228,255,0.68)] text-[clamp(1rem,1.5vw,1.18rem)] max-w-[44ch] leading-[1.85] mb-6"
+            className="font-body text-[rgba(235,228,255,0.68)] text-[clamp(1rem,1.5vw,1.18rem)] max-w-[40ch] leading-[1.85] mb-6"
           >
-            The science-backed, soul-aligned practice for rewiring your mind,
-            reclaiming your identity, and creating the life you actually want.
+            Not a new you. The real one.
+            The one you&apos;ve always sensed underneath the noise — waiting to be lived.
           </motion.p>
 
-          {/* CTA cluster */}
+          {/* CTA */}
           <motion.div
             variants={ITEM}
             className="w-full max-w-[440px] flex flex-col items-center gap-5"
@@ -131,24 +200,6 @@ export default function Hero() {
               ctaText="Begin Free — 21 Days"
               size="lg"
             />
-            <div className="flex items-center gap-6 flex-wrap justify-center">
-              <Button href="https://app.youcreateyou.life" external variant="ghost" size="md" className="text-[11px] text-[rgba(240,236,255,0.65)] tracking-[0.2em]">
-                Open the App
-              </Button>
-              <span className="h-4 w-px bg-[rgba(210,175,255,0.2)]" />
-              <Button href="#practice" variant="ghost" size="md" className="text-[11px] text-[rgba(240,236,255,0.65)] tracking-[0.2em]">
-                See the Practice
-              </Button>
-              <span className="h-4 w-px bg-[rgba(210,175,255,0.2)]" />
-              <a
-                href="https://app.youcreateyou.life/frequency_reader.html"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-mono text-[11px] tracking-[0.2em] uppercase text-[rgba(200,138,255,0.8)] hover:text-[rgba(200,138,255,1)] transition-colors duration-200"
-              >
-                ✦ Read My Frequency
-              </a>
-            </div>
           </motion.div>
 
           {/* Stats strip — brighter, more inviting */}

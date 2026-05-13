@@ -1,17 +1,14 @@
 import Hero from '@/components/sections/Hero'
 import Recognition from '@/components/sections/Recognition'
-import Pivot from '@/components/sections/Pivot'
-import SciencePillars from '@/components/sections/SciencePillars'
 import AppShowcase from '@/components/sections/AppShowcase'
 import Testimonial from '@/components/sections/Testimonial'
-import JournalPreview from '@/components/sections/JournalPreview'
 import Pricing from '@/components/sections/Pricing'
 import FinalCTA from '@/components/sections/FinalCTA'
 
 export const metadata = {
-  title: 'You Create You — Consciousness Tools for Real Transformation',
+  title: 'You Create You — The version of you who has everything exists.',
   description:
-    'Science-backed, soul-aligned daily practice for rewiring your mind, reclaiming your identity, and creating the life you actually want. 20 tools. 21-day free trial.',
+    'Not a new you. The real one. A daily practice for rewiring your mind, reclaiming your identity, and creating the life you actually want.',
 }
 
 export default function HomePage() {
@@ -19,11 +16,8 @@ export default function HomePage() {
     <main>
       <Hero />
       <Recognition />
-      <Pivot />
-      <SciencePillars />
       <AppShowcase />
       <Testimonial />
-      <JournalPreview />
       <Pricing />
       <FinalCTA />
     </main>

@@ -1,6 +1,7 @@
 import SectionLabel from '@/components/ui/SectionLabel'
 import Button from '@/components/ui/Button'
 import Card from '@/components/ui/Card'
+import TransformationFlow from '@/components/sections/TransformationFlow'
 
 export const metadata = {
   title: 'The Practice — You Create You',
@@ -56,6 +57,8 @@ export default function PracticePage() {
           Open the App — 21 Days Free
         </Button>
       </div>
+
+      <TransformationFlow />
 
       {phases.map(phase => (
         <section key={phase} className="pb-10">

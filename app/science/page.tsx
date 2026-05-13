@@ -1,5 +1,6 @@
 import SectionLabel from '@/components/ui/SectionLabel'
 import SciencePillars from '@/components/sections/SciencePillars'
+import StarLifeCycle from '@/components/sections/StarLifeCycle'
 import Button from '@/components/ui/Button'
 
 export const metadata = {
@@ -65,6 +66,8 @@ export default function SciencePage() {
       </section>
 
       <SciencePillars />
+
+      <StarLifeCycle />
 
       <div className="container-content mt-10 text-center">
         <Button href="https://app.youcreateyou.life" external variant="primary" size="lg">
