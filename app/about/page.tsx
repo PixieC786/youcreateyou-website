@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion'
 import SectionLabel from '@/components/ui/SectionLabel'
 import Button from '@/components/ui/Button'
-import StarLifeCycle from '@/components/sections/StarLifeCycle'
 
 const EASE = [0.22, 1, 0.36, 1] as const
 
@@ -194,7 +193,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <StarLifeCycle />
 
       <section className="relative z-10 pb-16">
         <div className="container-prose mx-auto">
