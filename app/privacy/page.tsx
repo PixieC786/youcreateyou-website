@@ -140,7 +140,7 @@ export default function PrivacyPage() {
         <ul className="ml-5 mb-6 list-disc">
           <Li><Strong>Export your data</Strong> — use the Backup &amp; Restore tool in the app to download everything saved on your device.</Li>
           <Li><Strong>Delete your local data</Strong> — clear your browser's site data, or use the "Reset &amp; Start Fresh" option in My Journey.</Li>
-          <Li><Strong>Delete your synced cloud data</Strong> — email <a href="mailto:support@youcreateyou.life" style={{ color: 'rgba(210,175,255,0.8)' }}>support@youcreateyou.life</a> and we will permanently delete your account and all associated data within 7 days.</Li>
+          <Li><Strong>Delete your synced cloud data</Strong> — email <a href="mailto:hello@youcreateyou.life" style={{ color: 'rgba(210,175,255,0.8)' }}>hello@youcreateyou.life</a> and we will permanently delete your account and all associated data within 7 days.</Li>
           <Li><Strong>Cancel your subscription</Strong> — manage it directly through the payment processor's customer portal, or email us.</Li>
           <Li><Strong>Withdraw push notification consent</Strong> — turn them off in your device settings at any time.</Li>
         </ul>
@@ -151,8 +151,8 @@ export default function PrivacyPage() {
         <P>
           This app is not intended for anyone under 13 years old. If you believe a child
           has used the app, email{' '}
-          <a href="mailto:support@youcreateyou.life" style={{ color: 'rgba(210,175,255,0.8)' }}>
-            support@youcreateyou.life
+          <a href="mailto:hello@youcreateyou.life" style={{ color: 'rgba(210,175,255,0.8)' }}>
+            hello@youcreateyou.life
           </a>{' '}
           and we will delete their data immediately.
         </P>
@@ -172,8 +172,8 @@ export default function PrivacyPage() {
         <H2>Contact</H2>
         <P>
           Questions, concerns, or data requests —{' '}
-          <a href="mailto:support@youcreateyou.life" style={{ color: 'rgba(210,175,255,0.8)' }}>
-            support@youcreateyou.life
+          <a href="mailto:hello@youcreateyou.life" style={{ color: 'rgba(210,175,255,0.8)' }}>
+            hello@youcreateyou.life
           </a>
         </P>
 

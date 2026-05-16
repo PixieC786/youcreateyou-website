@@ -8,7 +8,7 @@ const EASE = [0.22, 1, 0.36, 1] as const
 const INCLUDES = [
   'All 20 consciousness tools',
   '9-step daily morning practice',
-  'Guided meditations with Natasha',
+  'Guided voice meditations',
   'Your personal journey journal',
   '365 days · cancel any time',
 ]
@@ -52,7 +52,7 @@ export default function Pricing() {
             transition={{ duration: 0.7, ease: EASE, delay: 0.14 }}
             className="font-body text-[1rem] font-light text-[rgba(240,236,255,0.42)] leading-[1.85] mb-14"
           >
-            No card. No pressure. Just you and the practice.<br />
+            No credit card required. No pressure. Just you and the practice.<br />
             After your trial, choose the plan that feels right.
           </motion.p>
 

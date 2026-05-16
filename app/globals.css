@@ -13,7 +13,7 @@ html {
 }
 
 body {
-  background-color: #120d28;
+  background-color: #07050f;
   color: #f0ecff;
   font-family: var(--font-inter), system-ui, sans-serif;
   overflow-x: hidden;
@@ -223,4 +223,16 @@ a, button { -webkit-tap-highlight-color: transparent; touch-action: manipulation
 @keyframes breathe {
   0%, 100% { opacity: 0.55; transform: scale(1); }
   50%       { opacity: 0.9;  transform: scale(1.06); }
+}
+
+/* ── Ripple rings radiating outward from orb ─────────────────────────────── */
+@keyframes rippleOut {
+  0%   { transform: scale(0.85); opacity: 0.5; }
+  100% { transform: scale(1.4);  opacity: 0; }
+}
+
+/* ── Living ripple — expands from center point ───────────────────────────── */
+@keyframes rippleWave {
+  0%   { transform: scale(0.04); opacity: 0.65; }
+  100% { transform: scale(1);    opacity: 0; }
 }

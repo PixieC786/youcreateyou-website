@@ -151,8 +151,8 @@ export default function TermsPage() {
           Because the 21-day free trial gives you ample time to decide, refunds are not
           provided once a billing period has begun. If something genuinely broke or you were
           charged in error, email{' '}
-          <a href="mailto:support@youcreateyou.life" style={{ color: 'rgba(210,175,255,0.8)' }}>
-            support@youcreateyou.life
+          <a href="mailto:hello@youcreateyou.life" style={{ color: 'rgba(210,175,255,0.8)' }}>
+            hello@youcreateyou.life
           </a>{' '}
           and we will make it right.
         </P>
@@ -252,8 +252,8 @@ export default function TermsPage() {
         <H2>Contact</H2>
         <P>
           For any questions, concerns, or billing issues —{' '}
-          <a href="mailto:support@youcreateyou.life" style={{ color: 'rgba(210,175,255,0.8)' }}>
-            support@youcreateyou.life
+          <a href="mailto:hello@youcreateyou.life" style={{ color: 'rgba(210,175,255,0.8)' }}>
+            hello@youcreateyou.life
           </a>
         </P>
 
