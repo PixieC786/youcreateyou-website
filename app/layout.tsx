@@ -55,11 +55,20 @@ export const metadata: Metadata = {
     title: 'You Create You — The version of you who has everything exists.',
     description:
       'Not a new you. The real one. A daily practice for rewiring your mind, reclaiming your identity, and creating the life you actually want.',
+    images: [
+      {
+        url: 'https://youcreateyou.life/opengraph-image',
+        width: 1200,
+        height: 630,
+        alt: 'You Create You',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'You Create You — The version of you who has everything exists.',
     description: 'Not a new you. The real one. A daily practice for rewiring your mind, reclaiming your identity, and creating the life you actually want.',
+    images: ['https://youcreateyou.life/opengraph-image'],
   },
   robots: {
     index: true,
