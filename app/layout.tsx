@@ -57,18 +57,19 @@ export const metadata: Metadata = {
       'Not a new you. The real one. A daily practice for rewiring your mind, reclaiming your identity, and creating the life you actually want.',
     images: [
       {
-        url: 'https://youcreateyou.life/opengraph-image',
-        width: 1200,
-        height: 630,
+        url: 'https://youcreateyou.life/icon-512.png',
+        width: 512,
+        height: 512,
         alt: 'You Create You',
+        type: 'image/png',
       },
     ],
   },
   twitter: {
-    card: 'summary_large_image',
+    card: 'summary',
     title: 'You Create You — The version of you who has everything exists.',
     description: 'Not a new you. The real one. A daily practice for rewiring your mind, reclaiming your identity, and creating the life you actually want.',
-    images: ['https://youcreateyou.life/opengraph-image'],
+    images: ['https://youcreateyou.life/icon-512.png'],
   },
   robots: {
     index: true,
