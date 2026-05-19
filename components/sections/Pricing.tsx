@@ -42,7 +42,7 @@ export default function Pricing() {
             transition={{ duration: 0.8, ease: EASE, delay: 0.08 }}
             className="font-display text-[clamp(2rem,5vw,3rem)] font-light italic text-[rgba(240,236,255,0.95)] leading-[1.3] mb-4"
           >
-            Your first 21 days<br />are completely free.
+            Your first 21 days<br />to meet yourself.
           </motion.h2>
 
           <motion.p
@@ -126,7 +126,7 @@ export default function Pricing() {
               href="https://youcreateyou.life"
               className="inline-block font-mono text-[10px] tracking-[0.22em] uppercase text-[rgba(220,190,255,0.95)] bg-[rgba(155,90,230,0.15)] border border-[rgba(179,136,255,0.4)] rounded-full px-12 py-[18px] hover:bg-[rgba(155,90,230,0.28)] hover:border-[rgba(179,136,255,0.7)] transition-all duration-300 mb-5"
             >
-              Begin Free — 21 Days
+              21 Days to Meet Yourself
             </Link>
             <p className="font-mono text-[9px] tracking-[0.14em] uppercase text-[rgba(240,236,255,0.18)]">
               No credit card required · cancel any time

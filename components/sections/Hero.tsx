@@ -117,7 +117,7 @@ export default function Hero() {
           >
             <EmailCapture
               placeholder="Your email address"
-              ctaText="Begin Free — 21 Days"
+              ctaText="21 Days to Meet Yourself"
               size="lg"
             />
           </motion.div>
