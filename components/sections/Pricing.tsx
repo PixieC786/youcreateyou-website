@@ -6,11 +6,11 @@ import Link from 'next/link'
 const EASE = [0.22, 1, 0.36, 1] as const
 
 const INCLUDES = [
-  'All 20 consciousness tools',
-  '9-step daily morning practice',
-  'Guided voice meditations',
-  'Your personal journey journal',
-  '365 days · cancel any time',
+  '20 ways to understand yourself deeply',
+  '9 steps to create yourself daily',
+  'Guided meditation — feel your future life as if it is already real',
+  'A journal that tracks who you are becoming',
+  '365 days to become someone new',
 ]
 
 export default function Pricing() {
@@ -52,42 +52,8 @@ export default function Pricing() {
             transition={{ duration: 0.7, ease: EASE, delay: 0.14 }}
             className="font-body text-[1rem] font-light text-[rgba(240,236,255,0.42)] leading-[1.85] mb-14"
           >
-            No credit card required. No pressure. Just you and the practice.<br />
-            After your trial, choose the plan that feels right.
+            No credit card required. No pressure. Just you and the practice.
           </motion.p>
-
-          {/* Cards */}
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: EASE, delay: 0.2 }}
-            className="grid grid-cols-2 gap-4 mb-12"
-          >
-
-            {/* Monthly */}
-            <div className="border border-[rgba(179,136,255,0.15)] rounded-[20px] p-8 bg-[rgba(179,136,255,0.04)] hover:border-[rgba(179,136,255,0.3)] transition-colors duration-300">
-              <p className="font-mono text-[9px] tracking-[0.22em] uppercase text-[rgba(179,136,255,0.5)] mb-4">Monthly</p>
-              <div className="font-display text-[2.8rem] font-light text-[rgba(240,236,255,0.95)] leading-none mb-1">
-                <span className="text-[1.1rem] text-[rgba(240,236,255,0.4)]">$</span>9.99
-              </div>
-              <p className="font-mono text-[9px] tracking-[0.18em] uppercase text-[rgba(240,236,255,0.28)]">per month</p>
-            </div>
-
-            {/* Yearly */}
-            <div className="relative border border-[rgba(179,136,255,0.35)] rounded-[20px] p-8 bg-[rgba(179,136,255,0.07)] hover:border-[rgba(179,136,255,0.55)] transition-colors duration-300">
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2 font-mono text-[8px] tracking-[0.2em] uppercase text-[rgba(179,136,255,0.9)] bg-[#07050f] border border-[rgba(179,136,255,0.35)] rounded-full px-3 py-1 whitespace-nowrap">
-                ✦ Best value
-              </div>
-              <p className="font-mono text-[9px] tracking-[0.22em] uppercase text-[rgba(179,136,255,0.5)] mb-4">Yearly</p>
-              <div className="font-display text-[2.8rem] font-light text-[rgba(240,236,255,0.95)] leading-none mb-1">
-                <span className="text-[1.1rem] text-[rgba(240,236,255,0.4)]">$</span>79
-              </div>
-              <p className="font-mono text-[9px] tracking-[0.18em] uppercase text-[rgba(240,236,255,0.28)] mb-2">per year</p>
-              <p className="font-mono text-[9px] tracking-[0.14em] uppercase text-[rgba(179,136,255,0.7)]">~$6.58/month · save 35%</p>
-            </div>
-
-          </motion.div>
 
           {/* Ornament */}
           <motion.p

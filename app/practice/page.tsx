@@ -12,7 +12,7 @@ export const metadata = {
 const ALL_TOOLS = [
   { phase: '01', name: 'Ancient Wisdom Library', desc: 'Rotating wisdom from 16 traditions. Daily inspiration rooted in timeless truth.' },
   { phase: '01', name: 'Reality Architect', desc: 'Track your dominant thoughts, feelings, and words. See the frequency you\'re broadcasting.' },
-  { phase: '01', name: 'Frequency Tuner', desc: 'Hawkins consciousness scale + Solfeggio tone player. Calibrate your vibrational frequency.' },
+  { phase: '01', name: 'Frequency Tuner', desc: 'I AM Frequency Map + Solfeggio tone player. Calibrate your vibrational frequency.' },
   { phase: '01', name: 'The Observer', desc: '4-question quantum journaling method. Dissolve belief-based suffering.' },
   { phase: '02', name: 'The Fear Alchemist', desc: '6-stage somatic process that transforms fear into its hidden evolutionary gift.' },
   { phase: '02', name: 'Mind Body Connection', desc: '5-stage guided somatic release. The body holds every pattern you want to change.' },
