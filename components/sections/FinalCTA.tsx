@@ -120,7 +120,7 @@ export default function FinalCTA() {
           className="font-body text-[rgba(235,228,255,0.65)] text-[clamp(1rem,1.25vw,1.1rem)] max-w-[38ch] leading-[1.85] mb-12"
         >
           20 tools. Zero guesswork.
-          21 days to meet yourself — forever to deepen.
+          21 days to remember who you are — forever to deepen.
         </motion.p>
 
         <motion.div
@@ -132,7 +132,7 @@ export default function FinalCTA() {
         >
           <EmailCapture
             placeholder="Your email address"
-            ctaText="21 Days to Meet Yourself"
+            ctaText="21 Days to Remember Who You Are"
             size="lg"
           />
           <Button href="https://app.youcreateyou.life" external variant="ghost" size="sm">

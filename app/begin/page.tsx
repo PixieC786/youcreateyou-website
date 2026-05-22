@@ -5,7 +5,7 @@ import Button from '@/components/ui/Button'
 export const metadata = {
   title: 'Begin — You Create You',
   description:
-    'Start your You Create You practice today. 21 days to meet yourself — all 20 consciousness tools, a 9-step daily morning practice, and your personal journal.',
+    'Start your You Create You practice today. 21 days to remember who you are — all 20 consciousness tools, a 9-step daily morning practice, and your personal journal.',
 }
 
 const STEPS = [
@@ -41,13 +41,13 @@ export default function BeginPage() {
           <br />actually changes things.
         </h1>
         <p className="font-body text-[rgba(240,236,255,0.5)] text-lg max-w-lg mx-auto leading-relaxed mb-12">
-          21 days to meet yourself. No credit card required.
+          21 days to remember who you are. No credit card required.
           20 tools + a 9-step morning practice ready immediately.
         </p>
         <div className="max-w-md mx-auto">
           <EmailCapture
             placeholder="Your email address"
-            ctaText="21 Days to Meet Yourself"
+            ctaText="21 Days to Remember Who You Are"
             size="lg"
           />
         </div>

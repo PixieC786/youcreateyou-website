@@ -80,7 +80,7 @@ export default function Nav() {
                 ✦ Read My Frequency
               </a>
               <Button href="https://app.youcreateyou.life" variant="primary" size="sm" external>
-                21 Days to Meet Yourself
+                21 Days to Remember Who You Are
               </Button>
             </div>
 
@@ -190,7 +190,7 @@ export default function Nav() {
                 onClick={close}
                 className="w-full justify-center"
               >
-                21 Days to Meet Yourself
+                21 Days to Remember Who You Are
               </Button>
               <p className="mt-4 font-mono text-[9px] tracking-[0.18em] uppercase text-[rgba(240,236,255,0.2)] text-center">
                 No credit card · Cancel anytime
