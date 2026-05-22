@@ -92,7 +92,7 @@ export default function Pricing() {
               href="https://youcreateyou.life"
               className="inline-block font-mono text-[10px] tracking-[0.22em] uppercase text-[rgba(220,190,255,0.95)] bg-[rgba(155,90,230,0.15)] border border-[rgba(179,136,255,0.4)] rounded-full px-12 py-[18px] hover:bg-[rgba(155,90,230,0.28)] hover:border-[rgba(179,136,255,0.7)] transition-all duration-300 mb-5"
             >
-              21 Days to Remember Who You Are
+              21 Days to Remember Who You Are
             </Link>
             <p className="font-mono text-[9px] tracking-[0.14em] uppercase text-[rgba(240,236,255,0.18)]">
               No credit card required · cancel any time

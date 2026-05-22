@@ -47,7 +47,6 @@ export default function BeginPage() {
         <div className="max-w-md mx-auto">
           <EmailCapture
             placeholder="Your email address"
-            ctaText="21 Days to Remember Who You Are"
             size="lg"
           />
         </div>

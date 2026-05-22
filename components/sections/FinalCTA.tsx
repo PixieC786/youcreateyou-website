@@ -132,7 +132,6 @@ export default function FinalCTA() {
         >
           <EmailCapture
             placeholder="Your email address"
-            ctaText="21 Days to Remember Who You Are"
             size="lg"
           />
           <Button href="https://app.youcreateyou.life" external variant="ghost" size="sm">
