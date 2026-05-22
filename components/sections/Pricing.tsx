@@ -10,7 +10,7 @@ const INCLUDES = [
   '9 steps to create yourself daily',
   'Guided meditation — feel your future life as if it is already real',
   'A journal that tracks who you are becoming',
-  '365 days to become someone new',
+  '365 days of becoming who you\'ve always been',
 ]
 
 export default function Pricing() {
@@ -89,7 +89,7 @@ export default function Pricing() {
             transition={{ duration: 0.7, ease: EASE, delay: 0.36 }}
           >
             <Link
-              href="https://youcreateyou.life"
+              href="https://app.youcreateyou.life"
               className="inline-block font-mono text-[10px] tracking-[0.22em] uppercase text-[rgba(220,190,255,0.95)] bg-[rgba(155,90,230,0.15)] border border-[rgba(179,136,255,0.4)] rounded-full px-12 py-[18px] hover:bg-[rgba(155,90,230,0.28)] hover:border-[rgba(179,136,255,0.7)] transition-all duration-300 mb-5"
             >
               21 Days to Remember Who You Are

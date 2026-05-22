@@ -44,7 +44,7 @@ const STEPS = [
   },
   {
     num: '04', label: 'Practice',
-    phrase: 'One morning. One hour. One new version of you.',
+    phrase: 'One morning. One hour. One true version of you.',
     color: '#ff8eb4', shadow: 'rgba(255,100,155,0.5)',
     symbol: (
       <svg width="50" height="50" viewBox="0 0 50 50">

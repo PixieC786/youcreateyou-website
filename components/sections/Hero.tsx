@@ -19,7 +19,7 @@ const ITEM = {
 
 const STATS = [
   { value: '20', label: 'Tools for the Inner World' },
-  { value: '9',  label: 'Steps to a New Identity' },
+  { value: '9',  label: 'Steps to Your True Identity' },
   { value: '21', label: 'Days to Feel the Shift' },
 ]
 
