@@ -95,10 +95,10 @@ export default function Footer() {
           {/* Newsletter column */}
           <div>
             <p className="font-mono text-[9px] tracking-[0.24em] uppercase text-[rgba(179,136,255,0.45)] mb-3">
-              Weekly Consciousness
+              Consciousness Letters
             </p>
             <p className="font-body text-[13px] text-[rgba(240,236,255,0.38)] leading-[1.8] mb-4">
-              Deep insights on identity, neuroscience, and conscious creation — weekly.
+              Deep insights on identity, neuroscience, and conscious creation — delivered to your inbox.
             </p>
 
             {sent ? (
