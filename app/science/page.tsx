@@ -21,7 +21,7 @@ const RESEARCH = [
   },
   {
     stat: '528 Hz',
-    finding: 'Solfeggio frequency shown to reduce cortisol levels and promote cellular coherence in peer-reviewed studies',
+    finding: 'Solfeggio frequency — emerging research suggests it may reduce cortisol levels and support cellular coherence',
     source: 'Journal of Addiction Research',
   },
   {
@@ -41,8 +41,8 @@ export default function SciencePage() {
           <br />science and soul.
         </h1>
         <p className="font-body text-[rgba(240,236,255,0.5)] text-lg max-w-xl mx-auto leading-relaxed">
-          Every tool in the You Create You practice is grounded in measurable, peer-reviewed science
-          — and enriched by thousands of years of wisdom tradition.
+          Every tool in the You Create You practice is grounded in science, ancient wisdom, and lived experience
+          — each discipline chosen because it works.
         </p>
       </div>
 

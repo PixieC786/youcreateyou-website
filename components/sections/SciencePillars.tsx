@@ -74,7 +74,7 @@ const PILLARS = [
     icon: ICONS.infinity,
   },
   {
-    label: '05 — Quantum Thinking',
+    label: '05 — Quantum Thinking  ·  emerging science + contemplative tradition',
     title: 'Consciousness shapes reality',
     body: 'Observer-effect principles, manifestation field dynamics, and visualization science all converge on one truth: how you hold reality determines what you experience.',
     icon: ICONS.atom,
