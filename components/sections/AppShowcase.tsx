@@ -13,8 +13,8 @@ const TOOLS = [
     phase: 'Phase I — See Clearly',
     name: 'The Observer',
     tagline: 'Question the thought. Not yourself.',
-    description: 'A 4-question inquiry method — the most direct path to dissolving the beliefs that create your suffering. One question at a time, reality becomes negotiable.',
-    stages: ['The Thought', 'Is It True?', 'Absolutely True?', 'Who Are You?', 'The Turnaround', 'Freedom'],
+    description: 'A 6-stage inquiry journey — the most direct path to dissolving the beliefs that create your suffering. From naming the thought to choosing who you become, reality shifts from the inside.',
+    stages: ['The Thought', 'The Body', 'The Inquiry', 'The Cost', 'The Flip', 'The Choice'],
     color: 'rgba(100,55,200,0.12)',
   },
   {
