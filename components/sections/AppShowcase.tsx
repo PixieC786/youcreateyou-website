@@ -11,9 +11,9 @@ const TOOLS = [
   {
     id: 'observer',
     phase: 'Phase I — Remember',
-    name: 'The Observer',
-    tagline: 'Question the thought. Not yourself.',
-    description: 'A 6-stage inquiry journey — the most direct path to dissolving the beliefs that create your suffering. From naming the thought to choosing who you become, reality shifts from the inside.',
+    name: 'The Witness',
+    tagline: 'The one watching has always been you.',
+    description: 'A 6-stage journey that dissolves the beliefs running your life from underneath. The moment you witness a thought, you are no longer it. The Witness is not cold — the Witness is free.',
     stages: ['The Thought', 'The Body', 'The Inquiry', 'The Cost', 'The Flip', 'The Choice'],
     color: 'rgba(100,55,200,0.12)',
   },
@@ -29,9 +29,9 @@ const TOOLS = [
   {
     id: 'visualisation',
     phase: 'Phase III — Create',
-    name: 'Creative Visualisation',
-    tagline: 'You meet your future self here.',
-    description: 'A 20-minute guided journey into the life you\'re calling in — followed by Embody Your Identity, where you become the person you just saw. The most powerful sequence in the practice.',
+    name: 'Inner Cinema',
+    tagline: 'Step inside — not outside.',
+    description: 'A 20-minute guided journey into the life you are building — felt from the inside, not watched from the outside. Not visualisation. Inhabitation. The deep learns from felt experience. Give it the right one.',
     stages: ['Arrival', 'Descent', 'Vision', 'Meeting', 'Merge', 'Embody'],
     color: 'rgba(179,136,255,0.1)',
   },
@@ -47,7 +47,7 @@ const TOOLS = [
 ]
 
 const PHASES = [
-  { number: '01', name: 'Remember', count: 4, tools: 'Ancient Wisdom · Reality Architect · Frequency Tuner · The Observer' },
+  { number: '01', name: 'Remember', count: 4, tools: 'Ancient Wisdom · Reality Architect · Frequency Tuner · The Witness' },
   { number: '02', name: 'Return',   count: 7, tools: 'The Fear Alchemist · Mind Body · Ego Alchemy · Identity Rebirth · The Love You Are · The Purpose Compass · New Chapter Vision' },
   { number: '03', name: 'Create',   count: 3, tools: 'Subconscious Reprogrammer · Quantum Creation · Creative Visualisation' },
   { number: '04', name: 'Radiate',  count: 6, tools: 'Gratitude Portal · Coherence Lab · Manifestation Garden · Feminine Way · Masculine Way · Fun Is the Frequency' },
