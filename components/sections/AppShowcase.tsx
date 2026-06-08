@@ -10,7 +10,7 @@ const EASE = [0.22, 1, 0.36, 1] as const
 const TOOLS = [
   {
     id: 'observer',
-    phase: 'Phase I — Remember',
+    phase: 'Phase I — See Clearly',
     name: 'The Observer',
     tagline: 'Question the thought. Not yourself.',
     description: 'A 6-stage inquiry journey — the most direct path to dissolving the beliefs that create your suffering. From naming the thought to choosing who you become, reality shifts from the inside.',
@@ -19,7 +19,7 @@ const TOOLS = [
   },
   {
     id: 'fear',
-    phase: 'Phase II — Return',
+    phase: 'Phase II — Release & Discover',
     name: 'The Fear Alchemist',
     tagline: 'Every fear contains its opposite gift.',
     description: 'A 6-stage guided somatic process that transmutes what holds you back into the exact fuel you need for expansion. Named "the most powerful 20 minutes" by our community.',
@@ -28,7 +28,7 @@ const TOOLS = [
   },
   {
     id: 'visualisation',
-    phase: 'Phase III — Create',
+    phase: 'Phase III — Install the New Reality',
     name: 'Creative Visualisation',
     tagline: 'You meet your future self here.',
     description: 'A 20-minute guided journey into the life you\'re calling in — followed by Embody Your Identity, where you become the person you just saw. The most powerful sequence in the practice.',
@@ -37,7 +37,7 @@ const TOOLS = [
   },
   {
     id: 'gratitude',
-    phase: 'Phase IV — Radiate',
+    phase: 'Phase IV — Signal & Nurture Daily',
     name: 'The Gratitude Portal',
     tagline: 'What you appreciate, appreciates.',
     description: 'A daily gratitude practice with miracle morning sequencing and heart-pulse activation. The tool that compounds faster than any other in the practice.',
@@ -47,10 +47,10 @@ const TOOLS = [
 ]
 
 const PHASES = [
-  { number: '01', name: 'Remember', count: 4, tools: 'Ancient Wisdom · Reality Architect · Frequency Tuner · The Observer' },
-  { number: '02', name: 'Return',   count: 7, tools: 'The Fear Alchemist · Mind Body · Ego Alchemy · Identity Rebirth · The Love You Are · The Purpose Compass · New Chapter Vision' },
-  { number: '03', name: 'Create',   count: 3, tools: 'Subconscious Reprogrammer · Quantum Creation · Creative Visualisation' },
-  { number: '04', name: 'Radiate',  count: 6, tools: 'Gratitude Portal · Coherence Lab · Manifestation Garden · Feminine Way · Masculine Way · Fun Is the Frequency' },
+  { number: '01', name: 'See Clearly',            count: 4, tools: 'Ancient Wisdom · Reality Architect · Frequency Tuner · The Observer' },
+  { number: '02', name: 'Release & Discover',      count: 7, tools: 'The Fear Alchemist · Mind Body · Ego Alchemy · Identity Rebirth · The Love You Are · The Purpose Compass · New Chapter Vision' },
+  { number: '03', name: 'Install the New Reality', count: 3, tools: 'Subconscious Reprogrammer · Quantum Creation · Creative Visualisation' },
+  { number: '04', name: 'Signal & Nurture Daily',  count: 6, tools: 'Gratitude Portal · Coherence Lab · Manifestation Garden · Feminine Way · Masculine Way · Fun Is the Frequency' },
 ]
 
 export default function AppShowcase() {
