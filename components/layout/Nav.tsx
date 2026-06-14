@@ -71,15 +71,7 @@ export default function Nav() {
 
             {/* Desktop CTA */}
             <div className="hidden md:flex items-center gap-5">
-              <a
-                href="https://app.youcreateyou.life/frequency_reader.html"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-mono text-[9px] tracking-[0.2em] uppercase text-[rgba(200,138,255,0.7)] hover:text-[rgba(200,138,255,1)] transition-colors duration-200 whitespace-nowrap"
-              >
-                ✦ Read My Frequency
-              </a>
-              <Button href="https://app.youcreateyou.life" variant="primary" size="sm" external>
+              <Button href="/start" variant="primary" size="sm">
                 21 Days to Remember Who You Are
               </Button>
             </div>
@@ -183,10 +175,9 @@ export default function Nav() {
                 ✦ Read My Frequency — Free
               </a>
               <Button
-                href="https://app.youcreateyou.life"
+                href="/start"
                 variant="primary"
                 size="lg"
-                external
                 onClick={close}
                 className="w-full justify-center"
               >

@@ -6,37 +6,38 @@ import TransformationFlow from '@/components/sections/TransformationFlow'
 export const metadata = {
   title: 'The Practice — You Create You',
   description:
-    '20 consciousness tools across 4 phases: See Clearly, Release & Discover, Install the New Reality, and Signal & Nurture Daily. A complete system for lasting change.',
+    '21 consciousness tools across 4 phases: Remember, Return, Create, and Radiate. A complete system for lasting change.',
 }
 
 const ALL_TOOLS = [
-  { phase: '01', name: 'Ancient Wisdom Library', desc: 'Rotating wisdom from 16 traditions. Daily inspiration rooted in timeless truth.' },
-  { phase: '01', name: 'Reality Architect', desc: 'Track your dominant thoughts, feelings, and words. See the frequency you\'re broadcasting.' },
-  { phase: '01', name: 'Frequency Tuner', desc: 'I AM Frequency Map + Solfeggio tone player. Calibrate your vibrational frequency.' },
-  { phase: '01', name: 'The Observer', desc: '6-stage inquiry journey. Name the thought, feel it, question it, see the cost, flip it, choose who you become.' },
-  { phase: '02', name: 'The Fear Alchemist', desc: '6-stage somatic process that transforms fear into its hidden evolutionary gift.' },
-  { phase: '02', name: 'Mind Body Connection', desc: '5-stage guided somatic release. The body holds every pattern you want to change.' },
-  { phase: '02', name: 'Ego Alchemy', desc: '7-stage process for recognizing, understanding, and befriending your ego structures.' },
-  { phase: '02', name: 'Identity Rebirth', desc: '6-stage ceremony for shedding old identities and consciously choosing who you become.' },
-  { phase: '02', name: 'The Love You Are', desc: '7-phase journey from root to vow. The practice of meeting yourself with unconditional love — from the inside out.' },
-  { phase: '02', name: 'The Purpose Compass', desc: 'Ikigai 4-question discovery + visual diagram. Find where your gifts meet the world\'s need.' },
-  { phase: '02', name: 'New Chapter Vision', desc: '5-area vision + 90-day plan + personal manifesto. Design your next season with precision.' },
-  { phase: '03', name: 'Subconscious Reprogrammer', desc: 'Theta binaural beats + scene writing + breath. Rewrite your deepest programming.' },
-  { phase: '03', name: 'Quantum Creation', desc: '7-phase manifestation field journey with coherence activation, visualization, and solfeggio tones.' },
-  { phase: '03', name: 'Creative Visualisation', desc: '20-min guided meditation into your future self. The most powerful tool in the practice.' },
-  { phase: '04', name: 'The Gratitude Portal', desc: 'Gratitude chips + miracle morning sequence + heart-pulse activation.' },
-  { phase: '04', name: 'Coherence Lab', desc: 'Emotion + breath + 528/432 Hz frequencies. Measure and build heart-brain coherence.' },
-  { phase: '04', name: 'Manifestation Garden', desc: 'Plant intention seeds. Track 33-day growth. Visual metaphor for real-world creation.' },
-  { phase: '04', name: 'The Feminine Way', desc: '7 feminine qualities + wisdom carousel + daily affirmations. Reclaim the full spectrum of your nature.' },
-  { phase: '04', name: 'The Masculine Way', desc: '7 masculine qualities + wisdom carousel + affirmations. Balance the full energetic spectrum.' },
-  { phase: '04', name: 'Fun Is the Frequency', desc: 'A daily practice for joy, lightness, play, and loving presence. Transformation is also built through joy.' },
+  { phase: '01', name: 'Ancient Wisdom', desc: 'Daily transmission from 16 wisdom traditions. What was always yours to know — returned to you, one day at a time.' },
+  { phase: '01', name: 'Reality Architect', desc: 'Track the thoughts, feelings, and words running your life. See the frequency you are actually broadcasting.' },
+  { phase: '01', name: 'Frequency Tuner', desc: 'Map where you are. Tune to where you are going. Your inner state is the signal — this is how you read it.' },
+  { phase: '01', name: 'The Witness', desc: 'Name the thought. Feel it. Question it. See the cost. Flip it. Choose who you become.' },
+  { phase: '02', name: 'Fear Alchemist', desc: '6 stages from naming to gift. Every fear contains its opposite — this is how you find it.' },
+  { phase: '02', name: 'Mind Body Connection', desc: 'The body holds everything you have not yet said. A guided somatic process to release what the mind cannot reach.' },
+  { phase: '02', name: 'Ego Alchemy', desc: 'The ego is not the enemy — it is protecting you. This is how you finally understand what it built, and why.' },
+  { phase: '02', name: 'Identity Rebirth', desc: 'Who were you before they told you who to be? A ceremony for shedding inherited identities and choosing your own.' },
+  { phase: '02', name: 'The Love You Are', desc: 'A journey from root to vow. The practice of meeting yourself — fully, without conditions — from the inside out.' },
+  { phase: '02', name: 'Purpose Compass', desc: 'Your purpose was never lost — just buried. Find where your deepest gifts meet what the world most needs.' },
+  { phase: '02', name: 'New Chapter', desc: 'Design what comes next. A structured vision for your next season — built from who you are becoming, not who you were.' },
+  { phase: '03', name: 'The First Move', desc: 'There is something you keep preparing to begin. A 4-stage guided process to name it, see the story that has kept you waiting, find the one step the mind cannot refuse, and move — today.' },
+  { phase: '03', name: 'Subconscious', desc: 'The subconscious does not know the difference between what is imagined and what is real. Rewrite what is running beneath.' },
+  { phase: '03', name: 'Quantum Creation', desc: 'Feel the future into form. A 7-stage journey into the field where your inner state and outer reality meet.' },
+  { phase: '03', name: 'Inner Cinema', desc: 'Not a mental movie watched from the outside. A felt reality inhabited from within. The most powerful tool in the practice.' },
+  { phase: '04', name: 'The Frequency of Thanks', desc: 'The real kind of gratitude does not feel like appreciation — it feels like the chest opening. This is how you find it.' },
+  { phase: '04', name: 'Coherence Lab', desc: 'When your heart and mind finally agree, something shifts at every level. Build that inner harmony — measurably.' },
+  { phase: '04', name: 'Manifestation Garden', desc: 'Plant it. Water it. Trust it. A visual practice for planting intentions and watching them grow over 33 days.' },
+  { phase: '04', name: 'The Feminine Way', desc: 'The flowing quality — what was taken and what returns. Reclaim the full spectrum of your nature.' },
+  { phase: '04', name: 'The Masculine Way', desc: 'The directing quality — what was taken and what returns. Reclaim the full spectrum of your nature.' },
+  { phase: '04', name: 'Fun Is the Frequency', desc: 'Joy is not a reward. It is a practice. A daily tool for wonder, lightness, and the frequency that changes everything.' },
 ]
 
 const PHASE_NAMES: Record<string, string> = {
-  '01': 'See Clearly',
-  '02': 'Release & Discover',
-  '03': 'Install the New Reality',
-  '04': 'Signal & Nurture Daily',
+  '01': 'Remember',
+  '02': 'Return',
+  '03': 'Create',
+  '04': 'Radiate',
 }
 
 export default function PracticePage() {
@@ -47,13 +48,13 @@ export default function PracticePage() {
       <div className="container-content mb-8 text-center">
         <SectionLabel text="The full practice" />
         <h1 className="font-display text-5xl sm:text-6xl font-light italic text-[#f0ecff] mt-6 mb-6 leading-snug">
-          20 tools. One complete system.
+          21 tools. One complete system.
         </h1>
         <p className="font-body text-[rgba(240,236,255,0.5)] text-lg max-w-xl mx-auto leading-relaxed mb-10">
           Each tool is a standalone practice and part of a larger journey.
           Work through them in sequence, or use them as you need.
         </p>
-        <Button href="https://app.youcreateyou.life" external variant="primary" size="lg">
+        <Button href="/start" variant="primary" size="lg">
           Open the App — 21 Days
         </Button>
       </div>
@@ -82,29 +83,6 @@ export default function PracticePage() {
         </section>
       ))}
 
-      {/* Frequency Check-in feature */}
-      <section className="pb-16 pt-4">
-        <div className="container-site">
-          <div className="mb-8">
-            <span className="font-mono text-[9px] tracking-[0.25em] uppercase text-[rgba(179,136,255,0.45)]">Home Screen</span>
-            <h2 className="font-display text-3xl italic font-light text-[#f0ecff] mt-2">Daily Frequency Check-in</h2>
-          </div>
-          <div className="max-w-2xl">
-            <div className="p-8 rounded-2xl border border-[rgba(179,136,255,0.18)] bg-[rgba(179,136,255,0.04)]">
-              <span className="font-mono text-[9px] tracking-[0.25em] uppercase text-[rgba(179,136,255,0.55)] mb-4 block">✦ Read My Frequency</span>
-              <h3 className="font-display text-2xl italic font-light text-[#f0ecff] mb-4">
-                45 seconds. Finger on camera. Your nervous system tells the truth.
-              </h3>
-              <p className="font-body text-[rgba(240,236,255,0.55)] leading-relaxed mb-4">
-                Place your finger over the back camera. In 45 seconds, the app reads your heart rate variability and maps it to a consciousness level — Courage, Willingness, Love, Peace, and more. Come back weekly and watch your frequency shift over time.
-              </p>
-              <p className="font-body text-[rgba(240,236,255,0.38)] text-sm leading-relaxed">
-                Every reading is saved. Over weeks and months, you build an undeniable arc — proof that the work is moving something real.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
     </main>
   )
 }

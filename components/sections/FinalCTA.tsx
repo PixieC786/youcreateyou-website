@@ -7,11 +7,6 @@ import ParticleCanvas from '@/components/ui/ParticleCanvas'
 
 const EASE = [0.22, 1, 0.36, 1] as const
 
-const TRUST = [
-  'No credit card required',
-  'Cancel anytime',
-  'GDPR compliant',
-]
 
 export default function FinalCTA() {
   return (
@@ -119,7 +114,7 @@ export default function FinalCTA() {
           transition={{ delay: 0.18, duration: 0.75, ease: EASE }}
           className="font-body text-[rgba(235,228,255,0.65)] text-[clamp(1rem,1.25vw,1.1rem)] max-w-[38ch] leading-[1.85] mb-12"
         >
-          20 tools. Zero guesswork.
+          20 tools. One direction: back to yourself.
           21 days to remember who you are — forever to deepen.
         </motion.p>
 
@@ -134,32 +129,11 @@ export default function FinalCTA() {
             placeholder="Your email address"
             size="lg"
           />
-          <Button href="https://app.youcreateyou.life" external variant="ghost" size="sm">
+          <Button href="/start" variant="ghost" size="sm">
             Go straight to the app →
           </Button>
         </motion.div>
 
-        {/* Trust signals — more readable */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true, margin: '-40px' }}
-          transition={{ delay: 0.45, duration: 0.8 }}
-          className="mt-12 flex flex-wrap justify-center gap-6 md:gap-10"
-        >
-          {TRUST.map(item => (
-            <div key={item} className="flex items-center gap-2">
-              <svg width="11" height="11" viewBox="0 0 24 24" fill="none"
-                stroke="rgba(210,175,255,0.55)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <polyline points="20 6 9 17 4 12"/>
-              </svg>
-              <span className="font-mono text-[9px] tracking-[0.18em] uppercase"
-                style={{ color: 'rgba(235,228,255,0.32)' }}>
-                {item}
-              </span>
-            </div>
-          ))}
-        </motion.div>
 
         {/* Closing line — more present, warm */}
         <motion.p

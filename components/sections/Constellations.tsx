@@ -1,0 +1,201 @@
+'use client'
+
+import { motion } from 'framer-motion'
+
+const EASE = [0.22, 1, 0.36, 1] as const
+
+const ORBS = [
+  {
+    label: 'Send Love',
+    sub: 'Into the World',
+    href: 'https://app.youcreateyou.life/send_love.html',
+    color: 'rgba(179,136,255',
+    glow: 'rgba(140,70,230,0.18)',
+  },
+  {
+    label: 'Read My',
+    sub: 'Frequency',
+    href: 'https://app.youcreateyou.life/frequency_reader.html',
+    color: 'rgba(80,210,210',
+    glow: 'rgba(40,180,180,0.14)',
+  },
+]
+
+function OrbitButton({ label, sub, href, color, glow, delay }: {
+  label: string; sub: string; href: string
+  color: string; glow: string; delay: number
+}) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, scale: 0.85 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 1, ease: EASE, delay }}
+    >
+      <a href={href} target="_blank" rel="noopener noreferrer" className="block">
+        <motion.div
+          whileHover={{ scale: 1.06 }}
+          transition={{ duration: 0.4, ease: EASE }}
+          className="relative"
+          style={{ width: 150, height: 150 }}
+        >
+          {/* Outer ring — slow clockwise drift */}
+          <motion.div
+            animate={{ rotate: 360 }}
+            transition={{ duration: 28, repeat: Infinity, ease: 'linear' }}
+            className="absolute inset-0 rounded-full"
+            style={{ border: `1px solid ${color},0.18)` }}
+          />
+
+          {/* Second ring — counter-rotate */}
+          <motion.div
+            animate={{ rotate: -360 }}
+            transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
+            className="absolute rounded-full"
+            style={{
+              inset: 10,
+              border: `1px solid ${color},0.28)`,
+              borderTopColor: `${color},0.6)`,
+            }}
+          />
+
+          {/* Third ring — breathing */}
+          <motion.div
+            animate={{ scale: [1, 1.05, 1], opacity: [0.35, 0.65, 0.35] }}
+            transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+            className="absolute rounded-full"
+            style={{ inset: 28, border: `1px solid ${color},0.4)` }}
+          />
+
+          {/* Glow bloom */}
+          <div
+            className="absolute rounded-full"
+            style={{
+              inset: 28,
+              background: `radial-gradient(circle, ${glow} 0%, transparent 70%)`,
+              filter: 'blur(8px)',
+            }}
+          />
+
+          {/* Core */}
+          <motion.div
+            animate={{ opacity: [0.85, 1, 0.85] }}
+            transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+            className="absolute inset-0 flex flex-col items-center justify-center rounded-full"
+            style={{
+              background: `radial-gradient(circle at center, ${color},0.1) 0%, transparent 65%)`,
+              border: `1px solid ${color},0.32)`,
+              backdropFilter: 'blur(4px)',
+            }}
+          >
+            <span
+              className="font-display font-light italic text-center leading-snug"
+              style={{ fontSize: '1rem', color: `${color},0.95)` }}
+            >
+              {label}<br />{sub}
+            </span>
+          </motion.div>
+        </motion.div>
+      </a>
+    </motion.div>
+  )
+}
+
+export default function Constellations() {
+  return (
+    <>
+      {/* ── The live map ─────────────────────────────────────────────────── */}
+      <section
+        className="relative overflow-hidden"
+        style={{ marginTop: '76px', height: 'calc(100vh - 76px)', minHeight: '520px' }}
+      >
+        <iframe
+          src="https://app.youcreateyou.life/world_love.html"
+          className="absolute inset-0 w-full h-full"
+          style={{ border: 'none' }}
+          title="YCY Live Constellation"
+        />
+
+        {/* Top fade */}
+        <div aria-hidden className="absolute inset-x-0 top-0 pointer-events-none z-10"
+          style={{ height: 40, background: 'linear-gradient(to bottom, #07050f 0%, transparent 100%)' }} />
+
+        {/* Bottom fade */}
+        <div aria-hidden className="absolute inset-x-0 bottom-0 pointer-events-none z-10"
+          style={{ height: 200, background: 'linear-gradient(to top, #07050f 0%, #07050f 8%, transparent 100%)' }} />
+
+        {/* Cover ← back */}
+        <div aria-hidden className="absolute top-0 left-0 z-20"
+          style={{
+            width: 115, height: 36,
+            background: 'linear-gradient(to right, #07050f 55%, transparent 100%)',
+            pointerEvents: 'auto',
+          }}
+        />
+
+        {/* Orbit buttons — Indian Ocean empty zone (between Africa and Australia) */}
+        <div
+          className="absolute z-20 flex gap-6 pointer-events-auto"
+          style={{ bottom: '8%', left: '56%' }}
+        >
+          {ORBS.map((orb, i) => (
+            <OrbitButton key={orb.href} {...orb} delay={0.1 + i * 0.12} />
+          ))}
+        </div>
+
+        {/* Headline — small, bottom-left corner */}
+        <motion.div
+          initial={{ opacity: 0, y: 14 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.9, ease: EASE, delay: 0.1 }}
+          className="absolute z-20 pointer-events-none"
+          style={{ bottom: '18%', left: '3%' }}
+        >
+          <h2
+            className="font-display font-light italic text-[rgba(240,236,255,0.88)] leading-[1.2] mb-1"
+            style={{ fontSize: 'clamp(1.1rem, 2.2vw, 1.8rem)', textShadow: '0 2px 30px rgba(7,5,15,0.9)' }}
+          >
+            This is what a world<br />waking up looks like.
+          </h2>
+          <p
+            className="font-body font-light text-[rgba(240,236,255,0.32)]"
+            style={{ fontSize: 'clamp(0.75rem, 1vw, 0.875rem)' }}
+          >
+            Every dot is a human, practicing. Right now.
+          </p>
+        </motion.div>
+
+        {/* Cosmic scroll indicator — cascading stardust diamonds */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.4, duration: 1.2 }}
+          className="absolute bottom-7 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center gap-[10px] pointer-events-none"
+          aria-hidden
+        >
+          {[0, 1, 2].map((i) => (
+            <motion.div
+              key={i}
+              animate={{ opacity: [0.08, 1, 0.08], scale: [0.7, 1.15, 0.7] }}
+              transition={{
+                repeat: Infinity,
+                duration: 2.2,
+                delay: i * 0.38,
+                ease: 'easeInOut',
+              }}
+              style={{
+                width: 7 - i * 1.5,
+                height: 7 - i * 1.5,
+                background: `rgba(${210 - i * 10}, ${155 + i * 10}, 255, 0.95)`,
+                borderRadius: '50%',
+                boxShadow: `0 0 ${10 + i * 4}px ${5 + i * 2}px rgba(180,110,255,${0.55 - i * 0.1})`,
+              }}
+            />
+          ))}
+        </motion.div>
+
+      </section>
+    </>
+  )
+}

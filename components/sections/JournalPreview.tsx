@@ -25,11 +25,11 @@ const ENTRIES = [
 ]
 
 const FEATURES = [
-  'Quantum prompts calibrated to your current phase',
-  'Subconscious access — prompts that bypass the thinking mind',
-  'Pattern recognition across entries over time',
-  'Aligned with each of your 20 active practice tools',
-  'Private and encrypted — only you can read it',
+  'Questions that shift as you do — matched to where you are in the practice',
+  'Prompts that reach beneath the thinking mind',
+  'Patterns that reveal themselves across entries over time',
+  'One prompt per day — matched to your phase in the practice',
+  'Private — only you can read it',
 ]
 
 export default function JournalPreview() {
@@ -71,9 +71,8 @@ export default function JournalPreview() {
               transition={{ delay: 0.1, duration: 0.7, ease: EASE }}
               className="font-body text-[rgba(240,236,255,0.5)] text-[clamp(1rem,1.25vw,1.1rem)] leading-[1.82] mb-8"
             >
-              This is not a diary. It's a consciousness navigation system —
-              prompts engineered to access parts of you that conventional
-              journaling never reaches.
+              This is not a diary. These are questions designed to reach
+              the parts of you that ordinary journaling has never touched.
             </motion.p>
 
             <motion.div
@@ -97,7 +96,7 @@ export default function JournalPreview() {
               viewport={{ once: true, margin: '-60px' }}
               transition={{ delay: 0.28, duration: 0.6, ease: EASE }}
             >
-              <Button href="https://app.youcreateyou.life/journal.html" external variant="primary" size="md">
+              <Button href="/start" variant="primary" size="md">
                 Open My Journal
               </Button>
             </motion.div>

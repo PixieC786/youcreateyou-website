@@ -4,6 +4,8 @@ import './globals.css'
 import Nav from '@/components/layout/Nav'
 import Footer from '@/components/layout/Footer'
 import StarField from '@/components/ui/StarField'
+import CustomCursor from '@/components/ui/CustomCursor'
+import ExitIntentPopup from '@/components/ui/ExitIntentPopup'
 
 const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
@@ -107,6 +109,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <div className="fixed inset-0 pointer-events-none" style={{ zIndex: 0 }} aria-hidden>
           <StarField density={1.3} connectDistance={115} showLines={true} />
         </div>
+        <CustomCursor />
+        <ExitIntentPopup />
         <div className="relative" style={{ zIndex: 1 }}>
           <Nav />
           {children}

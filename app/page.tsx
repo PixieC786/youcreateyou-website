@@ -1,7 +1,8 @@
 import Hero from '@/components/sections/Hero'
+import CreatorField from '@/components/sections/CreatorField'
+import Constellations from '@/components/sections/Constellations'
 import Recognition from '@/components/sections/Recognition'
 import AppShowcase from '@/components/sections/AppShowcase'
-import Testimonial from '@/components/sections/Testimonial'
 import Pricing from '@/components/sections/Pricing'
 import FinalCTA from '@/components/sections/FinalCTA'
 
@@ -14,10 +15,11 @@ export const metadata = {
 export default function HomePage() {
   return (
     <main>
+      <Constellations />
       <Hero />
+      <CreatorField />
       <Recognition />
       <AppShowcase />
-      <Testimonial />
       <Pricing />
       <FinalCTA />
     </main>

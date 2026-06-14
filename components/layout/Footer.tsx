@@ -9,7 +9,7 @@ const NAV_LINKS = [
   { href: '/science',  label: 'The Science' },
   { href: '/journal',  label: 'Journal' },
   { href: '/about',    label: 'About' },
-  { href: '/begin',    label: 'Begin' },
+  { href: '/start',    label: 'Begin' },
 ]
 
 const LEGAL_LINKS = [
@@ -51,9 +51,9 @@ export default function Footer() {
               You Create You
             </Link>
             <p className="font-body text-[13px] text-[rgba(240,236,255,0.38)] leading-[1.85] max-w-[28ch]">
-              A 365-day daily practice rooted in neuroscience,
-              ancient wisdom, and the understanding that your
-              inner world creates your outer world.
+              A 365-day practice rooted in ancient wisdom,
+              modern science, and one understanding:
+              your inner world creates your outer world.
             </p>
             <p className="font-mono text-[9px] tracking-[0.2em] uppercase text-[rgba(179,136,255,0.38)] mt-5">
               app.youcreateyou.life
@@ -98,7 +98,7 @@ export default function Footer() {
               Consciousness Letters
             </p>
             <p className="font-body text-[13px] text-[rgba(240,236,255,0.38)] leading-[1.8] mb-4">
-              Deep insights on identity, neuroscience, and conscious creation — delivered to your inbox.
+              On remembering, returning, and creating from the inside out — delivered to your inbox.
             </p>
 
             {sent ? (

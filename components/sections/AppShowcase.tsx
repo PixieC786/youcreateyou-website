@@ -10,48 +10,42 @@ const EASE = [0.22, 1, 0.36, 1] as const
 const TOOLS = [
   {
     id: 'observer',
-    phase: 'Phase I — See Clearly',
-    name: 'The Observer',
+    phase: 'Phase I — Remember',
+    name: 'The Witness',
     tagline: 'Question the thought. Not yourself.',
-    description: 'A 6-stage inquiry journey — the most direct path to dissolving the beliefs that create your suffering. From naming the thought to choosing who you become, reality shifts from the inside.',
+    description: 'Name the thought. Question it. See what remains when it falls away.',
     stages: ['The Thought', 'The Body', 'The Inquiry', 'The Cost', 'The Flip', 'The Choice'],
     color: 'rgba(100,55,200,0.12)',
   },
   {
     id: 'fear',
-    phase: 'Phase II — Release & Discover',
-    name: 'The Fear Alchemist',
+    phase: 'Phase II — Return',
+    name: 'Fear Alchemist',
     tagline: 'Every fear contains its opposite gift.',
     description: 'A 6-stage guided somatic process that transmutes what holds you back into the exact fuel you need for expansion. Named "the most powerful 20 minutes" by our community.',
-    stages: ['Presence', 'Naming', 'Body', 'Dialogue', 'Gift', 'Integration'],
+    stages: ['Name It', 'Feel It', 'Question It', 'The Messenger', 'The Alchemy', 'One Step Forward'],
     color: 'rgba(140,80,255,0.12)',
   },
   {
     id: 'visualisation',
-    phase: 'Phase III — Install the New Reality',
-    name: 'Creative Visualisation',
+    phase: 'Phase III — Create',
+    name: 'Inner Cinema',
     tagline: 'You meet your future self here.',
     description: 'A 20-minute guided journey into the life you\'re calling in — followed by Embody Your Identity, where you become the person you just saw. The most powerful sequence in the practice.',
-    stages: ['Arrival', 'Descent', 'Vision', 'Meeting', 'Merge', 'Embody'],
+    stages: ['Prepare', 'Soften', 'The Journey', 'Arrival'],
     color: 'rgba(179,136,255,0.1)',
   },
   {
     id: 'gratitude',
-    phase: 'Phase IV — Signal & Nurture Daily',
-    name: 'The Gratitude Portal',
+    phase: 'Phase IV — Radiate',
+    name: 'The Frequency of Thanks',
     tagline: 'What you appreciate, appreciates.',
     description: 'A daily gratitude practice with miracle morning sequencing and heart-pulse activation. The tool that compounds faster than any other in the practice.',
-    stages: ['Arrival', 'Chips', 'Morning', 'Heart Pulse', 'Anchor', 'Signal'],
+    stages: ['The Past', 'The Present', "Today's Miracles", 'Already Received', 'The Transmission', 'Receive'],
     color: 'rgba(124,77,255,0.1)',
   },
 ]
 
-const PHASES = [
-  { number: '01', name: 'See Clearly',            count: 4, tools: 'Ancient Wisdom · Reality Architect · Frequency Tuner · The Observer' },
-  { number: '02', name: 'Release & Discover',      count: 7, tools: 'The Fear Alchemist · Mind Body · Ego Alchemy · Identity Rebirth · The Love You Are · The Purpose Compass · New Chapter Vision' },
-  { number: '03', name: 'Install the New Reality', count: 3, tools: 'Subconscious Reprogrammer · Quantum Creation · Creative Visualisation' },
-  { number: '04', name: 'Signal & Nurture Daily',  count: 6, tools: 'Gratitude Portal · Coherence Lab · Manifestation Garden · Feminine Way · Masculine Way · Fun Is the Frequency' },
-]
 
 export default function AppShowcase() {
   const [active, setActive] = useState(0)
@@ -75,9 +69,9 @@ export default function AppShowcase() {
             transition={{ duration: 0.8, ease: EASE }}
             className="font-display text-[clamp(2rem,4.5vw,3.5rem)] font-light italic text-[#f0ecff] mt-6 leading-[1.12]"
           >
-            20 tools. 4 phases.
+            21 tools. 4 phases.
             <br />
-            <span className="text-gradient">One complete transformation.</span>
+            <span className="text-gradient">One direction: back to yourself.</span>
           </motion.h2>
         </div>
 
@@ -174,7 +168,7 @@ export default function AppShowcase() {
                     </div>
                   </div>
 
-                  <Button href="https://app.youcreateyou.life/tools_hub.html" external variant="primary" size="sm">
+                  <Button href="/start" variant="primary" size="sm">
                     Try This Tool — 21 Days
                   </Button>
                 </div>
@@ -183,34 +177,6 @@ export default function AppShowcase() {
           </div>
         </div>
 
-        {/* 4-phase overview */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
-          {PHASES.map((phase, i) => (
-            <motion.div
-              key={phase.number}
-              initial={{ opacity: 0, y: 18 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-40px' }}
-              transition={{ delay: i * 0.06, duration: 0.6, ease: EASE }}
-              className="p-5 rounded-xl border border-[rgba(179,136,255,0.08)] bg-[rgba(179,136,255,0.025)] hover:border-[rgba(179,136,255,0.18)] transition-all duration-300 group cursor-default"
-            >
-              <div className="flex items-start justify-between mb-3">
-                <span className="font-mono text-[9px] tracking-[0.2em] text-[rgba(179,136,255,0.38)] group-hover:text-[rgba(179,136,255,0.58)] transition-colors duration-300">
-                  {phase.number}
-                </span>
-                <span className="font-mono text-[8px] tracking-[0.15em] uppercase text-[rgba(179,136,255,0.28)]">
-                  {phase.count} tools
-                </span>
-              </div>
-              <p className="font-display italic text-[1.15rem] text-[rgba(240,236,255,0.75)] mb-2 font-light group-hover:text-[#f0ecff] transition-colors duration-300">
-                {phase.name}
-              </p>
-              <p className="font-body text-[11px] text-[rgba(240,236,255,0.26)] leading-relaxed">
-                {phase.tools}
-              </p>
-            </motion.div>
-          ))}
-        </div>
       </div>
     </section>
   )

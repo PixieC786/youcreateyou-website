@@ -51,38 +51,38 @@ const ICONS = {
 const PILLARS = [
   {
     label: '01 — Neuroscience',
-    title: 'Neuroplasticity on demand',
-    body: 'Your brain reshapes itself with every repeated thought. We use theta-wave entrainment, visualization, and daily identity rehearsal to make structural change — not temporary motivation.',
+    title: 'What you practice, you become',
+    body: 'Your brain reshapes itself with every repeated thought. Not as metaphor — as biology. The practice works with this truth. What you return to daily, the brain builds pathways for. Not temporary motivation. Structural change — built one morning at a time.',
     icon: ICONS.brain,
   },
   {
     label: '02 — Psychology',
-    title: 'Identity-level change',
-    body: 'Behavior follows identity, not willpower. Jungian shadow work, ego transcendence, and cognitive reprogramming shift who you believe you are at the deepest level.',
+    title: 'Identity runs deeper than behavior',
+    body: 'You cannot outperform the story you believe about yourself. The practice doesn\'t ask you to try harder. It asks you to see the story clearly — the inherited one, the borrowed one — and choose a truer one. When the identity shifts, the behavior follows on its own.',
     icon: ICONS.person,
   },
   {
     label: '03 — Somatics',
-    title: 'The body holds the code',
-    body: 'Trauma, stress, and old patterns live in the nervous system — not just the mind. Breathwork, coherence training, and somatic release bring the body into alignment.',
+    title: 'The body holds what the mind won\'t say',
+    body: 'Trauma, stress, and old patterns live in the nervous system — not just the mind. The body has been keeping score. The practice meets it there — through breath, through presence, through the simple act of listening to what has been waiting to be heard.',
     icon: ICONS.wave,
   },
   {
     label: '04 — Ancient Wisdom',
     title: '5,000 years of knowing',
-    body: 'Stoicism, Taoism, Vedanta, Buddhism — every tradition points toward the same truth. We synthesize these lineages into practical tools, bridged by modern science.',
+    body: 'Stoicism, Taoism, Vedanta, Buddhism — every tradition points toward the same place. Not outward. Inward. The practice draws from these lineages — not as philosophy to study, but as lived truth to return to. What the mystics found in decades of silence, the practice makes available daily.',
     icon: ICONS.infinity,
   },
   {
-    label: '05 — Quantum Thinking  ·  emerging science + contemplative tradition',
-    title: 'Consciousness shapes reality',
-    body: 'Observer-effect principles, manifestation field dynamics, and visualization science all converge on one truth: how you hold reality determines what you experience.',
+    label: '05 — Consciousness',
+    title: 'The inner world creates the outer one',
+    body: 'This is the oldest observation and the newest science. How you hold reality — in the body, in the felt experience, in the signal you broadcast before you speak a word — shapes what arrives. The practice works with this directly. Not as belief. As mechanism.',
     icon: ICONS.atom,
   },
   {
-    label: '06 — Frequency Science',
-    title: 'Sound as medicine',
-    body: 'Solfeggio frequencies, binaural beats, and heart-brain synchronization are measurable phenomena. We embed them into every session as active transformation tools.',
+    label: '06 — Frequency',
+    title: 'Sound, breath, and the body\'s intelligence',
+    body: 'Heart-brain coherence, breath rhythm, and sound frequency are measurable phenomena. The practice is tuned to work with your nervous system — not against it. Every tool meets the body where it actually is, and moves it toward where it is ready to go.',
     icon: ICONS.music,
   },
 ]
@@ -124,8 +124,8 @@ export default function SciencePillars() {
             transition={{ delay: 0.1, duration: 0.7, ease: EASE }}
             className="mt-5 font-body text-[rgba(240,236,255,0.48)] text-[clamp(1rem,1.25vw,1.1rem)] leading-[1.82] max-w-[44ch] mx-auto"
           >
-            We didn't choose between modern neuroscience and ancient wisdom.
-            We synthesized them into 20 tools that work together.
+            The practice didn't choose between modern neuroscience and ancient wisdom.
+            It drew from both — and built 20 tools that work together.
           </motion.p>
         </div>
 

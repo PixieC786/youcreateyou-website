@@ -6,8 +6,8 @@ import Button from '@/components/ui/Button'
 
 const EASE = [0.22, 1, 0.36, 1] as const
 
-const PARA = "font-body text-[clamp(1.05rem,1.3vw,1.15rem)] font-normal leading-[1.9] mb-8"
-const DIM  = { color: 'rgba(235,228,255,0.78)' } as const
+const PARA = "font-display text-[clamp(1.05rem,1.4vw,1.2rem)] font-light leading-[1.95] mb-7"
+const DIM  = { color: 'rgba(235,228,255,0.72)' } as const
 const ACCENT = { color: 'rgba(210,175,255,0.9)' } as const
 
 function Para({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
@@ -23,21 +23,17 @@ function Para({ children, delay = 0 }: { children: React.ReactNode; delay?: numb
   )
 }
 
-function Stanza({ lines, delay = 0 }: { lines: string[]; delay?: number }) {
+function Beat({ text, delay = 0 }: { text: string; delay?: number }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-56px' }}
-      transition={{ delay, duration: 0.75, ease: EASE }}
-      className="mb-8 pl-6 border-l-2 border-purple-400/30"
+    <motion.p
+      initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-40px' }}
+      transition={{ delay, duration: 0.7, ease: EASE }}
+      className="font-display italic text-[clamp(1.1rem,1.6vw,1.35rem)] font-light leading-[1.8] mb-3 text-center"
+      style={ACCENT}
     >
-      {lines.map((line, i) => (
-        <p key={i}
-          className="font-display italic text-[clamp(1.05rem,1.3vw,1.15rem)] leading-[2.2] mb-0"
-          style={ACCENT}
-        >{line}</p>
-      ))}
-    </motion.div>
+      {text}
+    </motion.p>
   )
 }
 
@@ -45,7 +41,7 @@ export default function AboutPage() {
   return (
     <main className="relative overflow-hidden">
 
-      {/* ── Ambient atmosphere ─────────────────────────────────────────── */}
+      {/* Ambient atmosphere */}
       <div aria-hidden className="fixed inset-0 pointer-events-none" style={{ zIndex: 0 }}>
         <div style={{
           position: 'absolute', top: 0, left: '50%', transform: 'translateX(-50%)',
@@ -62,7 +58,7 @@ export default function AboutPage() {
         }} />
       </div>
 
-      {/* ── Header + Body ─────────────────────────────────────────────── */}
+      {/* Header */}
       <section className="relative z-10 pt-28 pb-16">
         <div className="container-prose mx-auto">
 
@@ -71,87 +67,60 @@ export default function AboutPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: EASE }}
           >
-            <SectionLabel text="Our story" className="mb-6" />
+            <SectionLabel text="The story" className="mb-6" />
           </motion.div>
 
           <motion.h1
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1, duration: 0.88, ease: EASE }}
-            className="font-display text-[clamp(2rem,4vw,3.25rem)] font-light italic mb-10 leading-[1.15] text-center"
+            className="font-display text-[clamp(2rem,4vw,3.25rem)] font-light italic mb-14 leading-[1.15] text-center"
             style={{ color: '#f8f5ff', letterSpacing: '-0.01em' }}
           >
-            Built from the{' '}
-            <span className="text-gradient">inside out.</span>
+            Built to find<br />
+            <span className="text-gradient">the real one.</span>
           </motion.h1>
 
           <Para>
-            YCY did not begin as a business plan, a content strategy, or a market gap.
-            It began with a question.
-          </Para>
-
-          <Para delay={0.04}>In 2017, I started asking myself why.</Para>
-
-          <Stanza delay={0.06} lines={[
-            'Why do I live the way I live?',
-            'Why do I have what I have?',
-            'Why do I feel the way I feel?',
-          ]} />
-
-          <Para>
-            That was the beginning.
-            Just me, myself, and I — thinking, questioning, searching, and slowly realizing
-            that so much of what I lived on the outside was a reflection of what was happening within.
-          </Para>
-
-          <Para delay={0.04}>And then the questions changed.</Para>
-
-          <Stanza delay={0.06} lines={[
-            'How do I want to live?',
-            'What do I want to have?',
-            'How do I want to feel?',
-            'Who do I want to become?',
-          ]} />
-
-          <Para>That shift changed everything.</Para>
-
-          <Para delay={0.04}>
-            Because real change does not begin on the outside. It begins within.
-            In the thoughts you think, the beliefs you hold, the emotions you live in,
-            the patterns you repeat, the identity you carry, and the energy you embody.
+            Before there was a practice — before there was a book — there was a moment of complete stillness.
           </Para>
 
           <Para delay={0.04}>
-            The outer life mirrors the inner one. What you live is often a reflection of what you believe.
-            What you hold inside shapes what you create outside.
-            And when something changes at the root, life begins to respond in a new way.
+            The kind where everything the world had said fell away. And in that silence, something
+            that had always been there finally became impossible to ignore.
           </Para>
 
           <Para delay={0.04}>
-            I kept coming back to this in my own life — testing it, questioning it, living it.
-            That is the essence of YCY. To work from the inside out.
-            To see the outer world as a mirror. To create from within.
+            A life had been built. A good one, by most measures. But it had been built from borrowed
+            blueprints — from fear, from expectation, from a story repeated so many times
+            it had been mistaken for truth.
           </Para>
 
           <Para delay={0.04}>
-            Nine years of exploring, learning, testing, unlearning, and rebuilding — not because I had every answer,
-            but because something in me knew there was more. More alignment. More truth. More possibility. More life. More love.
+            The version that had been constructed was not the real one.
+            It was a shape learned to fit.
           </Para>
 
           <Para delay={0.04}>
-            And now I am here — creating YCY. Not with a perfect map.
-            Not with the need to know exactly where it will lead.
-            But with a deep knowing that this is real, that it matters,
-            and that the process itself has already been life-changing.
+            And underneath it — quieter, older, more true — was someone who had almost been forgotten.
           </Para>
 
-          {/* Pull quote — the emotional centrepiece */}
+          <Beat delay={0.06} text="You Create You was built to find that someone." />
+
+          <Para delay={0.04}>
+            Not a program. Not a brand. A practice of remembering.
+            Twenty tools. Four phases. 365 days. One question underneath all of them:
+          </Para>
+
+          <Beat delay={0.06} text="What if the version of you who has everything is not who you become — but who you already are?" />
+
+          {/* Pull quote */}
           <motion.div
             initial={{ opacity: 0, y: 22 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ delay: 0.1, duration: 0.88, ease: EASE }}
-            className="relative my-10 py-8 px-8 md:px-12 rounded-2xl text-center overflow-hidden"
+            className="relative my-12 py-8 px-8 md:px-12 rounded-2xl text-center overflow-hidden"
             style={{
               border: '1px solid rgba(210,175,255,0.14)',
               background: 'rgba(210,175,255,0.04)',
@@ -163,7 +132,7 @@ export default function AboutPage() {
               background: 'radial-gradient(ellipse 80% 60% at 50% 50%, rgba(180,120,255,0.08) 0%, transparent 70%)',
               pointerEvents: 'none',
             }} />
-            <p className="relative font-display italic text-[clamp(1.2rem,2.2vw,1.6rem)] font-light leading-[1.62]"
+            <p className="relative font-display italic text-[clamp(1.2rem,2.2vw,1.6rem)] font-light leading-[1.65]"
               style={{
                 background: 'linear-gradient(150deg, #f0e4ff 0%, #d4aaff 50%, #b388ff 100%)',
                 WebkitBackgroundClip: 'text',
@@ -171,93 +140,72 @@ export default function AboutPage() {
                 backgroundClip: 'text',
               }}
             >
-              So I built it. For myself first. Then I realized it was for everyone
-              who had ever felt like they were working so hard on themselves —
-              and still missing something.
+              "This system was not invented.
+              It was remembered. One practice at a time.
+              One question at a time.
+              One honest look in the mirror at a time."
             </p>
           </motion.div>
 
           <Para>
-            YCY became the space where everything I had been seeking began to come together.
-            Not as more information. Not as another idea to admire.
-            But as practice. As embodiment. As conscious creation.
+            What was not expected was what happened when others began to practice it.
           </Para>
 
           <Para delay={0.04}>
-            Inside YCY, you will find 20 practices — rooted in neuroscience, ancient wisdom,
-            somatic work, and quantum thinking. Not theory. Not more content to consume.
-            A daily practice that works on your mind, your body, your subconscious, and your
-            identity — simultaneously. No guru. Just you, showing up for yourself.
+            Not just the personal shifts — though those were real, and they were deep.
+            Something larger began to move. When a human truly remembers who they are —
+            in the body, in the quiet, beneath all the borrowed noise — they do not only
+            change themselves. They change what is possible around them.
+            They become a different signal in the world.
           </Para>
+
+          <Para delay={0.04}>
+            We are at a point in our collective story where this matters more than it ever has.
+          </Para>
+
+          <Beat delay={0.06} text="The practice is personal. The effect is planetary." />
 
         </div>
       </section>
 
-
-      <section className="relative z-10 pb-16">
+      {/* Closing */}
+      <section className="relative z-10 pb-20">
         <div className="container-prose mx-auto">
 
-          {/* Closing philosophy */}
           <motion.div
             initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-56px' }}
             transition={{ delay: 0.04, duration: 0.75, ease: EASE }}
-            className="mb-8"
+            className="mb-10 text-center"
           >
-            <p className={`${PARA} mb-3`} style={DIM}>Because the name is the philosophy.</p>
             <p className="font-display italic text-[clamp(1.5rem,2.8vw,2.2rem)] font-light leading-[1.4] mb-6 text-gradient">
-              You create you.
+              You Create You —
             </p>
-            {[
-              'From the inside out.',
-              'From thought into form.',
-              'From identity into reality.',
-              'From the unseen into the seen.',
-            ].map((line, i) => (
-              <p key={i}
-                className="font-display italic text-[clamp(1.05rem,1.3vw,1.15rem)] leading-[2.2] mb-0"
-                style={{ color: 'rgba(210,175,255,0.7)' }}
-              >{line}</p>
-            ))}
+            <p
+              className="font-display italic text-[clamp(1.05rem,1.3vw,1.15rem)] leading-[2.2]"
+              style={{ color: 'rgba(210,175,255,0.65)' }}
+            >
+              for everyone ready to remember.
+            </p>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-56px' }}
-            transition={{ delay: 0.04, duration: 0.75, ease: EASE }}
-            className="mb-10"
-          >
-            {['Not your past.', 'Not your conditioning.', 'Not your circumstances.', 'YOU.'].map((line, i) => (
-              <p key={i}
-                className="font-display italic text-[clamp(1.05rem,1.3vw,1.15rem)] leading-[2.2] mb-0"
-                style={DIM}
-              >{line}</p>
-            ))}
-          </motion.div>
+          <div className="divider-glow my-10" />
 
-          <Para delay={0.04}>
-            And maybe that is where everything begins — with the willingness to ask why,
-            the courage to look within, and the choice to become.
-          </Para>
-
-          {/* Divider */}
-          <div className="divider-glow my-8" />
-
-          {/* CTA buttons */}
           <motion.div
             initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-40px' }}
             transition={{ duration: 0.65, ease: EASE }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4"
+            className="flex justify-center"
           >
-            <Button href="/begin" variant="primary" size="md">
-              Start Your Practice
+            <Button href="/start" variant="primary" size="md">
+              21 Days to Remember Who You Are
             </Button>
           </motion.div>
 
         </div>
       </section>
+
     </main>
   )
 }

@@ -1,12 +1,11 @@
+'use client'
+
+import { motion } from 'framer-motion'
 import SectionLabel from '@/components/ui/SectionLabel'
 import SciencePillars from '@/components/sections/SciencePillars'
 import Button from '@/components/ui/Button'
 
-export const metadata = {
-  title: 'The Science — You Create You',
-  description:
-    'Six disciplines synthesized into one practice: neuroscience, psychology, somatics, ancient wisdom, quantum thinking, and frequency science.',
-}
+const EASE = [0.22, 1, 0.36, 1] as const
 
 const RESEARCH = [
   {
@@ -37,12 +36,12 @@ export default function SciencePage() {
       <div className="container-content mb-12 text-center">
         <SectionLabel text="The science" />
         <h1 className="font-display text-5xl sm:text-6xl font-light italic text-[#f0ecff] mt-6 mb-6 leading-snug">
-          We didn't choose between
-          <br />science and soul.
+          Where science and soul
+          <br />point at the same place.
         </h1>
         <p className="font-body text-[rgba(240,236,255,0.5)] text-lg max-w-xl mx-auto leading-relaxed">
-          Every tool in the You Create You practice is grounded in science, ancient wisdom, and lived experience
-          — each discipline chosen because it works.
+          Every tool in the practice is grounded in science, ancient wisdom, and lived experience
+          — each chosen because it works.
         </p>
       </div>
 
@@ -64,10 +63,45 @@ export default function SciencePage() {
         </div>
       </section>
 
+      {/* Wisdom pull quote */}
+      <div className="container-content mb-4">
+        <motion.div
+          initial={{ opacity: 0, y: 22 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.9, ease: EASE }}
+          className="relative py-10 px-8 md:px-16 rounded-2xl text-center overflow-hidden"
+          style={{
+            border: '1px solid rgba(210,175,255,0.14)',
+            background: 'rgba(210,175,255,0.03)',
+            boxShadow: '0 0 60px rgba(140,70,255,0.07) inset',
+          }}
+        >
+          <div aria-hidden style={{
+            position: 'absolute', inset: 0,
+            background: 'radial-gradient(ellipse 70% 60% at 50% 50%, rgba(180,120,255,0.07) 0%, transparent 70%)',
+            pointerEvents: 'none',
+          }} />
+          <p
+            className="relative font-display italic text-[clamp(1.15rem,2vw,1.5rem)] font-light leading-[1.85] max-w-[52ch] mx-auto"
+            style={{
+              background: 'linear-gradient(150deg, #f0e4ff 0%, #d4aaff 50%, #b388ff 100%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
+            }}
+          >
+            "The ancient knowing is not a philosophy. It is not a belief system.
+            It is the oldest intelligence in the room —
+            and it has been waiting, patiently, for you to finally trust it."
+          </p>
+        </motion.div>
+      </div>
+
       <SciencePillars />
 
       <div className="container-content mt-10 text-center">
-        <Button href="https://app.youcreateyou.life" external variant="primary" size="lg">
+        <Button href="/start" variant="primary" size="lg">
           Experience the science yourself
         </Button>
       </div>

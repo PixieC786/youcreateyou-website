@@ -18,10 +18,10 @@ export default function JournalPage() {
           <br />are already waiting for you.
         </h1>
         <p className="font-body text-[rgba(240,236,255,0.5)] text-lg max-w-lg mx-auto leading-relaxed mb-10">
-          This isn't journaling as you know it. Every prompt is calibrated to your phase,
-          designed to access the subconscious, and aligned with your active practice tools.
+          This is not journaling as you know it. Every question is chosen to meet you
+          exactly where you are — and to reach the places ordinary writing never does.
         </p>
-        <Button href="https://app.youcreateyou.life/journal.html" external variant="primary" size="lg">
+        <Button href="/start" variant="primary" size="lg">
           Open My Journal
         </Button>
       </div>
