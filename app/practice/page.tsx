@@ -24,13 +24,13 @@ const ALL_TOOLS = [
   { phase: '03', name: 'The First Move', desc: 'There is something you keep preparing to begin. A 4-stage guided process to name it, see the story that has kept you waiting, find the one step the mind cannot refuse, and move — today.' },
   { phase: '03', name: 'Subconscious', desc: 'The subconscious does not know the difference between what is imagined and what is real. Rewrite what is running beneath.' },
   { phase: '03', name: 'Quantum Creation', desc: 'Feel the future into form. A 7-stage journey into the field where your inner state and outer reality meet.' },
-  { phase: '03', name: 'The Inner Cinema', desc: 'Not a mental movie watched from the outside. A felt reality inhabited from within. The most powerful tool in the practice.' },
+  { phase: '03', name: 'The Inner Cinema', desc: 'Not a mental movie watched from the outside. A felt reality inhabited from within. The most powerful portal in the practice.' },
   { phase: '04', name: 'The Frequency of Thanks', desc: 'The real kind of gratitude does not feel like appreciation — it feels like the chest opening. This is how you find it.' },
   { phase: '04', name: 'Coherence Lab', desc: 'When your heart and mind finally agree, something shifts at every level. Build that inner harmony — measurably.' },
   { phase: '04', name: 'Manifestation Garden', desc: 'Plant it. Water it. Trust it. A visual practice for planting intentions and watching them grow over 33 days.' },
   { phase: '04', name: 'The Feminine Way', desc: 'The flowing quality — what was taken and what returns. Reclaim the full spectrum of your nature.' },
   { phase: '04', name: 'The Masculine Way', desc: 'The directing quality — what was taken and what returns. Reclaim the full spectrum of your nature.' },
-  { phase: '04', name: 'Fun Is the Frequency', desc: 'Joy is not a reward. It is a practice. A daily tool for wonder, lightness, and the frequency that changes everything.' },
+  { phase: '04', name: 'Fun Is the Frequency', desc: 'Joy is not a reward. It is a practice. A daily portal for wonder, lightness, and the frequency that changes everything.' },
 ]
 
 const PHASE_NAMES: Record<string, string> = {
@@ -51,7 +51,7 @@ export default function PracticePage() {
           21 portals. One complete system.
         </h1>
         <p className="font-body text-[rgba(240,236,255,0.5)] text-lg max-w-xl mx-auto leading-relaxed mb-10">
-          Each tool is a standalone practice and part of a larger journey.
+          Each portal is a standalone practice and part of a larger journey.
           Work through them in sequence, or use them as you need.
         </p>
         <Button href="/start" variant="primary" size="lg">

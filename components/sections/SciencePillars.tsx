@@ -82,7 +82,7 @@ const PILLARS = [
   {
     label: '06 — Frequency',
     title: 'Sound, breath, and the body\'s intelligence',
-    body: 'Heart-brain coherence, breath rhythm, and sound frequency are measurable phenomena. The practice is tuned to work with your nervous system — not against it. Every tool meets the body where it actually is, and moves it toward where it is ready to go.',
+    body: 'Heart-brain coherence, breath rhythm, and sound frequency are measurable phenomena. The practice is tuned to work with your nervous system — not against it. Every portal meets the body where it actually is, and moves it toward where it is ready to go.',
     icon: ICONS.music,
   },
 ]

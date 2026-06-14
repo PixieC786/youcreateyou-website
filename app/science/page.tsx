@@ -40,7 +40,7 @@ export default function SciencePage() {
           <br />point at the same place.
         </h1>
         <p className="font-body text-[rgba(240,236,255,0.5)] text-lg max-w-xl mx-auto leading-relaxed">
-          Every tool in the practice is grounded in science, ancient wisdom, and lived experience
+          Every portal in the practice is grounded in science, ancient wisdom, and lived experience
           — each chosen because it works.
         </p>
       </div>

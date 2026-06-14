@@ -40,7 +40,7 @@ const TOOLS = [
     phase: 'Phase IV — Radiate',
     name: 'The Frequency of Thanks',
     tagline: 'What you appreciate, appreciates.',
-    description: 'A daily gratitude practice with miracle morning sequencing and heart-pulse activation. The tool that compounds faster than any other in the practice.',
+    description: 'A daily gratitude practice with miracle morning sequencing and heart-pulse activation. The portal that compounds faster than any other in the practice.',
     stages: ['The Past', 'The Present', "Today's Miracles", 'Already Received', 'The Transmission', 'Receive'],
     color: 'rgba(124,77,255,0.1)',
   },
@@ -169,7 +169,7 @@ export default function AppShowcase() {
                   </div>
 
                   <Button href="/start" variant="primary" size="sm">
-                    Try This Tool — 21 Days
+                    Try This Portal — 21 Days
                   </Button>
                 </div>
               </motion.div>
