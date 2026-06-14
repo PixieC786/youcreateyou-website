@@ -32,36 +32,33 @@ export default function Hero() {
         <ParticleCanvas particleCount={55} connectDistance={115} speed={0.8} />
       </div>
 
-      {/* ── Organic nebula atmosphere ─────────────────────────────────────── */}
+      {/* ── Nebula atmosphere ────────────────────────────────────────────── */}
       <div aria-hidden className="absolute inset-0 pointer-events-none overflow-hidden">
 
-        {/* Left — rose/magenta lobe, organic polygon shape */}
+        {/* Left — rose/magenta */}
         <div className="absolute" style={{
-          left: '-5%', top: '5%',
-          width: '52vw', height: '55vw',
-          background: 'radial-gradient(ellipse at 42% 48%, rgba(255,148,185,0.38) 0%, rgba(220,100,160,0.16) 42%, transparent 68%)',
-          clipPath: 'polygon(18% 4%, 44% 0%, 66% 7%, 80% 20%, 86% 38%, 83% 57%, 70% 71%, 50% 79%, 28% 76%, 10% 63%, 3% 42%, 7% 21%)',
-          filter: 'blur(30px)',
+          left: '-20%', top: '-10%',
+          width: '75vw', height: '75vw',
+          background: 'radial-gradient(ellipse at 50% 50%, rgba(255,148,185,0.22) 0%, rgba(220,100,160,0.08) 50%, transparent 72%)',
+          filter: 'blur(48px)',
           animation: 'breathe 13s ease-in-out 1s infinite',
         }} />
 
-        {/* Right — warm gold lobe, different irregular shape */}
+        {/* Right — warm gold */}
         <div className="absolute" style={{
-          right: '-8%', top: '12%',
-          width: '46vw', height: '52vw',
-          background: 'radial-gradient(ellipse at 54% 44%, rgba(255,198,120,0.30) 0%, rgba(220,160,80,0.12) 44%, transparent 70%)',
-          clipPath: 'polygon(24% 3%, 52% 0%, 74% 11%, 86% 30%, 90% 53%, 80% 72%, 60% 82%, 36% 80%, 15% 68%, 4% 48%, 8% 26%, 15% 12%)',
-          filter: 'blur(34px)',
+          right: '-18%', top: '0%',
+          width: '68vw', height: '68vw',
+          background: 'radial-gradient(ellipse at 50% 50%, rgba(255,198,120,0.18) 0%, rgba(220,160,80,0.07) 50%, transparent 72%)',
+          filter: 'blur(52px)',
           animation: 'breathe 15s ease-in-out 3s infinite',
         }} />
 
-        {/* Center — lavender nebula, largest irregular mass */}
+        {/* Center — lavender, dominant */}
         <div className="absolute" style={{
-          left: '20%', top: '-5%',
-          width: '60vw', height: '65vh',
-          background: 'radial-gradient(ellipse at 50% 48%, rgba(210,155,255,0.34) 0%, rgba(185,120,245,0.14) 48%, transparent 72%)',
-          clipPath: 'polygon(14% 9%, 34% 2%, 56% 0%, 74% 9%, 87% 24%, 92% 44%, 88% 64%, 74% 78%, 54% 84%, 32% 82%, 14% 72%, 4% 54%, 6% 30%)',
-          filter: 'blur(26px)',
+          left: '10%', top: '-15%',
+          width: '80vw', height: '70vh',
+          background: 'radial-gradient(ellipse at 50% 45%, rgba(210,155,255,0.26) 0%, rgba(185,120,245,0.10) 50%, transparent 74%)',
+          filter: 'blur(40px)',
           animation: 'breathe 9s ease-in-out infinite',
         }} />
 
