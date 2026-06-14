@@ -201,8 +201,7 @@ export default function Constellations() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.4, duration: 1.2 }}
-          className="absolute right-5 z-30 pointer-events-none"
-          style={{ top: '52%' }}
+          className="absolute right-5 z-30 pointer-events-none bottom-[9%] md:bottom-auto md:top-[52%]"
           aria-hidden
         >
           <div className="relative" style={{ width: 20, height: 52 }}>
