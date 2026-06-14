@@ -109,7 +109,7 @@ export default function AboutPage() {
 
           <Para delay={0.04}>
             Not a program. Not a brand. A practice of remembering.
-            Twenty-one tools. Four phases. 365 days. One question underneath all of them:
+            Twenty-one portals. Four phases. 365 days. One question underneath all of them:
           </Para>
 
           <Beat delay={0.06} text="What if the version of you who has everything is not who you become — but who you already are?" />

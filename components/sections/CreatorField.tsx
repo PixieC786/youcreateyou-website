@@ -9,7 +9,7 @@ const PARAGRAPHS = [
   { text: `Not a better version. Not an improved version. The real one — the one underneath everything that was borrowed, inherited, or learned in fear.`, style: 'normal' },
   { text: `YCY was built for that person. The one who already knows. The one who has always known.`, style: 'normal' },
   { text: `what if the version of you who has everything is not who you become — but who you already are?`, style: 'italic-accent' },
-  { text: `Twenty-one tools. Four phases. One direction: back to yourself.`, style: 'normal' },
+  { text: `Twenty-one portals. Four phases. One direction: back to yourself.`, style: 'normal' },
   { text: `What no one expects is what happens next. Not just the personal shifts — though those are real, and they go deep.`, style: 'normal' },
   { text: `Something larger begins to move.`, style: 'large' },
   { text: `A frequency. A field.`, style: 'large-accent' },

@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     'neuroscience',
     'daily practice',
     'self concept',
-    'consciousness tools',
+    'consciousness portals',
     'inner transformation',
   ],
   authors: [{ name: 'You Create You' }],

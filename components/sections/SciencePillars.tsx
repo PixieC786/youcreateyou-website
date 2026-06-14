@@ -125,7 +125,7 @@ export default function SciencePillars() {
             className="mt-5 font-body text-[rgba(240,236,255,0.48)] text-[clamp(1rem,1.25vw,1.1rem)] leading-[1.82] max-w-[44ch] mx-auto"
           >
             The practice didn't choose between modern neuroscience and ancient wisdom.
-            It drew from both — and built 21 tools that work together.
+            It drew from both — and built 21 portals that work together.
           </motion.p>
         </div>
 

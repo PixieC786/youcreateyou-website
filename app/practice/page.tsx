@@ -6,7 +6,7 @@ import TransformationFlow from '@/components/sections/TransformationFlow'
 export const metadata = {
   title: 'The Practice — You Create You',
   description:
-    '21 consciousness tools across 4 phases: Remember, Return, Create, and Radiate. A complete system for lasting change.',
+    '21 consciousness portals across 4 phases: Remember, Return, Create, and Radiate. A complete system for lasting change.',
 }
 
 const ALL_TOOLS = [
@@ -48,7 +48,7 @@ export default function PracticePage() {
       <div className="container-content mb-8 text-center">
         <SectionLabel text="The full practice" />
         <h1 className="font-display text-5xl sm:text-6xl font-light italic text-[#f0ecff] mt-6 mb-6 leading-snug">
-          21 tools. One complete system.
+          21 portals. One complete system.
         </h1>
         <p className="font-body text-[rgba(240,236,255,0.5)] text-lg max-w-xl mx-auto leading-relaxed mb-10">
           Each tool is a standalone practice and part of a larger journey.

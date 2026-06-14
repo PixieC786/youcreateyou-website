@@ -69,7 +69,7 @@ export default function AppShowcase() {
             transition={{ duration: 0.8, ease: EASE }}
             className="font-display text-[clamp(2rem,4.5vw,3.5rem)] font-light italic text-[#f0ecff] mt-6 leading-[1.12]"
           >
-            21 tools. 4 phases.
+            21 portals. 4 phases.
             <br />
             <span className="text-gradient">One direction: back to yourself.</span>
           </motion.h2>

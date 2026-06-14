@@ -6,7 +6,7 @@ import Link from 'next/link'
 const EASE = [0.22, 1, 0.36, 1] as const
 
 const INCLUDES = [
-  '21 tools across 4 phases: Remember, Return, Create, Radiate',
+  '21 portals across 4 phases: Remember, Return, Create, Radiate',
   'Inner Cinema — inhabit your future self from within',
   'Fear Alchemist — turn what holds you back into fuel',
   'The Witness — dissolve the thoughts that are not yours',
