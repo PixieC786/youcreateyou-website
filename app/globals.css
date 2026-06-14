@@ -22,6 +22,10 @@ body {
   line-height: 1.65;
 }
 
+@media (pointer: fine) {
+  *, *::before, *::after { cursor: none !important; }
+}
+
 /* ── Selection ───────────────────────────────────────────────────────────── */
 ::selection      { background: rgba(210,175,255,0.22); color: #ffffff; }
 ::-moz-selection { background: rgba(210,175,255,0.22); color: #ffffff; }

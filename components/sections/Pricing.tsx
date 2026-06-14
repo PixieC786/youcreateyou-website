@@ -6,11 +6,11 @@ import Link from 'next/link'
 const EASE = [0.22, 1, 0.36, 1] as const
 
 const INCLUDES = [
-  '20 ways to understand yourself deeply',
-  '9 steps to create yourself daily',
-  'Guided meditation — feel your future life as if it is already real',
-  'A journal that tracks who you are becoming',
-  '365 days of becoming who you\'ve always been',
+  '21 tools across 4 phases: Remember, Return, Create, Radiate',
+  'Inner Cinema — inhabit your future self from within',
+  'Fear Alchemist — turn what holds you back into fuel',
+  'The Witness — dissolve the thoughts that are not yours',
+  'The Frequency of Thanks — the state that changes everything',
 ]
 
 export default function Pricing() {
@@ -45,15 +45,6 @@ export default function Pricing() {
             Your first 21 days<br />to remember who you are.
           </motion.h2>
 
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, ease: EASE, delay: 0.14 }}
-            className="font-body text-[1rem] font-light text-[rgba(240,236,255,0.42)] leading-[1.85] mb-14"
-          >
-            No credit card required. No pressure. Just you and the practice.
-          </motion.p>
 
           {/* Ornament */}
           <motion.p
@@ -89,14 +80,11 @@ export default function Pricing() {
             transition={{ duration: 0.7, ease: EASE, delay: 0.36 }}
           >
             <Link
-              href="https://app.youcreateyou.life"
+              href="/start"
               className="inline-block font-mono text-[10px] tracking-[0.22em] uppercase text-[rgba(220,190,255,0.95)] bg-[rgba(155,90,230,0.15)] border border-[rgba(179,136,255,0.4)] rounded-full px-12 py-[18px] hover:bg-[rgba(155,90,230,0.28)] hover:border-[rgba(179,136,255,0.7)] transition-all duration-300 mb-5"
             >
               21 Days to Remember Who You Are
             </Link>
-            <p className="font-mono text-[9px] tracking-[0.14em] uppercase text-[rgba(240,236,255,0.18)]">
-              No credit card required · cancel any time
-            </p>
           </motion.div>
 
         </div>

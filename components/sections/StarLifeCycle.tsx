@@ -395,9 +395,7 @@ export default function StarLifeCycle() {
           className="mt-12 flex flex-col items-center gap-4"
         >
           <a
-            href="https://app.youcreateyou.life"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/start"
             style={{
               display: 'inline-flex',
               alignItems: 'center',

@@ -109,11 +109,6 @@ export default function EmailCapture({
         </p>
       )}
 
-      {status === 'idle' && (
-        <p className="mt-3 text-center font-mono text-[9px] tracking-[0.16em] uppercase text-[rgba(240,236,255,0.18)]">
-          No spam · No noise · Unsubscribe anytime
-        </p>
-      )}
     </div>
   )
 }

@@ -18,8 +18,8 @@ const ITEM = {
 }
 
 const STATS = [
-  { value: '20', label: 'Tools for the Inner World' },
-  { value: '9',  label: 'Steps to Your True Identity' },
+  { value: '21', label: 'Tools for the Inner World' },
+  { value: '4',  label: 'Phases Back to Yourself' },
   { value: '21', label: 'Days to Feel the Shift' },
 ]
 
@@ -32,34 +32,40 @@ export default function Hero() {
         <ParticleCanvas particleCount={55} connectDistance={115} speed={0.8} />
       </div>
 
-      {/* ── Atmospheric depth ────────────────────────────────────────────── */}
+      {/* ── Organic nebula atmosphere ─────────────────────────────────────── */}
+      <div aria-hidden className="absolute inset-0 pointer-events-none overflow-hidden">
 
-      {/* Warm rose drift — left */}
-      <div aria-hidden className="absolute pointer-events-none" style={{
-        left: '-5%', top: '10%',
-        width: '55vw', height: '55vw',
-        background: 'radial-gradient(ellipse, rgba(255,148,185,0.11) 0%, transparent 68%)',
-        filter: 'blur(55px)',
-        animation: 'breathe 13s ease-in-out 1s infinite',
-      }} />
+        {/* Left — rose/magenta lobe, organic polygon shape */}
+        <div className="absolute" style={{
+          left: '-5%', top: '5%',
+          width: '52vw', height: '55vw',
+          background: 'radial-gradient(ellipse at 42% 48%, rgba(255,148,185,0.38) 0%, rgba(220,100,160,0.16) 42%, transparent 68%)',
+          clipPath: 'polygon(18% 4%, 44% 0%, 66% 7%, 80% 20%, 86% 38%, 83% 57%, 70% 71%, 50% 79%, 28% 76%, 10% 63%, 3% 42%, 7% 21%)',
+          filter: 'blur(30px)',
+          animation: 'breathe 13s ease-in-out 1s infinite',
+        }} />
 
-      {/* Warm gold drift — right */}
-      <div aria-hidden className="absolute pointer-events-none" style={{
-        right: '-5%', top: '20%',
-        width: '48vw', height: '48vw',
-        background: 'radial-gradient(ellipse, rgba(255,198,120,0.09) 0%, transparent 70%)',
-        filter: 'blur(60px)',
-        animation: 'breathe 15s ease-in-out 3s infinite',
-      }} />
+        {/* Right — warm gold lobe, different irregular shape */}
+        <div className="absolute" style={{
+          right: '-8%', top: '12%',
+          width: '46vw', height: '52vw',
+          background: 'radial-gradient(ellipse at 54% 44%, rgba(255,198,120,0.30) 0%, rgba(220,160,80,0.12) 44%, transparent 70%)',
+          clipPath: 'polygon(24% 3%, 52% 0%, 74% 11%, 86% 30%, 90% 53%, 80% 72%, 60% 82%, 36% 80%, 15% 68%, 4% 48%, 8% 26%, 15% 12%)',
+          filter: 'blur(34px)',
+          animation: 'breathe 15s ease-in-out 3s infinite',
+        }} />
 
-      {/* Soft lavender center bloom */}
-      <div aria-hidden className="absolute pointer-events-none" style={{
-        left: '50%', top: '8%', transform: 'translateX(-50%)',
-        width: '65vw', height: '65vh',
-        background: 'radial-gradient(ellipse, rgba(210,155,255,0.16) 0%, rgba(185,120,245,0.08) 45%, transparent 72%)',
-        filter: 'blur(42px)',
-        animation: 'breathe 9s ease-in-out infinite',
-      }} />
+        {/* Center — lavender nebula, largest irregular mass */}
+        <div className="absolute" style={{
+          left: '20%', top: '-5%',
+          width: '60vw', height: '65vh',
+          background: 'radial-gradient(ellipse at 50% 48%, rgba(210,155,255,0.34) 0%, rgba(185,120,245,0.14) 48%, transparent 72%)',
+          clipPath: 'polygon(14% 9%, 34% 2%, 56% 0%, 74% 9%, 87% 24%, 92% 44%, 88% 64%, 74% 78%, 54% 84%, 32% 82%, 14% 72%, 4% 54%, 6% 30%)',
+          filter: 'blur(26px)',
+          animation: 'breathe 9s ease-in-out infinite',
+        }} />
+
+      </div>
 
       {/* Bottom fade */}
       <div aria-hidden className="absolute bottom-0 left-0 right-0 pointer-events-none" style={{

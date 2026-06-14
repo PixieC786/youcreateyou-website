@@ -6,7 +6,7 @@ const EASE = [0.22, 1, 0.36, 1] as const
 
 const STEPS = [
   {
-    num: '01', label: 'Recognize',
+    num: '01', label: 'Remember',
     phrase: 'You are not your patterns. You never were.',
     color: '#c88aff', shadow: 'rgba(180,100,255,0.55)',
     symbol: (
@@ -19,8 +19,8 @@ const STEPS = [
     ),
   },
   {
-    num: '02', label: 'Understand',
-    phrase: 'Everything you feel vibrates at its own frequency.',
+    num: '02', label: 'Return',
+    phrase: 'Everything you carry that is not yours — you can put down.',
     color: '#60d4f0', shadow: 'rgba(50,200,240,0.5)',
     symbol: (
       <svg width="50" height="50" viewBox="0 0 50 50">
@@ -31,8 +31,8 @@ const STEPS = [
     ),
   },
   {
-    num: '03', label: 'Choose',
-    phrase: 'Consciously. From identity — not habit.',
+    num: '03', label: 'Create',
+    phrase: 'From this new ground, build what is real.',
     color: '#ffd060', shadow: 'rgba(255,195,40,0.55)',
     symbol: (
       <svg width="50" height="50" viewBox="0 0 50 50">
@@ -43,8 +43,8 @@ const STEPS = [
     ),
   },
   {
-    num: '04', label: 'Practice',
-    phrase: 'One morning. One hour. One true version of you.',
+    num: '04', label: 'Radiate',
+    phrase: 'The practice is personal. The effect is planetary.',
     color: '#ff8eb4', shadow: 'rgba(255,100,155,0.5)',
     symbol: (
       <svg width="50" height="50" viewBox="0 0 50 50">
@@ -60,8 +60,8 @@ const STEPS = [
     ),
   },
   {
-    num: '05', label: 'Become',
-    phrase: 'Not someday. Right now. In this one quiet hour.',
+    num: '05', label: 'The Whole Self',
+    phrase: 'The Flowing. The Directing. The dance between them.',
     color: '#ffffff', shadow: 'rgba(220,205,255,0.6)',
     symbol: (
       <svg width="50" height="50" viewBox="0 0 50 50">
@@ -93,9 +93,9 @@ export default function TransformationFlow() {
           transition={{ duration: 0.75, ease: EASE }}
           className="text-center mb-16 md:mb-20"
         >
-          <p className="label-line justify-center mb-5">How transformation actually works</p>
+          <p className="label-line justify-center mb-5">The five parts of the journey</p>
           <p className="font-body text-[rgba(235,228,255,0.38)] text-sm max-w-[38ch] mx-auto leading-relaxed">
-            Not motivation. Not information.<br/>Identity — rebuilt from the inside out.
+            The book. The app. One ecosystem.<br/>One complete path back to yourself.
           </p>
         </motion.div>
 
