@@ -21,10 +21,11 @@ const ORBS = [
   },
 ]
 
-function OrbitButton({ label, sub, href, color, glow, delay }: {
+function OrbitButton({ label, sub, href, color, glow, delay, size = 150 }: {
   label: string; sub: string; href: string
-  color: string; glow: string; delay: number
+  color: string; glow: string; delay: number; size?: number
 }) {
+  const r = size / 150
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.85 }}
@@ -37,7 +38,7 @@ function OrbitButton({ label, sub, href, color, glow, delay }: {
           whileHover={{ scale: 1.06 }}
           transition={{ duration: 0.4, ease: EASE }}
           className="relative"
-          style={{ width: 150, height: 150 }}
+          style={{ width: size, height: size }}
         >
           {/* Outer ring — slow clockwise drift */}
           <motion.div
@@ -53,7 +54,7 @@ function OrbitButton({ label, sub, href, color, glow, delay }: {
             transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
             className="absolute rounded-full"
             style={{
-              inset: 10,
+              inset: Math.round(10 * r),
               border: `1px solid ${color},0.28)`,
               borderTopColor: `${color},0.6)`,
             }}
@@ -64,14 +65,14 @@ function OrbitButton({ label, sub, href, color, glow, delay }: {
             animate={{ scale: [1, 1.05, 1], opacity: [0.35, 0.65, 0.35] }}
             transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
             className="absolute rounded-full"
-            style={{ inset: 28, border: `1px solid ${color},0.4)` }}
+            style={{ inset: Math.round(28 * r), border: `1px solid ${color},0.4)` }}
           />
 
           {/* Glow bloom */}
           <div
             className="absolute rounded-full"
             style={{
-              inset: 28,
+              inset: Math.round(28 * r),
               background: `radial-gradient(circle, ${glow} 0%, transparent 70%)`,
               filter: 'blur(8px)',
             }}
@@ -90,7 +91,7 @@ function OrbitButton({ label, sub, href, color, glow, delay }: {
           >
             <span
               className="font-display font-light italic text-center leading-snug"
-              style={{ fontSize: '1rem', color: `${color},0.95)` }}
+              style={{ fontSize: `${r}rem`, color: `${color},0.95)` }}
             >
               {label}<br />{sub}
             </span>
@@ -133,23 +134,52 @@ export default function Constellations() {
           }}
         />
 
-        {/* Orbit buttons — Indian Ocean empty zone (between Africa and Australia) */}
+        {/* ── MOBILE layout: centered column ─────────────────────────────── */}
+        <div className="md:hidden absolute inset-x-0 bottom-0 z-20 flex flex-col items-center pb-8 gap-4 pointer-events-none">
+          <motion.div
+            initial={{ opacity: 0, y: 14 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.9, ease: EASE, delay: 0.1 }}
+            className="text-center px-6"
+          >
+            <h2
+              className="font-display font-light italic text-[rgba(240,236,255,0.88)] leading-[1.2] mb-1"
+              style={{ fontSize: 'clamp(1.1rem, 5vw, 1.4rem)', textShadow: '0 2px 30px rgba(7,5,15,0.9)' }}
+            >
+              This is what a world<br />waking up looks like.
+            </h2>
+            <p
+              className="font-body font-light text-[rgba(240,236,255,0.32)]"
+              style={{ fontSize: '0.75rem' }}
+            >
+              Every dot is a human, practicing. Right now.
+            </p>
+          </motion.div>
+
+          <div className="flex gap-5 pointer-events-auto">
+            {ORBS.map((orb, i) => (
+              <OrbitButton key={orb.href} {...orb} delay={0.1 + i * 0.12} size={110} />
+            ))}
+          </div>
+        </div>
+
+        {/* ── DESKTOP layout: original absolute positions ─────────────────── */}
         <div
-          className="absolute z-20 flex gap-6 pointer-events-auto"
+          className="hidden md:flex absolute z-20 gap-6 pointer-events-auto"
           style={{ bottom: '8%', left: '56%' }}
         >
           {ORBS.map((orb, i) => (
-            <OrbitButton key={orb.href} {...orb} delay={0.1 + i * 0.12} />
+            <OrbitButton key={orb.href} {...orb} delay={0.1 + i * 0.12} size={150} />
           ))}
         </div>
 
-        {/* Headline — small, bottom-left corner */}
         <motion.div
           initial={{ opacity: 0, y: 14 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.9, ease: EASE, delay: 0.1 }}
-          className="absolute z-20 pointer-events-none"
+          className="hidden md:block absolute z-20 pointer-events-none"
           style={{ bottom: '18%', left: '3%' }}
         >
           <h2
@@ -166,7 +196,7 @@ export default function Constellations() {
           </p>
         </motion.div>
 
-        {/* Cosmic scroll indicator — cascading stardust diamonds */}
+        {/* Cosmic scroll indicator */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
