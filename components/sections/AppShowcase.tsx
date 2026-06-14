@@ -29,7 +29,7 @@ const TOOLS = [
   {
     id: 'visualisation',
     phase: 'Phase III — Create',
-    name: 'Inner Cinema',
+    name: 'The Inner Cinema',
     tagline: 'You meet your future self here.',
     description: 'A 20-minute guided journey into the life you\'re calling in — followed by Embody Your Identity, where you become the person you just saw. The most powerful sequence in the practice.',
     stages: ['Prepare', 'Soften', 'The Journey', 'Arrival'],
