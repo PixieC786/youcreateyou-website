@@ -196,33 +196,46 @@ export default function Constellations() {
           </p>
         </motion.div>
 
-        {/* Cosmic scroll indicator */}
+        {/* Scroll indicator — right side, glowing dot arrow pointing down */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.4, duration: 1.2 }}
-          className="absolute bottom-7 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center gap-[10px] pointer-events-none"
+          className="absolute right-5 z-30 pointer-events-none"
+          style={{ top: '52%' }}
           aria-hidden
         >
-          {[0, 1, 2].map((i) => (
-            <motion.div
-              key={i}
-              animate={{ opacity: [0.08, 1, 0.08], scale: [0.7, 1.15, 0.7] }}
-              transition={{
-                repeat: Infinity,
-                duration: 2.2,
-                delay: i * 0.38,
-                ease: 'easeInOut',
-              }}
-              style={{
-                width: 7 - i * 1.5,
-                height: 7 - i * 1.5,
-                background: `rgba(${210 - i * 10}, ${155 + i * 10}, 255, 0.95)`,
-                borderRadius: '50%',
-                boxShadow: `0 0 ${10 + i * 4}px ${5 + i * 2}px rgba(180,110,255,${0.55 - i * 0.1})`,
-              }}
-            />
-          ))}
+          <div className="relative" style={{ width: 20, height: 52 }}>
+            {[
+              { x: 10, y: 0,  delay: 0,    size: 4 },
+              { x: 10, y: 11, delay: 0.16, size: 4 },
+              { x: 10, y: 22, delay: 0.32, size: 4 },
+              { x: 2,  y: 32, delay: 0.44, size: 4 },
+              { x: 18, y: 32, delay: 0.44, size: 4 },
+              { x: 10, y: 44, delay: 0.6,  size: 5 },
+            ].map((dot, i) => (
+              <motion.div
+                key={i}
+                animate={{ opacity: [0.1, 1, 0.1], scale: [0.6, 1.3, 0.6] }}
+                transition={{
+                  repeat: Infinity,
+                  duration: 2.4,
+                  delay: dot.delay,
+                  ease: 'easeInOut',
+                }}
+                style={{
+                  position: 'absolute',
+                  left: dot.x - dot.size / 2,
+                  top: dot.y - dot.size / 2,
+                  width: dot.size,
+                  height: dot.size,
+                  background: 'rgba(200,155,255,0.95)',
+                  borderRadius: '50%',
+                  boxShadow: `0 0 ${dot.size * 2}px ${dot.size}px rgba(170,100,255,0.45)`,
+                }}
+              />
+            ))}
+          </div>
         </motion.div>
 
       </section>
