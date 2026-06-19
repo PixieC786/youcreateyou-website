@@ -108,7 +108,7 @@ export default function Constellations() {
       {/* ── The live map ─────────────────────────────────────────────────── */}
       <section
         className="relative overflow-hidden"
-        style={{ marginTop: '76px', height: 'calc(100vh - 76px)', minHeight: '520px' }}
+        style={{ marginTop: '76px', height: 'calc(100dvh - 76px)', minHeight: '520px' }}
       >
         <iframe
           src="https://app.youcreateyou.life/world_love.html"
@@ -135,7 +135,7 @@ export default function Constellations() {
         />
 
         {/* ── MOBILE layout: centered column ─────────────────────────────── */}
-        <div className="md:hidden absolute inset-x-0 bottom-0 z-20 flex flex-col items-center pb-8 gap-4 pointer-events-none">
+        <div className="md:hidden absolute inset-x-0 bottom-0 z-20 flex flex-col items-center gap-4 pointer-events-none" style={{ paddingBottom: 'calc(2rem + env(safe-area-inset-bottom, 0px))' }}>
           <motion.div
             initial={{ opacity: 0, y: 14 }}
             whileInView={{ opacity: 1, y: 0 }}
