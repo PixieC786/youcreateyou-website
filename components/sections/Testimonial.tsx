@@ -27,7 +27,7 @@ const TESTIMONIALS = [
     initials: 'AK',
   },
   {
-    quote: 'I was sceptical about the quantum creation stuff. Then I used the Coherence Lab daily for two weeks and my resting HRV improved by 23%. Whatever is happening, the science is real.',
+    quote: 'I was sceptical about the quantum creation stuff. Then I used Heart Coherence daily for two weeks and my resting HRV improved by 23%. Whatever is happening, the science is real.',
     name: 'Daniel S.',
     title: 'Researcher · Berlin',
     initials: 'DS',

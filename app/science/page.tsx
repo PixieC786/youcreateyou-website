@@ -15,7 +15,7 @@ const RESEARCH = [
   },
   {
     stat: '4–7 Hz',
-    finding: 'Theta brainwave state — proven optimal for subconscious reprogramming and deep belief change',
+    finding: 'Theta brainwave state — proven optimal for deep belief change and accessing the receptive state where new truth takes root',
     source: 'Journal of Neurophysiology',
   },
   {

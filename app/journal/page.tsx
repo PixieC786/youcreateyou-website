@@ -5,7 +5,7 @@ import Button from '@/components/ui/Button'
 export const metadata = {
   title: 'The Journal — You Create You',
   description:
-    'A consciousness navigation system, not a diary. Daily quantum prompts aligned to your 20 consciousness portals — access the answers already inside you.',
+    'A consciousness navigation system, not a diary. Daily prompts from the path, aligned to all 21 portals — access the answers already inside you.',
 }
 
 export default function JournalPage() {
