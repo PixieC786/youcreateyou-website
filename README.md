@@ -1,75 +1,68 @@
 # You Create You
 
-**You Create You** is a consciousness and personal transformation app — a complete inner work system built for people who are ready to stop running on autopilot and start creating their lives on purpose.
+**Something is off. You're performing your life. There's an original you underneath. Come back to it daily.**
+
+You Create You is a complete inner world practice — 21 portals across 4 phases, built for people who are ready to stop living from the outside in and start creating from within.
 
 Live at [app.youcreateyou.life](https://app.youcreateyou.life)
 
 ---
 
-## What It Does
-
-Most people live from the outside in — reacting to circumstances, running on old beliefs, feeling like life is happening *to* them rather than *through* them.
-
-You Create You reverses that.
-
-It is a guided journey through 20 tools, organised across 4 phases of transformation — from seeing your patterns clearly, to releasing what no longer serves you, to reprogramming your subconscious, to building a daily practice that keeps you in signal.
-
----
-
 ## The 4 Phases
 
-### Phase 01 — See Clearly
-You cannot change what you cannot see.
+### Phase 01 — Remember
+You cannot return to what you cannot see.
 
-Tools that illuminate the patterns, beliefs, and frequencies shaping your reality — often invisibly.
+Portals that illuminate the patterns, beliefs, and frequencies shaping your reality — often invisibly.
 
-- **Ancient Wisdom** — one teaching per day from 9 wisdom traditions
-- **Reality Architect** — map your dominant thought, feeling, and word
-- **Frequency Tuner** — locate yourself on the 16-level I AM Frequency Map
-- **The Observer** — 6-stage written inquiry to see through painful beliefs
+- **Ancient Wisdom** — one teaching per day from 16 wisdom traditions
+- **Reality Architect** — map the thoughts, feelings, and words running your life
+- **Frequency Tuner** — locate where you are, tune toward where you are going
+- **The Witness** — 6-stage written inquiry to see through the stories that have been running
 
-### Phase 02 — Release & Discover
-You cannot build a new life on top of unexamined fear.
+### Phase 02 — Return
+You cannot build a new life on top of what has not been seen clearly.
 
-Tools for releasing what no longer serves — and discovering who you are without it.
+Portals for releasing what no longer belongs — and discovering who you are without it.
 
-- **Fear Alchemist** — move from fear into clarity and action
-- **Mind-Body Connection** — locate and release tension stored in the body
+- **Fear Alchemist** — every fear contains its opposite; this is how you find it
+- **Mind Body Connection** — a guided somatic process to release what the mind cannot reach
 - **Ego Alchemy** — recognise, understand, and befriend the ego
-- **Identity Rebirth** — shed old roles and declare the new you
-- **The Love You Are** — the deepest self-love practice in the app
-- **Purpose Compass** — Ikigai-based journey to your life's purpose
+- **Identity Rebirth** — shed inherited identities and declare the original you
+- **The Love You Are** — the practice of meeting yourself fully, from the inside out
+- **Purpose Compass** — find where your deepest gifts meet what the world most needs
+- **The New Chapter** — design what comes next, built from who you are becoming
 
-### Phase 03 — Install the New Reality
-Much of your life is shaped by patterns operating below conscious awareness.
+### Phase 03 — Create
+Your inner state is the signal. The deep receives what is genuinely felt.
 
-Tools that work directly with the subconscious to install new beliefs and identities at the deepest level.
+Portals that work directly with the field — planting new truth at the level where it takes root.
 
-- **New Chapter** — close the old chapter and write your 90-day manifesto
-- **Subconscious Reprogrammer** — theta-state programming before sleep
-- **Quantum Creation** — transmit your intention into the field
-- **Visualisation Meditation** — guided 20-minute manifestation meditation
+- **The First Move** — name what you keep preparing to begin, and move today
+- **The Deep** — give the deep new truth; it does not know the difference between what is imagined and what is real
+- **The Creation Field** — feel the future into form across 7 stages
+- **The Inner Cinema** — a felt reality inhabited from within, not a mental movie watched from outside
 
-### Phase 04 — Signal & Nurture Daily
-Transformation is not a single event. It is a daily practice.
+### Phase 04 — Radiate
+The original self is not found once. It is returned to daily.
 
-Tools for staying in signal — every single day.
+Portals for staying in signal — every single day.
 
-- **Gratitude Portal** — the most powerful daily practice in the app
-- **Coherence Lab** — heart-brain coherence through elevated emotion
-- **Manifestation Garden** — plant seeds, water them daily, watch them bloom
-- **The Feminine Way** — 7 qualities of feminine energy with daily practice
-- **The Masculine Way** — 7 qualities of masculine energy with daily practice
-- **Fun Is the Frequency** — joy and play as transformation tools
+- **The Frequency of Thanks** — the kind of gratitude that opens the chest, not just the mind
+- **Heart Coherence** — when your heart and mind finally agree, something shifts at every level
+- **Manifestation Garden** — plant intentions and water them daily across 33 days
+- **The Flowing Quality** — 7 qualities of the flowing nature; what was taken and what returns
+- **The Directing Quality** — 7 qualities of the directing nature; what was taken and what returns
+- **Fun Is the Frequency** — joy is not a reward; it is a daily practice
 
 ---
 
 ## Core Features
 
-- **FREQ** — 45-second phone-camera reading that maps your physiological state to a consciousness level
+- **FREQ** — 45-second phone-camera reading that maps your physiological state to a signal level
 - **Send Love** — one tap sends a wave of love into the world; tracked globally
-- **Live Love Constellation** — a real-time interactive world map of every love wave ever sent
-- **Daily Journal** — prompted practice designed to access the subconscious
+- **Live Love Constellation** — a real-time world map of every love wave ever sent
+- **Daily Journal** — a prompted practice for returning to the inner world that creates the outer one
 - **Journey Tracker** — your progress across all 4 phases
 
 ---
@@ -85,6 +78,6 @@ Tools for staying in signal — every single day.
 You Create You is not just an app. It is a complete world:
 
 - **The App** — [app.youcreateyou.life](https://app.youcreateyou.life)
-- **The Book** — the foundational text for the entire journey
+- **The Book** — *The Transmission* — the foundational text for the entire journey
 - **The Website** — [youcreateyou.life](https://youcreateyou.life)
 - **The Live Love Constellation** — a live world map of love sent globally
