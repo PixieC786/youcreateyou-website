@@ -15,7 +15,7 @@ const NAV_LINKS = [
 const LEGAL_LINKS = [
   { href: '/privacy', label: 'Privacy' },
   { href: '/terms',   label: 'Terms' },
-  { href: 'mailto:youcreateyouteachings@gmail.com', label: 'Contact' },
+  { href: 'mailto:hello@youcreateyou.life', label: 'Contact' },
 ]
 
 export default function Footer() {
