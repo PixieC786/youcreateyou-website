@@ -16,8 +16,8 @@ const ORBS = [
     label: 'Read My',
     sub: 'Frequency',
     href: 'https://app.youcreateyou.life/frequency_reader.html',
-    color: 'rgba(80,210,210',
-    glow: 'rgba(40,180,180,0.14)',
+    color: 'rgba(55,190,255',
+    glow: 'rgba(30,160,240,0.18)',
   },
 ]
 
