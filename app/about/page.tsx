@@ -78,7 +78,7 @@ export default function AboutPage() {
             style={{ color: '#f8f5ff', letterSpacing: '-0.01em' }}
           >
             Built to find<br />
-            <span className="text-gradient">the real one.</span>
+            <span className="text-gradient">the original one.</span>
           </motion.h1>
 
           <Para>
