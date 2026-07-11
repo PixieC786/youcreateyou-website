@@ -72,7 +72,7 @@ export default function Nav() {
             {/* Desktop CTA */}
             <div className="hidden md:flex items-center gap-5">
               <Button href="/start" variant="primary" size="sm">
-                21 Days to Remember Who You Are
+                Begin Your Practice
               </Button>
             </div>
 
@@ -181,11 +181,8 @@ export default function Nav() {
                 onClick={close}
                 className="w-full justify-center"
               >
-                21 Days to Remember Who You Are
+                Begin Your Practice
               </Button>
-              <p className="mt-4 font-mono text-[9px] tracking-[0.18em] uppercase text-[rgba(240,236,255,0.2)] text-center">
-                No credit card · Cancel anytime
-              </p>
             </motion.div>
           </motion.div>
         )}

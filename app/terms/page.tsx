@@ -126,12 +126,6 @@ export default function TermsPage() {
 
         <H2>Subscription and payment</H2>
 
-        <H3>Free trial</H3>
-        <P>
-          You get <Strong>21 days free</Strong>, with full access to the entire app — no card
-          required up front. The trial begins on your first day of use.
-        </P>
-
         <H3>Pricing</H3>
         <ul className="ml-5 mb-6 list-disc">
           <Li><Strong>$9.99 per month</Strong>, or</Li>
@@ -148,13 +142,15 @@ export default function TermsPage() {
 
         <H3>Refunds</H3>
         <P>
-          Because the 21-day free trial gives you ample time to decide, refunds are not
-          provided once a billing period has begun. If something genuinely broke or you were
-          charged in error, email{' '}
+          If you're not sure it's for you, we offer a <Strong>7-day money-back guarantee</Strong> from
+          your first payment. Email{' '}
           <a href="mailto:hello@youcreateyou.life" style={{ color: 'rgba(210,175,255,0.8)' }}>
             hello@youcreateyou.life
           </a>{' '}
-          and we will make it right.
+          within 7 days and we will refund you in full, no questions asked. After that window,
+          refunds are not provided for the remainder of a billing period once it has begun. If
+          something genuinely broke or you were charged in error, reach out any time and we will
+          make it right.
         </P>
 
         <H3>Price changes</H3>
@@ -195,8 +191,7 @@ export default function TermsPage() {
         <P>
           The app's design, code, copy, voice recordings, wisdom prompts, sacred sequences,
           daily practices, and overall structure are owned by You Create You. You are welcome
-          to use the app personally while you have an active subscription or are within the
-          free trial. You may not:
+          to use the app personally while you have an active subscription. You may not:
         </P>
         <ul className="ml-5 mb-6 list-disc">
           <Li>Copy, redistribute, or rebrand the app or its contents.</Li>

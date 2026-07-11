@@ -199,7 +199,7 @@ export default function AboutPage() {
             className="flex justify-center"
           >
             <Button href="/start" variant="primary" size="md">
-              21 Days to Remember Who You Are
+              Begin Your Practice
             </Button>
           </motion.div>
 

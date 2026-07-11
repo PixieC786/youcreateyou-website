@@ -61,7 +61,7 @@ export default function StartPage() {
           transition={{ duration: 0.7, ease: EASE }}
           className="font-mono text-[9px] tracking-[0.28em] uppercase text-[rgba(179,136,255,0.55)] mb-8"
         >
-          Begin your 21 days
+          Begin your practice
         </motion.p>
 
         {/* Headline */}

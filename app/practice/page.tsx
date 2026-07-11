@@ -55,7 +55,7 @@ export default function PracticePage() {
           Work through them in sequence, or use them as you need.
         </p>
         <Button href="/start" variant="primary" size="lg">
-          Open the App — 21 Days
+          Open the App
         </Button>
       </div>
 

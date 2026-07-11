@@ -169,7 +169,7 @@ export default function AppShowcase() {
                   </div>
 
                   <Button href="/start" variant="primary" size="sm">
-                    Try This Portal — 21 Days
+                    Try This Portal
                   </Button>
                 </div>
               </motion.div>
