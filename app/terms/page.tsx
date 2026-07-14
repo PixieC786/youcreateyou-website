@@ -142,15 +142,12 @@ export default function TermsPage() {
 
         <H3>Refunds</H3>
         <P>
-          If you're not sure it's for you, we offer a <Strong>7-day money-back guarantee</Strong> from
-          your first payment. Email{' '}
+          If you've genuinely given the practice a try — checked in with your Frequency, opened
+          your journal, spent real time with the Transmissions — and it still didn't land the way
+          it was meant to, you have 90 days. We'll take care of it. Just email{' '}
           <a href="mailto:hello@youcreateyou.life" style={{ color: 'rgba(210,175,255,0.8)' }}>
             hello@youcreateyou.life
-          </a>{' '}
-          within 7 days and we will refund you in full, no questions asked. After that window,
-          refunds are not provided for the remainder of a billing period once it has begun. If
-          something genuinely broke or you were charged in error, reach out any time and we will
-          make it right.
+          </a>.
         </P>
 
         <H3>Price changes</H3>
