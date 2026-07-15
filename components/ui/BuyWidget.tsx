@@ -1,46 +1,30 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { beginCheckout } from '@/lib/checkout'
 
-const SESSION_KEY = 'ycy_buy_widget_seen'
-const SCROLL_TRIGGER_RATIO = 0.3
-
 export default function BuyWidget() {
-  const [visible, setVisible] = useState(false)
+  const [pastMap, setPastMap] = useState(false)
   const [dismissed, setDismissed] = useState(false)
   const [loading, setLoading] = useState(false)
-  const [obscured, setObscured] = useState(false)
-  const triggeredRef = useRef(false)
 
-  useEffect(() => {
-    if (sessionStorage.getItem(SESSION_KEY)) return
-
-    const handleScroll = () => {
-      if (triggeredRef.current) return
-      const scrolled = window.scrollY
-      const maxScroll = document.documentElement.scrollHeight - window.innerHeight
-      if (maxScroll > 0 && scrolled / maxScroll >= SCROLL_TRIGGER_RATIO) {
-        triggeredRef.current = true
-        setVisible(true)
-        sessionStorage.setItem(SESSION_KEY, '1')
-        window.removeEventListener('scroll', handleScroll)
-      }
-    }
-
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
-  // The live Constellation map has its own bottom-right buttons — stay out
-  // of their way rather than covering them whenever that section is in view.
+  // Shows once the visitor has scrolled past the Constellation map, hides
+  // while the map is in view (its own buttons live in the same corner) and
+  // hides again above the map. Re-passing the map resets a manual dismiss.
   useEffect(() => {
     const target = document.getElementById('constellation-map')
     if (!target) return
 
     const observer = new IntersectionObserver(
-      ([entry]) => setObscured(entry.isIntersecting),
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setPastMap(false)
+          setDismissed(false)
+        } else {
+          setPastMap(entry.boundingClientRect.top < 0)
+        }
+      },
       { threshold: 0.15 }
     )
     observer.observe(target)
@@ -57,7 +41,7 @@ export default function BuyWidget() {
 
   return (
     <AnimatePresence>
-      {visible && !dismissed && !obscured && (
+      {pastMap && !dismissed && (
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
