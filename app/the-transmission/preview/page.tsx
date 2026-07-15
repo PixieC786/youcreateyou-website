@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
 import SectionLabel from '@/components/ui/SectionLabel'
@@ -78,6 +78,10 @@ function PullQuote({ text }: { text: string }) {
 export default function TransmissionPreviewPage() {
   const [email, setEmail] = useState('')
   const [unlocked, setUnlocked] = useState(false)
+
+  useEffect(() => {
+    if (sessionStorage.getItem('ycy_preview_unlocked')) setUnlocked(true)
+  }, [])
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()

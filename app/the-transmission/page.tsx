@@ -1,10 +1,14 @@
 'use client'
 
+import { useState } from 'react'
+import { useRouter } from 'next/navigation'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
 import SectionLabel from '@/components/ui/SectionLabel'
+import Button from '@/components/ui/Button'
 import BeginPracticeButton from '@/components/ui/BeginPracticeButton'
+import { captureAbandonedEmail } from '@/lib/checkout'
 
 const EASE = [0.22, 1, 0.36, 1] as const
 
@@ -17,6 +21,17 @@ const PHASES = [
 ]
 
 export default function TheTransmissionPage() {
+  const router = useRouter()
+  const [email, setEmail] = useState('')
+
+  const unlockPreview = (e: React.FormEvent) => {
+    e.preventDefault()
+    if (!email.trim()) return
+    captureAbandonedEmail(email)
+    sessionStorage.setItem('ycy_preview_unlocked', '1')
+    router.push('/the-transmission/preview')
+  }
+
   return (
     <main className="relative overflow-hidden">
 
@@ -107,11 +122,23 @@ export default function TheTransmissionPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.28, duration: 0.7, ease: EASE }}
             >
-              <BeginPracticeButton variant="primary" size="lg">
-                Begin Your Practice — $67
-              </BeginPracticeButton>
+              <form onSubmit={unlockPreview} className="flex flex-col sm:flex-row gap-2.5 max-w-md">
+                <input
+                  type="email"
+                  value={email}
+                  onChange={e => setEmail(e.target.value)}
+                  placeholder="Enter your email"
+                  required
+                  aria-label="Email address"
+                  suppressHydrationWarning
+                  className="input-base px-5 py-3 text-sm"
+                />
+                <Button type="submit" variant="primary" size="lg">
+                  Get Transmission One — Free
+                </Button>
+              </form>
               <p className="font-mono text-[9px] tracking-[0.15em] uppercase mt-4" style={{ color: 'rgba(210,175,255,0.4)' }}>
-                Ebook + lifetime app access · one time
+                The opening Transmission, unlocked instantly
               </p>
             </motion.div>
           </div>
