@@ -118,7 +118,7 @@ export default function BuyWidget() {
               style={{ color: 'rgba(220,195,255,0.7)' }}
             >
               <span style={{ color: 'rgba(200,150,255,0.9)' }}>✦</span>
-              Ebook &quot;The Transmission&quot; + App
+              App + Ebook &quot;The Transmission&quot;
             </span>
 
             <h3
