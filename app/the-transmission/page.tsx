@@ -230,26 +230,6 @@ export default function TheTransmissionPage() {
 
       <div className="container-prose mx-auto"><div className="divider-glow my-4" /></div>
 
-      {/* ── About Zirka Ray ─────────────────────────────────────────────── */}
-      <section className="relative z-10 py-20">
-        <div className="container-prose mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-56px' }}
-            transition={{ duration: 0.75, ease: EASE }}
-          >
-            <SectionLabel text="The author" className="mb-6" />
-            <p className="font-display italic text-[clamp(1.15rem,1.8vw,1.4rem)] leading-[1.9] max-w-[48ch] mx-auto"
-              style={{ color: 'rgba(235,228,255,0.75)' }}
-            >
-              Zirka Ray is a pen name — no photo, no biography, no public identity attached.
-              The work speaks for itself, and it was written to be met without a face
-              standing in front of it.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
       {/* ── Final CTA ────────────────────────────────────────────────────── */}
       <section className="relative z-10 pb-24">
         <div className="container-prose mx-auto text-center">
