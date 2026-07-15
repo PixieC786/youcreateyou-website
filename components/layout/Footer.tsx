@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 
 const NAV_LINKS = [
+  { href: '/the-transmission', label: 'The Book' },
   { href: '/practice', label: 'The Practice' },
   { href: '/science',  label: 'The Science' },
   { href: '/journal',  label: 'Journal' },
