@@ -6,6 +6,7 @@ import { beginCheckout } from '@/lib/checkout'
 const EASE = [0.22, 1, 0.36, 1] as const
 
 const INCLUDES = [
+  'The Transmission ebook — the full book, right inside the app, no download',
   '21 portals across 4 phases: Remember, Return, Create, Radiate',
   'Inner Cinema — inhabit your future self from within',
   'Fear Alchemist — turn what holds you back into fuel',

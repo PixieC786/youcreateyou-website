@@ -201,14 +201,30 @@ export default function TheTransmissionPage() {
             initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-40px' }}
             transition={{ duration: 0.7, ease: EASE }}
-            className="font-body text-[1rem] leading-[1.95] max-w-[52ch] mx-auto"
+            className="font-body text-[1rem] leading-[1.95] max-w-[52ch] mx-auto mb-8"
             style={{ color: 'rgba(235,228,255,0.6)' }}
           >
-            Read a Transmission, then open the app and live it — each of the 29 Transmissions
-            connects directly to a tool, a portal, or a practice inside You Create You.
-            Neither piece is the whole thing on its own. Together, they are a living
-            transmission for the human ready to return to themselves.
+            Each of the 29 Transmissions connects directly to a tool, a portal, or a
+            practice inside You Create You. Neither piece is the whole thing on its own.
+            Together, they are a living transmission for the human ready to return to themselves.
           </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-40px' }}
+            transition={{ delay: 0.08, duration: 0.7, ease: EASE }}
+            className="rounded-2xl p-6 max-w-[52ch] mx-auto"
+            style={{ border: '1px solid rgba(210,175,255,0.18)', background: 'rgba(210,175,255,0.05)' }}
+          >
+            <p className="font-display italic text-[1.05rem] leading-[1.7]" style={{ color: 'rgba(240,236,255,0.9)' }}>
+              There is nothing to download. The ebook lives right inside the app.
+            </p>
+            <p className="font-body text-[0.92rem] leading-[1.8] mt-2" style={{ color: 'rgba(235,228,255,0.55)' }}>
+              The moment you begin your practice, the full text of The Transmission appears
+              on your home screen, ready to open — sitting right next to the journal and
+              daily portals that bring each chapter to life.
+            </p>
+          </motion.div>
 
         </div>
       </section>
@@ -270,6 +286,9 @@ export default function TheTransmissionPage() {
             <BeginPracticeButton variant="primary" size="lg">
               Begin Your Practice — $67
             </BeginPracticeButton>
+            <p className="font-mono text-[9px] tracking-[0.15em] uppercase" style={{ color: 'rgba(210,175,255,0.4)' }}>
+              Ebook + lifetime app access · read inside the app · one time
+            </p>
             <Link
               href="/the-transmission/preview"
               className="font-mono text-[10px] tracking-[0.15em] uppercase transition-colors duration-200"
