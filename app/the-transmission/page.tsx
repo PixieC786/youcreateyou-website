@@ -38,7 +38,7 @@ export default function TheTransmissionPage() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: EASE }}
-            className="flex justify-center md:justify-end order-1 md:order-2"
+            className="flex justify-center md:justify-start order-1 md:order-1"
           >
             <div
               className="relative w-full max-w-[380px] rounded-lg overflow-hidden"
@@ -59,7 +59,7 @@ export default function TheTransmissionPage() {
           </motion.div>
 
           {/* Intro */}
-          <div className="order-2 md:order-1">
+          <div className="order-2 md:order-2">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
