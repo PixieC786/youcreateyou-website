@@ -9,8 +9,6 @@ import { beginCheckout } from '@/lib/checkout'
 const NAV_LINKS = [
   { href: '/the-transmission', label: 'The Book' },
   { href: '/practice', label: 'The Practice' },
-  { href: '/science',  label: 'The Science' },
-  { href: '/journal',  label: 'Journal' },
   { href: '/about',    label: 'About' },
 ]
 
