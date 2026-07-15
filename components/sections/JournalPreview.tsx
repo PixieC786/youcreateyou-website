@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import SectionLabel from '@/components/ui/SectionLabel'
-import Button from '@/components/ui/Button'
+import BeginPracticeButton from '@/components/ui/BeginPracticeButton'
 
 const EASE = [0.22, 1, 0.36, 1] as const
 
@@ -96,9 +96,9 @@ export default function JournalPreview() {
               viewport={{ once: true, margin: '-60px' }}
               transition={{ delay: 0.28, duration: 0.6, ease: EASE }}
             >
-              <Button href="/start" variant="primary" size="md">
+              <BeginPracticeButton variant="primary" size="md">
                 Open My Journal
-              </Button>
+              </BeginPracticeButton>
             </motion.div>
           </div>
 

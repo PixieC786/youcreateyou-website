@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import EmailCapture from '@/components/ui/EmailCapture'
-import Button from '@/components/ui/Button'
+import BeginPracticeButton from '@/components/ui/BeginPracticeButton'
 import ParticleCanvas from '@/components/ui/ParticleCanvas'
 
 const EASE = [0.22, 1, 0.36, 1] as const
@@ -129,9 +129,9 @@ export default function FinalCTA() {
             placeholder="Your email address"
             size="lg"
           />
-          <Button href="/start" variant="ghost" size="sm">
+          <BeginPracticeButton variant="ghost" size="sm">
             Go straight to the app →
-          </Button>
+          </BeginPracticeButton>
         </motion.div>
 
 

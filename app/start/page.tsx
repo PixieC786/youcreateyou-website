@@ -1,29 +1,23 @@
 'use client'
 
 import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
+import { beginCheckout, captureAbandonedEmail } from '@/lib/checkout'
 
 const EASE = [0.22, 1, 0.36, 1] as const
 
 export default function StartPage() {
   const [email, setEmail]   = useState('')
-  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
+  const [status, setStatus] = useState<'idle' | 'loading' | 'error'>('idle')
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     if (!email.trim()) return
     setStatus('loading')
+    captureAbandonedEmail(email)
     try {
-      const res = await fetch('/api/subscribe', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email }),
-      })
-      if (!res.ok) throw new Error()
-      setStatus('success')
-      setTimeout(() => {
-        window.location.href = 'https://app.youcreateyou.life'
-      }, 1800)
+      await beginCheckout(email)
+      setStatus('error')
     } catch {
       setStatus('error')
     }
@@ -94,57 +88,36 @@ export default function StartPage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.8, ease: EASE }}
         >
-          <AnimatePresence mode="wait">
-            {status === 'success' ? (
-              <motion.div
-                key="success"
-                initial={{ opacity: 0, scale: 0.97 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, ease: EASE }}
-                className="py-6"
-              >
-                <p className="font-display italic text-[1.3rem] text-[rgba(200,166,255,0.9)] mb-2">
-                  Welcome. You are remembered.
-                </p>
-                <p className="font-mono text-[9px] tracking-[0.22em] uppercase text-[rgba(179,136,255,0.45)]">
-                  Opening your practice...
-                </p>
-              </motion.div>
-            ) : (
-              <motion.form
-                key="form"
-                onSubmit={handleSubmit}
-                exit={{ opacity: 0, y: -8 }}
-                transition={{ duration: 0.25 }}
-                className="flex flex-col sm:flex-row gap-3"
-              >
-                <input
-                  type="email"
-                  value={email}
-                  onChange={e => setEmail(e.target.value)}
-                  placeholder="Your email address"
-                  required
-                  aria-label="Email address"
-                  suppressHydrationWarning
-                  className="input-base flex-1 px-6 py-4 text-[15px]"
-                />
-                <button
-                  type="submit"
-                  disabled={status === 'loading'}
-                  className="px-7 py-4 rounded-full font-mono text-[10px] tracking-[0.22em] uppercase transition-all duration-300"
-                  style={{
-                    background: 'linear-gradient(135deg, rgba(140,70,220,0.9) 0%, rgba(100,45,180,0.9) 100%)',
-                    border: '1px solid rgba(210,175,255,0.3)',
-                    color: 'rgba(240,236,255,0.95)',
-                    boxShadow: '0 0 28px rgba(140,70,220,0.35)',
-                    whiteSpace: 'nowrap',
-                  }}
-                >
-                  {status === 'loading' ? 'Opening...' : 'Begin →'}
-                </button>
-              </motion.form>
-            )}
-          </AnimatePresence>
+          <motion.form
+            onSubmit={handleSubmit}
+            transition={{ duration: 0.25 }}
+            className="flex flex-col sm:flex-row gap-3"
+          >
+            <input
+              type="email"
+              value={email}
+              onChange={e => setEmail(e.target.value)}
+              placeholder="Your email address"
+              required
+              aria-label="Email address"
+              suppressHydrationWarning
+              className="input-base flex-1 px-6 py-4 text-[15px]"
+            />
+            <button
+              type="submit"
+              disabled={status === 'loading'}
+              className="px-7 py-4 rounded-full font-mono text-[10px] tracking-[0.22em] uppercase transition-all duration-300"
+              style={{
+                background: 'linear-gradient(135deg, rgba(140,70,220,0.9) 0%, rgba(100,45,180,0.9) 100%)',
+                border: '1px solid rgba(210,175,255,0.3)',
+                color: 'rgba(240,236,255,0.95)',
+                boxShadow: '0 0 28px rgba(140,70,220,0.35)',
+                whiteSpace: 'nowrap',
+              }}
+            >
+              {status === 'loading' ? 'Opening checkout...' : 'Begin →'}
+            </button>
+          </motion.form>
 
           {status === 'error' && (
             <p className="mt-3 font-mono text-[10px] tracking-[0.15em] text-red-400/60">

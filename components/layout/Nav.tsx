@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
 import Button from '@/components/ui/Button'
+import { beginCheckout } from '@/lib/checkout'
 
 const NAV_LINKS = [
   { href: '/practice', label: 'The Practice' },
@@ -71,7 +72,7 @@ export default function Nav() {
 
             {/* Desktop CTA */}
             <div className="hidden md:flex items-center gap-5">
-              <Button href="/start" variant="primary" size="sm">
+              <Button onClick={() => beginCheckout()} variant="primary" size="sm">
                 Begin Your Practice
               </Button>
             </div>
@@ -175,10 +176,9 @@ export default function Nav() {
                 ✦ Read My Frequency — Free
               </a>
               <Button
-                href="/start"
                 variant="primary"
                 size="lg"
-                onClick={close}
+                onClick={() => { close(); beginCheckout(); }}
                 className="w-full justify-center"
               >
                 Begin Your Practice

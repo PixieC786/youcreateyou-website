@@ -1,5 +1,5 @@
 import SectionLabel from '@/components/ui/SectionLabel'
-import Button from '@/components/ui/Button'
+import BeginPracticeButton from '@/components/ui/BeginPracticeButton'
 import Card from '@/components/ui/Card'
 import TransformationFlow from '@/components/sections/TransformationFlow'
 
@@ -54,9 +54,9 @@ export default function PracticePage() {
           Each portal is a standalone practice and part of a larger journey.
           Work through them in sequence, or use them as you need.
         </p>
-        <Button href="/start" variant="primary" size="lg">
+        <BeginPracticeButton variant="primary" size="lg">
           Open the App
-        </Button>
+        </BeginPracticeButton>
       </div>
 
       <TransformationFlow />

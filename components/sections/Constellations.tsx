@@ -107,6 +107,7 @@ export default function Constellations() {
     <>
       {/* ── The live map ─────────────────────────────────────────────────── */}
       <section
+        id="constellation-map"
         className="relative overflow-hidden"
         style={{ marginTop: '76px', height: 'calc(100dvh - 76px)', minHeight: '520px' }}
       >

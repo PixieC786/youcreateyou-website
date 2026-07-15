@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { beginCheckout } from '@/lib/checkout'
 
 /* YCY STAR LIFE CYCLE SECTION START */
 
@@ -394,8 +395,8 @@ export default function StarLifeCycle() {
           transition={{ duration: 0.75, ease: EASE, delay: 0.14 }}
           className="mt-12 flex flex-col items-center gap-4"
         >
-          <a
-            href="/start"
+          <button
+            onClick={() => beginCheckout()}
             style={{
               display: 'inline-flex',
               alignItems: 'center',
@@ -412,18 +413,19 @@ export default function StarLifeCycle() {
               boxShadow: '0 0 32px rgba(168,85,247,0.1)',
               transition: 'border-color 0.25s ease, box-shadow 0.25s ease',
               textDecoration: 'none',
+              cursor: 'pointer',
             }}
             onMouseEnter={e => {
-              (e.currentTarget as HTMLAnchorElement).style.borderColor = 'rgba(207,168,255,0.55)'
-              ;(e.currentTarget as HTMLAnchorElement).style.boxShadow = '0 0 48px rgba(168,85,247,0.22)'
+              (e.currentTarget as HTMLButtonElement).style.borderColor = 'rgba(207,168,255,0.55)'
+              ;(e.currentTarget as HTMLButtonElement).style.boxShadow = '0 0 48px rgba(168,85,247,0.22)'
             }}
             onMouseLeave={e => {
-              (e.currentTarget as HTMLAnchorElement).style.borderColor = 'rgba(207,168,255,0.3)'
-              ;(e.currentTarget as HTMLAnchorElement).style.boxShadow = '0 0 32px rgba(168,85,247,0.1)'
+              (e.currentTarget as HTMLButtonElement).style.borderColor = 'rgba(207,168,255,0.3)'
+              ;(e.currentTarget as HTMLButtonElement).style.boxShadow = '0 0 32px rgba(168,85,247,0.1)'
             }}
           >
             Begin Your Practice
-          </a>
+          </button>
           <p className="font-body" style={{
             fontSize: '0.8rem',
             color: 'rgba(207,168,255,0.38)',

@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import SectionLabel from '@/components/ui/SectionLabel'
 import Button from '@/components/ui/Button'
+import { beginCheckout } from '@/lib/checkout'
 
 const EASE = [0.22, 1, 0.36, 1] as const
 
@@ -168,7 +169,7 @@ export default function AppShowcase() {
                     </div>
                   </div>
 
-                  <Button href="/start" variant="primary" size="sm">
+                  <Button onClick={() => beginCheckout()} variant="primary" size="sm">
                     Try This Portal
                   </Button>
                 </div>

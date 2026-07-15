@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import SectionLabel from '@/components/ui/SectionLabel'
-import Button from '@/components/ui/Button'
+import BeginPracticeButton from '@/components/ui/BeginPracticeButton'
 
 const EASE = [0.22, 1, 0.36, 1] as const
 
@@ -198,9 +198,9 @@ export default function AboutPage() {
             transition={{ duration: 0.65, ease: EASE }}
             className="flex justify-center"
           >
-            <Button href="/start" variant="primary" size="md">
+            <BeginPracticeButton variant="primary" size="md">
               Begin Your Practice
-            </Button>
+            </BeginPracticeButton>
           </motion.div>
 
         </div>

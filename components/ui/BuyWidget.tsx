@@ -2,17 +2,16 @@
 
 import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { beginCheckout } from '@/lib/checkout'
 
 const SESSION_KEY = 'ycy_buy_widget_seen'
 const SCROLL_TRIGGER_RATIO = 0.3
-
-const YCY_SUPABASE_URL = 'https://xdfxawwydrypjzgpncam.supabase.co'
-const YCY_SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhkZnhhd3d5ZHJ5cGp6Z3BuY2FtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUzMjI5MTUsImV4cCI6MjA5MDg5ODkxNX0.N-UQ0HuPQS-1LUPBFprEgbsjndPSZ_cbh3HYuQTtNiw'
 
 export default function BuyWidget() {
   const [visible, setVisible] = useState(false)
   const [dismissed, setDismissed] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [obscured, setObscured] = useState(false)
   const triggeredRef = useRef(false)
 
   useEffect(() => {
@@ -34,36 +33,31 @@ export default function BuyWidget() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  // The live Constellation map has its own bottom-right buttons — stay out
+  // of their way rather than covering them whenever that section is in view.
+  useEffect(() => {
+    const target = document.getElementById('constellation-map')
+    if (!target) return
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setObscured(entry.isIntersecting),
+      { threshold: 0.15 }
+    )
+    observer.observe(target)
+    return () => observer.disconnect()
+  }, [])
+
   const dismiss = () => setDismissed(true)
 
   const buyNow = async () => {
     setLoading(true)
-    try {
-      const res = await fetch(`${YCY_SUPABASE_URL}/functions/v1/create-checkout`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'apikey': YCY_SUPABASE_KEY },
-        body: JSON.stringify({
-          plan: 'ebook_app',
-          email: null,
-          returnUrl: 'https://app.youcreateyou.life',
-        }),
-      })
-      const data = await res.json()
-      if (data.url) {
-        window.location.href = data.url
-      } else {
-        setLoading(false)
-        alert('Could not open checkout. Please try again.')
-      }
-    } catch {
-      setLoading(false)
-      alert('Could not open checkout. Please try again.')
-    }
+    await beginCheckout()
+    setLoading(false)
   }
 
   return (
     <AnimatePresence>
-      {visible && !dismissed && (
+      {visible && !dismissed && !obscured && (
         <motion.div
           initial={{ opacity: 0, y: 40, x: 20 }}
           animate={{ opacity: 1, y: 0, x: 0 }}

@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Link from 'next/link'
+import { beginCheckout } from '@/lib/checkout'
 
 const EASE = [0.22, 1, 0.36, 1] as const
 
@@ -79,12 +79,12 @@ export default function Pricing() {
             viewport={{ once: true }}
             transition={{ duration: 0.7, ease: EASE, delay: 0.36 }}
           >
-            <Link
-              href="/start"
+            <button
+              onClick={() => beginCheckout()}
               className="inline-block font-mono text-[10px] tracking-[0.22em] uppercase text-[rgba(220,190,255,0.95)] bg-[rgba(155,90,230,0.15)] border border-[rgba(179,136,255,0.4)] rounded-full px-12 py-[18px] hover:bg-[rgba(155,90,230,0.28)] hover:border-[rgba(179,136,255,0.7)] transition-all duration-300 mb-5"
             >
               Begin Your Practice
-            </Link>
+            </button>
           </motion.div>
 
         </div>

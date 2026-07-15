@@ -1,6 +1,6 @@
 import SectionLabel from '@/components/ui/SectionLabel'
 import JournalPreview from '@/components/sections/JournalPreview'
-import Button from '@/components/ui/Button'
+import BeginPracticeButton from '@/components/ui/BeginPracticeButton'
 
 export const metadata = {
   title: 'The Journal — You Create You',
@@ -21,9 +21,9 @@ export default function JournalPage() {
           This is not journaling as you know it. Every question is chosen to meet you
           exactly where you are — and to reach the places ordinary writing never does.
         </p>
-        <Button href="/start" variant="primary" size="lg">
+        <BeginPracticeButton variant="primary" size="lg">
           Open My Journal
-        </Button>
+        </BeginPracticeButton>
       </div>
 
       <JournalPreview />

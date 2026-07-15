@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion'
 import SectionLabel from '@/components/ui/SectionLabel'
 import SciencePillars from '@/components/sections/SciencePillars'
-import Button from '@/components/ui/Button'
+import BeginPracticeButton from '@/components/ui/BeginPracticeButton'
 
 const EASE = [0.22, 1, 0.36, 1] as const
 
@@ -101,9 +101,9 @@ export default function SciencePage() {
       <SciencePillars />
 
       <div className="container-content mt-10 text-center">
-        <Button href="/start" variant="primary" size="lg">
+        <BeginPracticeButton variant="primary" size="lg">
           Experience the science yourself
-        </Button>
+        </BeginPracticeButton>
       </div>
     </main>
   )
