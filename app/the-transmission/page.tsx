@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
+import Link from 'next/link'
 import SectionLabel from '@/components/ui/SectionLabel'
 import BeginPracticeButton from '@/components/ui/BeginPracticeButton'
 
@@ -242,15 +243,13 @@ export default function TheTransmissionPage() {
             <BeginPracticeButton variant="primary" size="lg">
               Begin Your Practice — $67
             </BeginPracticeButton>
-            <a
-              href="https://ycy-the-transmission-narrator.netlify.app/"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/the-transmission/preview"
               className="font-mono text-[10px] tracking-[0.15em] uppercase transition-colors duration-200"
               style={{ color: 'rgba(210,175,255,0.5)' }}
             >
               Read a free preview →
-            </a>
+            </Link>
           </motion.div>
         </div>
       </section>
