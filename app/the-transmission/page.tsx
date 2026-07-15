@@ -288,7 +288,7 @@ export default function TheTransmissionPage() {
             className="flex flex-col items-center gap-5"
           >
             <BeginPracticeButton variant="primary" size="lg">
-              Begin Your Practice — $67
+              Begin Your Practice — $79
             </BeginPracticeButton>
             <p className="font-mono text-[9px] tracking-[0.15em] uppercase" style={{ color: 'rgba(210,175,255,0.4)' }}>
               Ebook + lifetime app access · read inside the app · one time

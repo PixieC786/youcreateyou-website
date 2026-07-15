@@ -195,7 +195,7 @@ export default function TransmissionPreviewPage() {
                 a practice inside the app.
               </p>
               <BeginPracticeButton variant="primary" size="lg">
-                Begin Your Practice — $67
+                Begin Your Practice — $79
               </BeginPracticeButton>
               <Link
                 href="/the-transmission"

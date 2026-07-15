@@ -129,7 +129,7 @@ export default function BuyWidget() {
             </h3>
 
             <div className="flex items-baseline gap-2 mb-3">
-              <span className="font-display text-[1.9rem] font-light" style={{ color: '#f8f5ff' }}>$67</span>
+              <span className="font-display text-[1.9rem] font-light" style={{ color: '#f8f5ff' }}>$79</span>
               <span className="font-mono text-[11px]" style={{ color: 'rgba(220,195,255,0.65)' }}>one time</span>
             </div>
 
