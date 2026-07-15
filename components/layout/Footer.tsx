@@ -1,8 +1,6 @@
 'use client'
 
-import { useState } from 'react'
 import Link from 'next/link'
-import { motion } from 'framer-motion'
 
 const NAV_LINKS = [
   { href: '/the-transmission', label: 'The Book' },
@@ -20,28 +18,13 @@ const LEGAL_LINKS = [
 ]
 
 export default function Footer() {
-  const [email, setEmail] = useState('')
-  const [sent, setSent] = useState(false)
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    if (!email.trim()) return
-    await fetch('/api/subscribe', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email }),
-    })
-    setSent(true)
-    setEmail('')
-  }
-
   return (
     <footer className="relative border-t border-[rgba(179,136,255,0.07)]" style={{ background: '#120d28' }}>
       {/* Top glow line */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[400px] h-px bg-gradient-to-r from-transparent via-[rgba(179,136,255,0.22)] to-transparent" />
 
       <div className="container-site py-16 md:py-20">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-10 mb-14">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-10 mb-14">
 
           {/* Brand column */}
           <div className="md:col-span-1">
@@ -93,51 +76,6 @@ export default function Footer() {
             </nav>
           </div>
 
-          {/* Newsletter column */}
-          <div>
-            <p className="font-mono text-[9px] tracking-[0.24em] uppercase text-[rgba(179,136,255,0.45)] mb-3">
-              Consciousness Letters
-            </p>
-            <p className="font-body text-[13px] text-[rgba(240,236,255,0.38)] leading-[1.8] mb-4">
-              On remembering, returning, and creating from the inside out — delivered to your inbox.
-            </p>
-
-            {sent ? (
-              <motion.p
-                initial={{ opacity: 0, y: 6 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="font-display italic text-[0.95rem] text-[rgba(200,166,255,0.8)]"
-              >
-                Welcome. Watch your inbox.
-              </motion.p>
-            ) : (
-              <form onSubmit={handleSubmit} className="flex gap-2">
-                <input
-                  type="email"
-                  value={email}
-                  onChange={e => setEmail(e.target.value)}
-                  placeholder="Your email"
-                  required
-                  aria-label="Email for newsletter"
-                  suppressHydrationWarning
-                  className="input-base px-4 py-2.5 text-[13px]"
-                />
-                <button
-                  type="submit"
-                  suppressHydrationWarning
-                  className="
-                    px-4 py-2.5 rounded-full flex-shrink-0
-                    bg-[rgba(179,136,255,0.1)] border border-[rgba(179,136,255,0.25)]
-                    text-[rgba(179,136,255,0.85)] font-mono text-[9px] tracking-[0.18em] uppercase
-                    hover:bg-[rgba(179,136,255,0.18)] hover:border-[rgba(179,136,255,0.45)]
-                    transition-all duration-200
-                  "
-                >
-                  Join
-                </button>
-              </form>
-            )}
-          </div>
         </div>
 
         {/* Bottom bar */}
