@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import SectionLabel from '@/components/ui/SectionLabel'
 import BeginPracticeButton from '@/components/ui/BeginPracticeButton'
 
@@ -40,29 +41,20 @@ export default function TheTransmissionPage() {
             className="flex justify-center md:justify-end order-1 md:order-2"
           >
             <div
-              className="relative w-full max-w-[340px] rounded-lg overflow-hidden"
+              className="relative w-full max-w-[380px] rounded-lg overflow-hidden"
               style={{
-                aspectRatio: '2 / 3.05',
+                aspectRatio: '3072 / 5504',
                 boxShadow: '0 30px 80px rgba(0,0,0,0.55), 0 0 60px rgba(140,70,255,0.12)',
               }}
             >
-              {/*
-                REPLACE ME: save the cover image (the 3D mockup with the
-                silhouette figure) as:
-                  public/images/the-transmission-cover.png
-                then swap this placeholder block below for:
-                  <Image src="/images/the-transmission-cover.png" alt="The Transmission — A Gift to Humanity, by Zirka Ray" fill className="object-cover" />
-              */}
-              <div
-                className="absolute inset-0 flex flex-col items-center justify-center text-center px-8"
-                style={{
-                  background: 'radial-gradient(ellipse at 50% 20%, rgba(140,70,255,0.22) 0%, rgba(15,10,28,0.98) 70%), #0b0816',
-                  border: '1px solid rgba(210,175,255,0.18)',
-                }}
-              >
-                <span className="font-display italic text-[1.4rem] text-[rgba(240,236,255,0.9)] mb-2">THE TRANSMISSION</span>
-                <span className="font-mono text-[9px] tracking-[0.2em] uppercase text-[rgba(210,175,255,0.45)]">Cover image goes here</span>
-              </div>
+              <Image
+                src="/images/the-transmission-cover.webp"
+                alt="The Transmission — A Gift to Humanity, by Zirka Ray"
+                fill
+                sizes="(max-width: 768px) 90vw, 380px"
+                className="object-contain"
+                priority
+              />
             </div>
           </motion.div>
 
