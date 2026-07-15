@@ -63,7 +63,7 @@ export default function BuyWidget() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 30, scale: 0.96 }}
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          className="fixed inset-x-4 bottom-4 sm:inset-x-auto sm:bottom-5 sm:right-5 z-[80] sm:w-[300px] rounded-2xl overflow-hidden"
+          className="fixed inset-x-4 bottom-4 sm:inset-x-auto sm:bottom-5 sm:right-5 z-[80] sm:w-[340px] rounded-2xl overflow-hidden"
           style={{
             background: '#0c0918',
             border: '1px solid rgba(210,175,255,0.16)',
@@ -83,34 +83,34 @@ export default function BuyWidget() {
             </svg>
           </button>
 
-          <div className="p-6 sm:p-5">
+          <div className="p-6">
             <span
-              className="font-mono text-[10px] sm:text-[8px] tracking-[0.28em] uppercase mb-3 block"
-              style={{ color: 'rgba(210,175,255,0.5)' }}
+              className="font-mono text-[10px] tracking-[0.2em] uppercase mb-3 block"
+              style={{ color: 'rgba(210,175,255,0.55)' }}
             >
-              The Transmission + App
+              Ebook &quot;The Transmission&quot; + App
             </span>
 
             <h3
-              className="font-display font-light italic leading-[1.2] mb-3 text-[1.35rem] sm:text-[1.15rem]"
+              className="font-display font-light italic leading-[1.2] mb-3 text-[1.35rem]"
               style={{ color: '#f8f5ff' }}
             >
               Begin your practice.
             </h3>
 
             <div className="flex items-baseline gap-2 mb-3">
-              <span className="font-display text-[1.9rem] sm:text-[1.6rem] font-light" style={{ color: '#f8f5ff' }}>$67</span>
-              <span className="font-mono text-[11px] sm:text-[9px]" style={{ color: 'rgba(210,175,255,0.45)' }}>one time</span>
+              <span className="font-display text-[1.9rem] font-light" style={{ color: '#f8f5ff' }}>$67</span>
+              <span className="font-mono text-[11px]" style={{ color: 'rgba(210,175,255,0.5)' }}>one time</span>
             </div>
 
-            <div className="flex flex-col gap-2 sm:gap-1.5 mb-4">
-              <p className="font-mono text-[10px] sm:text-[8px] tracking-[0.08em]" style={{ color: 'rgba(210,175,255,0.4)' }}>
+            <div className="flex flex-col gap-2 mb-4">
+              <p className="font-mono text-[11px] tracking-[0.05em]" style={{ color: 'rgba(220,205,255,0.6)' }}>
                 ✦ Not available anywhere else
               </p>
-              <p className="font-mono text-[10px] sm:text-[8px] tracking-[0.08em]" style={{ color: 'rgba(210,175,255,0.4)' }}>
+              <p className="font-mono text-[11px] tracking-[0.05em]" style={{ color: 'rgba(220,205,255,0.6)' }}>
                 ✦ Pay in 4 interest-free with Klarna
               </p>
-              <p className="font-mono text-[10px] sm:text-[8px] tracking-[0.08em]" style={{ color: 'rgba(210,175,255,0.4)' }}>
+              <p className="font-mono text-[11px] tracking-[0.05em]" style={{ color: 'rgba(220,205,255,0.6)' }}>
                 ✦ $97 once the audiobook is included
               </p>
             </div>
@@ -118,7 +118,7 @@ export default function BuyWidget() {
             <button
               onClick={buyNow}
               disabled={loading}
-              className="w-full py-[15px] sm:py-[13px] rounded-full font-mono text-[11px] sm:text-[10px] tracking-[0.2em] uppercase transition-all duration-300 hover:opacity-90"
+              className="w-full py-[15px] rounded-full font-mono text-[11px] tracking-[0.2em] uppercase transition-all duration-300 hover:opacity-90"
               style={{
                 background: 'linear-gradient(135deg, rgba(155,90,230,0.95), rgba(120,60,200,0.95))',
                 color: '#f8f5ff',
@@ -130,8 +130,8 @@ export default function BuyWidget() {
             </button>
 
             <p
-              className="font-mono text-[10px] sm:text-[8px] tracking-[0.1em] mt-3 text-center"
-              style={{ color: 'rgba(210,175,255,0.28)' }}
+              className="font-mono text-[10px] tracking-[0.08em] mt-3 text-center"
+              style={{ color: 'rgba(210,175,255,0.35)' }}
             >
               90-day guarantee · Your data stays with you
             </p>
