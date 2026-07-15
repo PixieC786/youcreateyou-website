@@ -6,6 +6,7 @@ import Footer from '@/components/layout/Footer'
 import StarField from '@/components/ui/StarField'
 import CustomCursor from '@/components/ui/CustomCursor'
 import ExitIntentPopup from '@/components/ui/ExitIntentPopup'
+import BuyWidget from '@/components/ui/BuyWidget'
 
 const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
@@ -111,6 +112,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </div>
         <CustomCursor />
         <ExitIntentPopup />
+        <BuyWidget />
         <div className="relative" style={{ zIndex: 1 }}>
           <Nav />
           {children}
