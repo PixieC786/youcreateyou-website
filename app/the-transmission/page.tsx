@@ -8,6 +8,7 @@ import Link from 'next/link'
 import SectionLabel from '@/components/ui/SectionLabel'
 import Button from '@/components/ui/Button'
 import BeginPracticeButton from '@/components/ui/BeginPracticeButton'
+import ValueStack from '@/components/ui/ValueStack'
 import { captureAbandonedEmail } from '@/lib/checkout'
 
 const EASE = [0.22, 1, 0.36, 1] as const
@@ -277,6 +278,9 @@ export default function TheTransmissionPage() {
       {/* ── Final CTA ────────────────────────────────────────────────────── */}
       <section className="relative z-10 pb-24">
         <div className="container-prose mx-auto text-center">
+          <div className="mb-10">
+            <ValueStack />
+          </div>
           <motion.div
             initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-40px' }}

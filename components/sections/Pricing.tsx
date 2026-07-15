@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { beginCheckout } from '@/lib/checkout'
+import ValueStack from '@/components/ui/ValueStack'
 
 const EASE = [0.22, 1, 0.36, 1] as const
 
@@ -72,6 +73,11 @@ export default function Pricing() {
               </p>
             ))}
           </motion.div>
+
+          {/* Value stack */}
+          <div className="mb-10">
+            <ValueStack />
+          </div>
 
           {/* CTA */}
           <motion.div
