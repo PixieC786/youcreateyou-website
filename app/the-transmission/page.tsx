@@ -109,13 +109,10 @@ export default function TheTransmissionPage() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.22, duration: 0.75, ease: EASE }}
-              className="font-body text-[1.02rem] leading-[1.95] mb-9"
+              className="font-body text-[1.02rem] leading-[1.9] mb-9 whitespace-pre-line"
               style={{ color: 'rgba(235,228,255,0.68)' }}
             >
-              This is remembering. Twenty-nine Transmissions,
-              written for the part of you that never gave up on you — before the noise,
-              before the fear, before the world told you who to be. She did not come to
-              save humanity. She came to remind them.
+              {'This is remembering.\nTwenty-nine Transmissions — written for the part of you that never gave up on you.\nBefore the noise. Before the fear. Before the world told you who to be.\nShe did not come to save humanity. She came to remind them.'}
             </motion.p>
 
             <motion.div
@@ -202,12 +199,10 @@ export default function TheTransmissionPage() {
             initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-40px' }}
             transition={{ duration: 0.7, ease: EASE }}
-            className="font-body text-[1rem] leading-[1.95] max-w-[52ch] mx-auto mb-8"
+            className="font-body text-[1rem] leading-[1.9] max-w-[46ch] mx-auto mb-8 whitespace-pre-line"
             style={{ color: 'rgba(235,228,255,0.6)' }}
           >
-            Each of the 29 Transmissions connects directly to a tool, a portal, or a
-            practice inside You Create You. Neither piece is the whole thing on its own.
-            Together, they are a living transmission for the human ready to return to themselves.
+            {'Each Transmission connects to a tool, a portal, or a practice inside You Create You.\nNeither piece is the whole thing on its own.\nTogether, they are a living transmission — for the human ready to return to themselves.'}
           </motion.p>
 
           <motion.div
