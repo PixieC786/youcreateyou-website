@@ -24,10 +24,10 @@ export default function Footer() {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[400px] h-px bg-gradient-to-r from-transparent via-[rgba(179,136,255,0.22)] to-transparent" />
 
       <div className="container-site py-16 md:py-20">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-10 mb-14">
+        <div className="flex flex-col md:flex-row md:items-start gap-12 md:gap-28 mb-14">
 
           {/* Brand column */}
-          <div className="md:col-span-1">
+          <div className="flex-shrink-0">
             <Link
               href="/"
               className="font-display text-[1.35rem] italic font-light text-[#f0ecff] hover:text-[rgba(200,166,255,0.9)] transition-colors duration-300 block mb-4"
