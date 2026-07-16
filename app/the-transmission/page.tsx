@@ -112,7 +112,7 @@ export default function TheTransmissionPage() {
               className="font-body text-[1.02rem] leading-[1.95] mb-9"
               style={{ color: 'rgba(235,228,255,0.68)' }}
             >
-              This is not self-help. This is remembering. Twenty-nine Transmissions,
+              This is remembering. Twenty-nine Transmissions,
               written for the part of you that never gave up on you — before the noise,
               before the fear, before the world told you who to be. She did not come to
               save humanity. She came to remind them.
