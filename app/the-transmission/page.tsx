@@ -73,7 +73,7 @@ const PHASES = [
 const FAQS = [
   {
     q: 'Do I need the app to read the book?',
-    a: 'No — they’re not separate. The ebook lives right inside the app, on your home screen, the moment you begin your practice. No download, no separate file to manage.',
+    a: 'Yes — the ebook only lives inside the app, on your home screen. There’s no separate PDF or download. That’s not a limitation: it means the moment you begin your practice, the book is already there, waiting.',
   },
   {
     q: 'Is this a subscription?',
