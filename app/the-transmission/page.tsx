@@ -97,6 +97,38 @@ const FAQS = [
   },
 ]
 
+const FAQ_JSON_LD = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: FAQS.map(({ q, a }) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: { '@type': 'Answer', text: a },
+  })),
+}
+
+const BOOK_JSON_LD = {
+  '@context': 'https://schema.org',
+  '@type': 'Book',
+  name: 'The Transmission',
+  alternateName: 'The Transmission: A Gift to Humanity',
+  author: { '@type': 'Person', name: 'Zirka Ray' },
+  publisher: { '@type': 'Organization', name: 'You Create You' },
+  description:
+    'Twenty-nine Transmissions, five phases — a book read entirely inside the You Create You app, bundled with lifetime app access.',
+  bookFormat: 'https://schema.org/EBook',
+  url: 'https://youcreateyou.life/the-transmission',
+  image: 'https://youcreateyou.life/images/the-transmission-cover.webp',
+  offers: {
+    '@type': 'Offer',
+    price: '79',
+    priceCurrency: 'USD',
+    availability: 'https://schema.org/InStock',
+    url: 'https://youcreateyou.life/the-transmission',
+    description: 'One-time payment — includes lifetime access to the You Create You app.',
+  },
+}
+
 export default function TheTransmissionPage() {
   const router = useRouter()
   const [email, setEmail] = useState('')
@@ -113,6 +145,15 @@ export default function TheTransmissionPage() {
 
   return (
     <main className="relative overflow-hidden">
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(BOOK_JSON_LD) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_JSON_LD) }}
+      />
 
       {/* Ambient atmosphere */}
       <div aria-hidden className="fixed inset-0 pointer-events-none" style={{ zIndex: 0 }}>
