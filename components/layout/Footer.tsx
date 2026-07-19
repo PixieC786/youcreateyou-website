@@ -56,6 +56,20 @@ export default function Footer() {
               </svg>
               <span className="font-mono text-[9px] tracking-[0.18em] uppercase">@youcreateyou_</span>
             </a>
+            <a
+              href="https://www.instagram.com/zirkaray/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Follow @zirkaray on Instagram"
+              className="inline-flex items-center gap-2 mt-2.5 text-[rgba(179,136,255,0.4)] hover:text-[rgba(200,166,255,0.75)] transition-colors duration-200"
+            >
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                <circle cx="12" cy="12" r="4.5"/>
+                <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/>
+              </svg>
+              <span className="font-mono text-[9px] tracking-[0.18em] uppercase">@zirkaray</span>
+            </a>
           </div>
 
           {/* Navigation column */}
