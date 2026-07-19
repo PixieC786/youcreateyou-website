@@ -124,20 +124,21 @@ export default function TermsPage() {
 
         <div className="my-8" style={{ borderTop: '1px solid rgba(179,136,255,0.1)' }} />
 
-        <H2>Subscription and payment</H2>
+        <H2>Payment</H2>
 
         <H3>Pricing</H3>
-        <ul className="ml-5 mb-6 list-disc">
-          <Li><Strong>$9.99 per month</Strong>, or</Li>
-          <Li><Strong>$79 per year</Strong> (approximately $6.58/month — a 35% saving on the monthly price).</Li>
-        </ul>
+        <P>
+          The Transmission ebook and lifetime access to the app are sold together as a single
+          <Strong> $79, one-time payment</Strong>. This is not a subscription — there is nothing
+          to renew, and nothing that auto-charges you again.
+        </P>
 
-        <H3>How billing works</H3>
+        <H3>How payment works</H3>
         <P>
           Payment is handled by a <Strong>secure third-party payment processor</Strong>. We never
-          see your card details. Subscriptions auto-renew at the end of each billing period.
-          You can cancel at any time through the payment processor's customer portal or by
-          emailing us — your access continues until the end of the period you have already paid for.
+          see your card details. Once payment succeeds, you have lifetime access to the ebook and
+          every portal in the app — there is no billing period, no auto-renewal, and nothing to
+          cancel.
         </P>
 
         <H3>Refunds</H3>
@@ -152,9 +153,10 @@ export default function TermsPage() {
 
         <H3>Price changes</H3>
         <P>
-          We reserve the right to change subscription pricing in the future. Existing subscribers
-          will be notified by email at least 30 days in advance and given the option to cancel
-          before the new price applies.
+          We may change the price for new purchases at any time — for example, once an audiobook
+          is added to the bundle. This never affects anyone who has already purchased: your access
+          doesn't change, and any future digital additions to the bundle (like the audiobook) are
+          yours at no extra cost.
         </P>
 
         <div className="my-8" style={{ borderTop: '1px solid rgba(179,136,255,0.1)' }} />

@@ -115,7 +115,7 @@ export default function FinalCTA() {
           className="font-body text-[rgba(235,228,255,0.65)] text-[clamp(1rem,1.25vw,1.1rem)] max-w-[38ch] leading-[1.85] mb-12"
         >
           21 portals. One direction: back to yourself.
-          21 days to remember who you are — forever to deepen.
+          One practice, lifetime access — nothing to renew, ever.
         </motion.p>
 
         <motion.div
