@@ -125,7 +125,7 @@ export default function BuyWidget() {
                 ✦ Pay in 4 interest-free with Klarna
               </p>
               <p className="font-mono text-[11px] tracking-[0.05em]" style={{ color: 'rgba(220,205,255,0.6)' }}>
-                ✦ $97 once the audiobook is included
+                ✦ Buy today, get the audiobook free when it ships
               </p>
             </div>
 

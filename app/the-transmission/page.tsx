@@ -93,7 +93,7 @@ const FAQS = [
   },
   {
     q: 'Is there a physical or audio version?',
-    a: 'Not yet. Right now it’s ebook + app. An audiobook is coming — once it ships, the bundle price moves to $97, so the earlier you begin, the less you pay for the same lifetime access.',
+    a: 'Not yet. Right now it’s ebook + app. An audiobook is coming — buy today and it’s yours free the moment it ships, no extra charge. Wait, and the bundle becomes $97 with the audiobook included from the start.',
   },
 ]
 
