@@ -99,6 +99,28 @@ export const viewport: Viewport = {
   initialScale: 1,
 }
 
+const ORGANIZATION_JSON_LD = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'You Create You',
+  alternateName: 'YCY',
+  url: 'https://youcreateyou.life',
+  logo: 'https://youcreateyou.life/icon-512.png',
+  description:
+    'Not a new you. The real one. A daily practice for rewiring your mind, reclaiming your identity, and creating the life you actually want.',
+  sameAs: [
+    'https://www.instagram.com/youcreateyou_/',
+    'https://www.instagram.com/zirkaray/',
+  ],
+}
+
+const WEBSITE_JSON_LD = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'You Create You',
+  url: 'https://youcreateyou.life',
+}
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html
@@ -106,6 +128,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={`${cormorant.variable} ${inter.variable} ${dmMono.variable}`}
     >
       <body className="bg-space text-[#f0ecff] font-body antialiased" suppressHydrationWarning>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(ORGANIZATION_JSON_LD) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(WEBSITE_JSON_LD) }}
+        />
         {/* Global star field — fixed, behind everything */}
         <div className="fixed inset-0 pointer-events-none" style={{ zIndex: 0 }} aria-hidden>
           <StarField density={1.3} connectDistance={115} showLines={true} />
