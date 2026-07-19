@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
 import SectionLabel from '@/components/ui/SectionLabel'
@@ -14,16 +14,94 @@ import { captureAbandonedEmail } from '@/lib/checkout'
 const EASE = [0.22, 1, 0.36, 1] as const
 
 const PHASES = [
-  { name: 'Remember', range: 'Transmissions 1–6' },
-  { name: 'Return', range: 'Transmissions 7–13' },
-  { name: 'Create', range: 'Transmissions 14–20' },
-  { name: 'Radiate', range: 'Transmissions 21–26' },
-  { name: 'The Whole Self', range: 'Transmissions 27–29' },
+  {
+    name: 'Remember', range: 'Transmissions 1–6',
+    chapters: [
+      'The Mirror',
+      'The Thoughts You Think Are Thinking You',
+      'What You Feel Is What You Broadcast',
+      'The Ancient Knowing',
+      'The Witness',
+      'Your Frequency',
+    ],
+  },
+  {
+    name: 'Return', range: 'Transmissions 7–13',
+    chapters: [
+      'Fear Is Not the Enemy',
+      'The Body Holds Everything You Haven’t Said',
+      'The Ego Is Not You',
+      'Who Were You Before They Told You Who to Be',
+      'The Love You Are',
+      'Your Purpose Was Never Lost',
+      'The New Chapter',
+    ],
+  },
+  {
+    name: 'Create', range: 'Transmissions 14–20',
+    chapters: [
+      'The Subconscious Doesn’t Know the Difference',
+      'The Field',
+      'Inner Cinema',
+      'Identity Is Not Fixed',
+      'The First Move',
+      'The Creative Life',
+      'You Create Your Day Before It Creates You',
+    ],
+  },
+  {
+    name: 'Radiate', range: 'Transmissions 21–26',
+    chapters: [
+      'Synchronicity',
+      'The Frequency of Thanks',
+      'Inner Harmony',
+      'Living Creation',
+      'Wonder',
+      'The Mirror People Hold',
+    ],
+  },
+  {
+    name: 'The Whole Self', range: 'Transmissions 27–29',
+    chapters: [
+      'The Flowing Quality',
+      'The Directing Quality',
+      'The Dance',
+    ],
+  },
+]
+
+const FAQS = [
+  {
+    q: 'Do I need the app to read the book?',
+    a: 'No — they’re not separate. The ebook lives right inside the app, on your home screen, the moment you begin your practice. No download, no separate file to manage.',
+  },
+  {
+    q: 'Is this a subscription?',
+    a: '$79, one time. Lifetime access to the ebook and every portal in the app — nothing to cancel, nothing that renews.',
+  },
+  {
+    q: 'What if it doesn’t work for me?',
+    a: 'You have 90 days. If you’ve genuinely given the practice a try and it still didn’t land, email us and we’ll take care of it — no hoops.',
+  },
+  {
+    q: 'I don’t have the app yet — what happens after I buy?',
+    a: 'Your account is created automatically at checkout. Open the app on any device and you’re already signed in — no separate signup, no password to set up first.',
+  },
+  {
+    q: 'Can I read on my phone and my computer?',
+    a: 'Yes. Everything syncs to your account, not your device — pick up on whatever you’re on.',
+  },
+  {
+    q: 'Is there a physical or audio version?',
+    a: 'Not yet. Right now it’s ebook + app. An audiobook is coming — once it ships, the bundle price moves to $97, so the earlier you begin, the less you pay for the same lifetime access.',
+  },
 ]
 
 export default function TheTransmissionPage() {
   const router = useRouter()
   const [email, setEmail] = useState('')
+  const [openPhase, setOpenPhase] = useState<number | null>(null)
+  const [openFaq, setOpenFaq] = useState<number | null>(null)
 
   const unlockPreview = (e: React.FormEvent) => {
     e.preventDefault()
@@ -245,24 +323,139 @@ export default function TheTransmissionPage() {
             </h2>
           </motion.div>
 
-          <div className="flex flex-col gap-3 max-w-[440px] mx-auto">
-            {PHASES.map((phase, i) => (
-              <motion.div
-                key={phase.name}
-                initial={{ opacity: 0, x: -14 }} whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: '-30px' }}
-                transition={{ delay: i * 0.06, duration: 0.6, ease: EASE }}
-                className="flex items-center justify-between px-5 py-4 rounded-xl"
-                style={{ border: '1px solid rgba(210,175,255,0.1)', background: 'rgba(210,175,255,0.02)' }}
-              >
-                <span className="font-display italic text-[1.05rem]" style={{ color: 'rgba(240,236,255,0.88)' }}>
-                  {phase.name}
-                </span>
-                <span className="font-mono text-[9px] tracking-[0.1em] uppercase" style={{ color: 'rgba(210,175,255,0.4)' }}>
-                  {phase.range}
-                </span>
-              </motion.div>
-            ))}
+          <div className="flex flex-col gap-3 max-w-[520px] mx-auto">
+            {PHASES.map((phase, i) => {
+              const isOpen = openPhase === i
+              return (
+                <motion.div
+                  key={phase.name}
+                  initial={{ opacity: 0, x: -14 }} whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, margin: '-30px' }}
+                  transition={{ delay: i * 0.06, duration: 0.6, ease: EASE }}
+                  className="rounded-xl overflow-hidden"
+                  style={{ border: '1px solid rgba(210,175,255,0.1)', background: 'rgba(210,175,255,0.02)' }}
+                >
+                  <button
+                    onClick={() => setOpenPhase(isOpen ? null : i)}
+                    className="w-full flex items-center justify-between px-5 py-4 text-left"
+                    aria-expanded={isOpen}
+                  >
+                    <span className="font-display italic text-[1.05rem]" style={{ color: 'rgba(240,236,255,0.88)' }}>
+                      {phase.name}
+                    </span>
+                    <span className="flex items-center gap-3">
+                      <span className="font-mono text-[9px] tracking-[0.1em] uppercase" style={{ color: 'rgba(210,175,255,0.4)' }}>
+                        {phase.range}
+                      </span>
+                      <motion.span
+                        animate={{ rotate: isOpen ? 45 : 0 }}
+                        transition={{ duration: 0.25 }}
+                        className="font-mono text-[14px]"
+                        style={{ color: 'rgba(210,175,255,0.5)' }}
+                      >
+                        +
+                      </motion.span>
+                    </span>
+                  </button>
+                  <AnimatePresence initial={false}>
+                    {isOpen && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: 'auto', opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3, ease: EASE }}
+                        className="overflow-hidden"
+                      >
+                        <ul className="px-5 pb-4 flex flex-col gap-2">
+                          {phase.chapters.map((chapter, ci) => (
+                            <li key={chapter} className="flex items-baseline gap-3">
+                              <span className="font-mono text-[9px]" style={{ color: 'rgba(210,175,255,0.35)' }}>
+                                {String(ci + 1 + PHASES.slice(0, i).reduce((sum, p) => sum + p.chapters.length, 0)).padStart(2, '0')}
+                              </span>
+                              <span className="font-body text-[0.92rem]" style={{ color: 'rgba(235,228,255,0.65)' }}>
+                                {chapter}
+                              </span>
+                            </li>
+                          ))}
+                        </ul>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </motion.div>
+              )
+            })}
+          </div>
+
+        </div>
+      </section>
+
+      <div className="container-prose mx-auto"><div className="divider-glow my-4" /></div>
+
+      {/* ── FAQ ──────────────────────────────────────────────────────────── */}
+      <section className="relative z-10 py-20">
+        <div className="container-prose mx-auto">
+
+          <motion.div
+            initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-56px' }}
+            transition={{ duration: 0.75, ease: EASE }}
+            className="text-center mb-14"
+          >
+            <SectionLabel text="Questions" className="mb-6" />
+            <h2 className="font-display font-light italic text-[clamp(1.6rem,3vw,2.3rem)] leading-[1.3]"
+              style={{ color: '#f8f5ff' }}
+            >
+              Before you begin.
+            </h2>
+          </motion.div>
+
+          <div className="flex flex-col gap-3 max-w-[560px] mx-auto">
+            {FAQS.map((item, i) => {
+              const isOpen = openFaq === i
+              return (
+                <motion.div
+                  key={item.q}
+                  initial={{ opacity: 0, y: 14 }} whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-30px' }}
+                  transition={{ delay: i * 0.05, duration: 0.6, ease: EASE }}
+                  className="rounded-xl overflow-hidden"
+                  style={{ border: '1px solid rgba(210,175,255,0.1)', background: 'rgba(210,175,255,0.02)' }}
+                >
+                  <button
+                    onClick={() => setOpenFaq(isOpen ? null : i)}
+                    className="w-full flex items-center justify-between gap-4 px-5 py-4 text-left"
+                    aria-expanded={isOpen}
+                  >
+                    <span className="font-display italic text-[1rem]" style={{ color: 'rgba(240,236,255,0.88)' }}>
+                      {item.q}
+                    </span>
+                    <motion.span
+                      animate={{ rotate: isOpen ? 45 : 0 }}
+                      transition={{ duration: 0.25 }}
+                      className="font-mono text-[14px] flex-shrink-0"
+                      style={{ color: 'rgba(210,175,255,0.5)' }}
+                    >
+                      +
+                    </motion.span>
+                  </button>
+                  <AnimatePresence initial={false}>
+                    {isOpen && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: 'auto', opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3, ease: EASE }}
+                        className="overflow-hidden"
+                      >
+                        <p className="px-5 pb-4 font-body text-[0.92rem] leading-[1.8]" style={{ color: 'rgba(235,228,255,0.6)' }}>
+                          {item.a}
+                        </p>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </motion.div>
+              )
+            })}
           </div>
 
         </div>
