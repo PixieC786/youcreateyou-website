@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const EASE = [0.22, 1, 0.36, 1] as const
@@ -40,23 +40,7 @@ const MOMENTS = [
   },
 ]
 
-// Same spiral placement math as the real Constellation page: angle sweeps
-// 4 full rotations outward from centre, y compressed for an elliptical
-// galaxy shape. Pure math, no Math.random — deterministic so server and
-// client render identically (avoids hydration mismatches).
-const REMEMBER_STAR_COUNT = 34
-const REMEMBER_STARS = Array.from({ length: REMEMBER_STAR_COUNT }, (_, i) => {
-  const total = REMEMBER_STAR_COUNT
-  const angle = (i / total) * Math.PI * 2 * 4
-  const radius = (i / (total - 1)) * 44
-  const isReply = i % 5 === 0
-  return {
-    x: 50 + Math.cos(angle) * radius,
-    y: 50 + Math.sin(angle) * radius * 0.62,
-    r: isReply ? 3.4 : 1.7,
-    isReply,
-  }
-})
+const REMEMBER_STAR_COUNT = 42
 
 function PhoneFrame({ children }: { children: React.ReactNode }) {
   return (
@@ -146,30 +130,85 @@ function NoticeMock() {
 }
 
 function RememberMock() {
-  const points = REMEMBER_STARS.map((s) => `${s.x},${s.y}`).join(' ')
+  const canvasRef = useRef<HTMLCanvasElement>(null)
+
+  useEffect(() => {
+    const canvas = canvasRef.current
+    const parent = canvas?.parentElement
+    if (!canvas || !parent) return
+
+    function draw() {
+      const dpr = window.devicePixelRatio || 1
+      const w = parent!.clientWidth
+      const h = parent!.clientHeight
+      if (w === 0 || h === 0) return
+      canvas!.width = w * dpr
+      canvas!.height = h * dpr
+      const ctx = canvas!.getContext('2d')
+      if (!ctx) return
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0)
+      ctx.clearRect(0, 0, w, h)
+
+      const cx = w / 2, cy = h / 2
+      const total = REMEMBER_STAR_COUNT
+      const maxRadius = Math.min(w, h) * 0.44
+
+      const nebula = ctx.createRadialGradient(cx, cy, 0, cx, cy, maxRadius)
+      nebula.addColorStop(0, 'rgba(160,80,255,0.2)')
+      nebula.addColorStop(0.4, 'rgba(100,40,200,0.09)')
+      nebula.addColorStop(1, 'rgba(0,0,0,0)')
+      ctx.fillStyle = nebula
+      ctx.fillRect(0, 0, w, h)
+
+      const stars = Array.from({ length: total }, (_, i) => {
+        const angle = (i / total) * Math.PI * 2 * 4
+        const radius = (i / (total - 1)) * maxRadius
+        const isReply = i % 5 === 0
+        return {
+          x: cx + Math.cos(angle) * radius,
+          y: cy + Math.sin(angle) * radius * 0.62,
+          r: isReply ? 2.6 : 1.4,
+          isReply,
+        }
+      })
+
+      ctx.strokeStyle = 'rgba(200,138,255,0.09)'
+      ctx.lineWidth = 0.6
+      ctx.beginPath()
+      stars.forEach((s, i) => { if (i === 0) ctx.moveTo(s.x, s.y); else ctx.lineTo(s.x, s.y) })
+      ctx.stroke()
+
+      stars.forEach((s) => {
+        const glowR = s.r * 2.4
+        const grd = ctx.createRadialGradient(s.x, s.y, 0, s.x, s.y, glowR)
+        if (s.isReply) {
+          grd.addColorStop(0, 'rgba(255,245,220,0.45)')
+          grd.addColorStop(0.4, 'rgba(230,190,255,0.28)')
+        } else {
+          grd.addColorStop(0, 'rgba(210,150,255,0.35)')
+          grd.addColorStop(0.4, 'rgba(160,80,255,0.18)')
+        }
+        grd.addColorStop(1, 'rgba(160,80,255,0)')
+        ctx.fillStyle = grd
+        ctx.beginPath(); ctx.arc(s.x, s.y, glowR, 0, Math.PI * 2); ctx.fill()
+      })
+
+      stars.forEach((s) => {
+        ctx.beginPath(); ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2)
+        ctx.fillStyle = s.isReply ? 'rgba(255,250,240,0.95)' : 'rgba(220,155,255,0.9)'
+        ctx.fill()
+      })
+    }
+
+    draw()
+    const ro = new ResizeObserver(draw)
+    ro.observe(parent)
+    return () => ro.disconnect()
+  }, [])
+
   return (
     <div className="flex-1 relative">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(160,80,255,0.22)_0%,rgba(100,40,200,0.1)_40%,transparent_70%)]" />
-      <svg viewBox="0 0 100 100" className="absolute inset-0 w-full h-full" preserveAspectRatio="none">
-        <polyline
-          points={points}
-          fill="none"
-          stroke="rgba(200,138,255,0.12)"
-          strokeWidth="0.3"
-        />
-        {REMEMBER_STARS.map((s, i) => (
-          <g key={i}>
-            <circle
-              cx={s.x} cy={s.y} r={s.r * 2.4}
-              fill={s.isReply ? 'rgba(255,245,220,0.28)' : 'rgba(200,138,255,0.22)'}
-            />
-            <circle
-              cx={s.x} cy={s.y} r={s.r}
-              fill={s.isReply ? 'rgba(255,250,240,0.95)' : 'rgba(220,155,255,0.92)'}
-            />
-          </g>
-        ))}
-      </svg>
+      <canvas ref={canvasRef} className="absolute inset-0 w-full h-full" />
       <p className="absolute bottom-1 inset-x-0 text-center font-mono text-[6.5px] tracking-[0.15em] uppercase text-[rgba(179,136,255,0.55)]">
         {REMEMBER_STAR_COUNT} stars in your constellation
       </p>
