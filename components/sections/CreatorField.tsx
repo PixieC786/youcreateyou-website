@@ -1,140 +1,310 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import SectionLabel from '@/components/ui/SectionLabel'
+import Button from '@/components/ui/Button'
+import { beginCheckout } from '@/lib/checkout'
 
 const EASE = [0.22, 1, 0.36, 1] as const
 
-const PARAGRAPHS = [
-  { text: `Every human carries a version of themselves they have not yet lived.`, style: 'normal' },
-  { text: `Not a better version. Not an improved version. The real one — the one underneath everything that was borrowed, inherited, or learned in fear.`, style: 'normal' },
-  { text: `YCY was built for that person. The one who already knows. The one who has always known.`, style: 'normal' },
-  { text: `what if the version of you who has everything is not who you become — but who you already are?`, style: 'italic-accent' },
-  { text: `Twenty-one portals. Four phases. One direction: back to yourself.`, style: 'normal' },
-  { text: `What no one expects is what happens next. Not just the personal shifts — though those are real, and they go deep.`, style: 'normal' },
-  { text: `Something larger begins to move.`, style: 'large' },
-  { text: `A frequency. A field.`, style: 'large-accent' },
-  { text: `When a human truly remembers who they are — in the body, in the quiet, beneath all the borrowed noise — they do not only change themselves. They become a different signal in the world.`, style: 'normal' },
-  { text: `We are at a point in our collective story where this matters more than it ever has.`, style: 'normal' },
+const MOMENTS = [
+  {
+    id: 'share',
+    step: '01',
+    name: 'Share',
+    tagline: 'Seven ways in. Never a blank page.',
+    description: `Reflection. Intention. Milestone. Feeling. Gratitude. Becoming. Sacred Word. Every share starts from a real place — never "what's on your mind."`,
+    color: 'rgba(140,80,255,0.12)',
+  },
+  {
+    id: 'respond',
+    step: '02',
+    name: 'Respond',
+    tagline: 'The real danger was never a bad reply. It was silence.',
+    description: `One tap sends real words back — "I see you," "I've felt this too" — so nobody who shares something true is ever left with nothing.`,
+    color: 'rgba(179,136,255,0.12)',
+  },
+  {
+    id: 'notice',
+    step: '03',
+    name: 'Notice',
+    tagline: 'A letter, not a headline.',
+    description: `When someone responds, you're told — never shown. What was said stays sealed until you choose to open it, wherever you are.`,
+    color: 'rgba(124,77,255,0.12)',
+  },
+  {
+    id: 'remember',
+    step: '04',
+    name: 'Remember',
+    tagline: 'Every reply becomes a star.',
+    description: `A private, growing map of every moment someone truly saw you — yours alone, filling in one act of love at a time.`,
+    color: 'rgba(200,166,255,0.12)',
+  },
 ]
 
-export default function CreatorField() {
-  return (
-    <section className="relative py-28 md:py-40 overflow-hidden">
+const STARS = [
+  { x: '22%', y: '28%', r: 3 }, { x: '58%', y: '18%', r: 2 }, { x: '38%', y: '42%', r: 4.5 },
+  { x: '70%', y: '38%', r: 2.5 }, { x: '50%', y: '55%', r: 3 }, { x: '28%', y: '62%', r: 2 },
+  { x: '66%', y: '60%', r: 3.5 }, { x: '45%', y: '72%', r: 2 }, { x: '78%', y: '20%', r: 2 },
+  { x: '15%', y: '48%', r: 2.5 }, { x: '60%', y: '80%', r: 2 }, { x: '35%', y: '20%', r: 2 },
+]
 
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[320px] h-px bg-gradient-to-r from-transparent via-[rgba(179,136,255,0.18)] to-transparent" />
+function PhoneFrame({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="relative mx-auto w-full max-w-[240px] aspect-[9/18.5] rounded-[2rem] border border-[rgba(179,136,255,0.2)] bg-[#0a0620] shadow-[0_30px_70px_-24px_rgba(90,25,170,0.5)] overflow-hidden">
+      <div className="absolute top-3 left-1/2 -translate-x-1/2 w-14 h-1 rounded-full bg-[rgba(255,255,255,0.1)] z-20" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_28%_18%,rgba(179,136,255,0.14),transparent_60%)]" />
+      <div className="relative z-10 h-full pt-8 px-3.5 pb-4 flex flex-col">
+        {children}
+      </div>
+    </div>
+  )
+}
+
+function FieldHeader() {
+  return (
+    <p className="font-mono text-[6.5px] tracking-[0.2em] uppercase text-[rgba(179,136,255,0.42)] text-center mb-3">
+      The Creator Field ✦
+    </p>
+  )
+}
+
+function ShareMock() {
+  return (
+    <>
+      <FieldHeader />
+      <div className="flex gap-2 mb-3 overflow-hidden">
+        {['✦ Reflection', '◎ Intention', '◉ Milestone'].map((c) => (
+          <span key={c} className="flex-shrink-0 font-display italic text-[7.5px] text-[rgba(200,166,255,0.5)] whitespace-nowrap">{c}</span>
+        ))}
+      </div>
+      <div className="rounded-lg border border-[rgba(179,136,255,0.16)] bg-[rgba(179,136,255,0.05)] p-3">
+        <div className="flex items-baseline gap-1.5 mb-2">
+          <span className="font-display italic text-[11px] text-[rgba(200,166,255,0.88)]">Lüna</span>
+          <span className="font-mono text-[5.5px] tracking-[0.15em] uppercase text-[rgba(179,136,255,0.4)]">Milestone</span>
+        </div>
+        <p className="font-display italic text-[11.5px] text-[rgba(240,236,255,0.85)] leading-snug mb-3">
+          I started to read the book. Anyone else? 🙃
+        </p>
+        <div className="flex gap-1.5">
+          {['💜', '🙏', '✨'].map((e) => <span key={e} className="text-[10px]">{e}</span>)}
+        </div>
+      </div>
+    </>
+  )
+}
+
+function RespondMock() {
+  return (
+    <>
+      <FieldHeader />
+      <div className="rounded-lg border border-[rgba(179,136,255,0.1)] bg-[rgba(179,136,255,0.03)] p-2.5 mb-2.5 opacity-60">
+        <p className="font-display italic text-[10px] text-[rgba(240,236,255,0.7)] leading-snug">
+          Some days the practice feels heavy. I showed up anyway.
+        </p>
+      </div>
+      <div className="flex flex-wrap gap-1.5 mb-2.5">
+        {['I see you 💜', 'Sending you love'].map((c) => (
+          <span key={c} className="font-display italic text-[7.5px] border border-[rgba(179,136,255,0.25)] rounded-full px-2 py-1 text-[rgba(200,166,255,0.75)]">{c}</span>
+        ))}
+      </div>
+      <div className="rounded-lg border-l-2 border-[rgba(179,136,255,0.4)] bg-[rgba(255,255,255,0.025)] p-2.5">
+        <span className="font-display italic text-[9.5px] text-[rgba(200,166,255,0.85)] block mb-0.5">Sparkle</span>
+        <p className="font-display italic text-[10.5px] text-[rgba(240,236,255,0.82)] leading-snug">
+          I've felt that too — showing up is the whole thing 💜
+        </p>
+      </div>
+    </>
+  )
+}
+
+function NoticeMock() {
+  return (
+    <div className="flex-1 flex items-center justify-center px-1">
+      <div className="w-full rounded-xl border border-[rgba(179,136,255,0.3)] bg-[rgba(12,8,28,0.92)] backdrop-blur p-3">
+        <p className="font-mono text-[6px] tracking-[0.15em] uppercase text-[rgba(179,136,255,0.55)] mb-1.5">
+          You Create You
+        </p>
+        <p className="font-display italic text-[12px] text-[rgba(240,236,255,0.94)] mb-1">
+          Someone responded ✦
+        </p>
+        <p className="font-body text-[8.5px] text-[rgba(240,236,255,0.4)] leading-snug">
+          Someone responded to what you shared in The Creator Field.
+        </p>
+      </div>
+    </div>
+  )
+}
+
+function RememberMock() {
+  return (
+    <div className="flex-1 relative">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(160,80,255,0.18),transparent_65%)]" />
+      {STARS.map((s, i) => (
+        <span
+          key={i}
+          className="absolute rounded-full bg-white"
+          style={{
+            left: s.x, top: s.y, width: s.r * 2, height: s.r * 2,
+            boxShadow: '0 0 6px rgba(200,138,255,0.85)',
+          }}
+        />
+      ))}
+      <p className="absolute bottom-1 inset-x-0 text-center font-mono text-[6.5px] tracking-[0.15em] uppercase text-[rgba(179,136,255,0.55)]">
+        12 stars in your constellation
+      </p>
+    </div>
+  )
+}
+
+const MOCKS: Record<string, () => JSX.Element> = {
+  share: ShareMock,
+  respond: RespondMock,
+  notice: NoticeMock,
+  remember: RememberMock,
+}
+
+export default function CreatorField() {
+  const [active, setActive] = useState(0)
+  const moment = MOMENTS[active]
+  const Mock = MOCKS[moment.id]
+
+  return (
+    <section id="creator-field" className="section-pad relative overflow-hidden">
+
+      <div className="absolute top-0 inset-x-0 divider-glow" />
 
       <div aria-hidden className="absolute inset-0 pointer-events-none overflow-hidden">
-        <svg className="absolute inset-0 w-full h-full" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <filter id="cf-blur" x="-60%" y="-60%" width="220%" height="220%">
-              <feGaussianBlur stdDeviation="60"/>
-            </filter>
-            <radialGradient id="cf-ng" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stopColor="rgba(100,40,200,0.18)"/>
-              <stop offset="55%" stopColor="rgba(60,20,140,0.06)"/>
-              <stop offset="100%" stopColor="rgba(60,20,140,0)"/>
-            </radialGradient>
-          </defs>
-          <path
-            d="M 300,100 C 500,20 780,60 880,220 C 980,380 900,560 700,600 C 500,640 280,560 220,380 C 160,200 100,180 300,100 Z"
-            fill="url(#cf-ng)"
-            filter="url(#cf-blur)"
-            style={{ animation: 'breathe 11s ease-in-out 2s infinite' }}
-          />
-        </svg>
+        <div
+          className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full opacity-40"
+          style={{
+            background: 'radial-gradient(ellipse, rgba(140,60,255,0.1) 0%, transparent 70%)',
+            animation: 'breathe 11s ease-in-out infinite',
+          }}
+        />
       </div>
 
-      <div className="container-prose relative z-10">
+      <div className="container-site relative z-10">
 
-        <motion.p
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, ease: EASE }}
-          className="font-mono text-[9px] tracking-[0.28em] uppercase text-[rgba(179,136,255,0.5)] mb-10 text-center"
-        >
-          Why this exists
-        </motion.p>
+        <div className="text-center mb-14 md:mb-18">
+          <SectionLabel text="The Creator Field" />
+          <motion.h2
+            initial={{ opacity: 0, y: 22 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-80px' }}
+            transition={{ duration: 0.8, ease: EASE }}
+            className="font-display text-[clamp(2rem,4.5vw,3.5rem)] font-light italic text-[#f0ecff] mt-6 leading-[1.12]"
+          >
+            Share your becoming.
+            <br />
+            <span className="text-gradient">Receive love. No noise.</span>
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-60px' }}
+            transition={{ duration: 0.7, ease: EASE, delay: 0.1 }}
+            className="font-body text-[rgba(240,236,255,0.55)] text-[15px] leading-[1.8] max-w-[56ch] mx-auto mt-6"
+          >
+            Not a wall for performing. A field built around one idea: the moment someone
+            shares something true, the worst thing that can happen isn&apos;t a bad reply —
+            it&apos;s silence. Everything here exists to make sure that never happens.
+          </motion.p>
+        </div>
 
-        <motion.h2
-          initial={{ opacity: 0, y: 22 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.9, ease: EASE, delay: 0.06 }}
-          className="font-display text-[clamp(2.2rem,5.5vw,3.5rem)] font-light italic text-[rgba(240,236,255,0.95)] leading-[1.2] mb-16 text-center"
-        >
-          The real you already exists.
-        </motion.h2>
+        {/* Interactive moment explorer */}
+        <div className="grid grid-cols-1 lg:grid-cols-[260px_1fr] gap-5 mb-14">
 
-        <div className="space-y-6">
-          {PARAGRAPHS.map((para, i) => {
-            const base = 'font-display font-light leading-[1.9]'
-
-            if (para.style === 'large-accent') return (
-              <motion.p
-                key={i}
-                initial={{ opacity: 0, y: 14 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.75, ease: EASE, delay: 0.06 + i * 0.04 }}
-                className={`${base} text-[clamp(1.6rem,4vw,2.4rem)] italic text-[rgba(210,175,255,0.9)] text-center py-2`}
+          {/* Selector */}
+          <div className="flex flex-row lg:flex-col gap-2 overflow-x-auto lg:overflow-x-visible pb-2 lg:pb-0">
+            {MOMENTS.map((m, i) => (
+              <motion.button
+                key={m.id}
+                onClick={() => setActive(i)}
+                initial={{ opacity: 0, x: -16 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: '-40px' }}
+                transition={{ delay: i * 0.07, duration: 0.55, ease: EASE }}
+                suppressHydrationWarning
+                className={`
+                  group relative flex-shrink-0 text-left px-5 py-4 rounded-xl border
+                  transition-all duration-300 cursor-pointer
+                  ${active === i
+                    ? 'border-[rgba(179,136,255,0.32)] bg-[rgba(179,136,255,0.08)] shadow-[0_2px_24px_rgba(0,0,0,0.35)]'
+                    : 'border-[rgba(179,136,255,0.07)] bg-transparent hover:border-[rgba(179,136,255,0.16)] hover:bg-[rgba(179,136,255,0.03)]'
+                  }
+                `}
               >
-                {para.text}
-              </motion.p>
-            )
+                {active === i && (
+                  <motion.div
+                    layoutId="field-moment-pill"
+                    className="absolute left-0 top-1/4 bottom-1/4 w-[2px] rounded-full bg-accent/60"
+                  />
+                )}
+                <span className="font-mono text-[8.5px] tracking-[0.22em] uppercase text-[rgba(179,136,255,0.42)] block mb-1">
+                  Moment {m.step}
+                </span>
+                <p className={`font-display italic text-[1.05rem] leading-snug transition-colors duration-300 ${active === i ? 'text-[#f0ecff]' : 'text-[rgba(240,236,255,0.48)]'}`}>
+                  {m.name}
+                </p>
+              </motion.button>
+            ))}
+          </div>
 
-            if (para.style === 'large') return (
-              <motion.p
-                key={i}
-                initial={{ opacity: 0, y: 14 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.75, ease: EASE, delay: 0.06 + i * 0.04 }}
-                className={`${base} text-[clamp(1.2rem,2.5vw,1.6rem)] italic text-[rgba(240,236,255,0.75)] text-center`}
+          {/* Detail panel */}
+          <div className="lg:sticky lg:top-24 self-start">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={active}
+                initial={{ opacity: 0, y: 18, filter: 'blur(3px)' }}
+                animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                exit={{ opacity: 0, y: -12, filter: 'blur(3px)' }}
+                transition={{ duration: 0.38, ease: EASE }}
+                className="relative rounded-2xl border border-[rgba(179,136,255,0.14)] overflow-hidden"
               >
-                {para.text}
-              </motion.p>
-            )
+                <div
+                  className="absolute inset-0 pointer-events-none"
+                  style={{ background: `radial-gradient(ellipse 80% 60% at 20% 30%, ${moment.color} 0%, transparent 70%)` }}
+                />
 
-            if (para.style === 'italic-accent') return (
-              <motion.p
-                key={i}
-                initial={{ opacity: 0, y: 14 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.75, ease: EASE, delay: 0.06 + i * 0.04 }}
-                className={`${base} text-[clamp(1.1rem,1.8vw,1.3rem)] italic text-[rgba(210,175,255,0.8)] text-center px-4`}
-              >
-                {para.text}
-              </motion.p>
-            )
+                <div className="relative z-10 p-8 md:p-10 grid md:grid-cols-2 gap-8 md:gap-10 items-center">
 
-            return (
-              <motion.p
-                key={i}
-                initial={{ opacity: 0, y: 14 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.75, ease: EASE, delay: 0.06 + i * 0.04 }}
-                className={`${base} text-[clamp(1.05rem,1.5vw,1.2rem)] text-[rgba(240,236,255,0.62)]`}
-              >
-                {para.text}
-              </motion.p>
-            )
-          })}
+                  <div>
+                    <span className="font-mono text-[9px] tracking-[0.24em] uppercase text-[rgba(179,136,255,0.5)]">
+                      Moment {moment.step}
+                    </span>
+                    <h3 className="font-display italic text-[clamp(1.5rem,2.6vw,2rem)] text-[#f0ecff] mt-3 mb-2 font-light leading-[1.15]">
+                      {moment.name}
+                    </h3>
+                    <p className="font-display italic text-[1rem] text-[rgba(200,166,255,0.65)] mb-5 leading-snug">
+                      {moment.tagline}
+                    </p>
+                    <p className="font-body text-[rgba(240,236,255,0.58)] text-[14px] leading-[1.8] max-w-[42ch]">
+                      {moment.description}
+                    </p>
+                  </div>
+
+                  <PhoneFrame>
+                    <Mock />
+                  </PhoneFrame>
+
+                </div>
+              </motion.div>
+            </AnimatePresence>
+          </div>
         </div>
 
         <motion.div
           initial={{ opacity: 0, y: 14 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, ease: EASE, delay: 0.5 }}
-          className="mt-16 pt-12 text-center"
-          style={{ borderTop: '1px solid rgba(179,136,255,0.1)' }}
+          viewport={{ once: true, margin: '-40px' }}
+          transition={{ duration: 0.7, ease: EASE }}
+          className="text-center"
         >
-          <p className="font-display text-[clamp(1.3rem,2.5vw,1.8rem)] font-light italic text-[rgba(210,175,255,0.75)] leading-[1.6]">
-            "The practice is personal.<br />The effect is planetary."
-          </p>
+          <Button onClick={() => beginCheckout()} variant="primary" size="lg">
+            Step Into The Field
+          </Button>
         </motion.div>
 
       </div>
