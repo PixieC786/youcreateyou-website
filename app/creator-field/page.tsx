@@ -39,6 +39,21 @@ const DIFFERENCES = [
     title: 'No one left in silence.',
     body: 'One tap sends real words back, even on the days you do not know what to say. Nobody who shares something true is left with nothing.',
   },
+  {
+    mark: '✷',
+    title: 'No follow. No following.',
+    body: 'There is no growth mechanic to game and no audience to build. You show up as yourself, exactly the same as everyone else here.',
+  },
+  {
+    mark: '✦',
+    title: 'No ads. Ever.',
+    body: 'Nothing here is for sale except the practice itself. Nothing you share is data harvested for someone else’s campaign.',
+  },
+  {
+    mark: '◎',
+    title: 'No marketing games.',
+    body: 'No growth hacks, no engagement bait, no manufactured urgency. Just people, showing up, for each other.',
+  },
 ]
 
 export default function CreatorFieldPage() {
@@ -92,6 +107,19 @@ export default function CreatorFieldPage() {
                 </p>
               </div>
             ))}
+          </div>
+
+          <div className="text-center mt-16 max-w-2xl mx-auto">
+            <p className="font-display italic text-[clamp(1.4rem,3vw,2.1rem)] font-light text-[#f0ecff] leading-[1.5]">
+              Not a network to grow.
+              <br />
+              <span className="text-gradient">A world of people becoming the same way you are.</span>
+            </p>
+            <p className="font-body text-[rgba(240,236,255,0.5)] text-[15px] leading-[1.8] mt-6 max-w-[54ch] mx-auto">
+              Same direction. Same vision. Found without ever having to perform for it — this is
+              what it looks like when people who are actually like-minded find each other,
+              inside the YCY world, with nothing standing between you but the truth you shared.
+            </p>
           </div>
         </div>
       </section>
