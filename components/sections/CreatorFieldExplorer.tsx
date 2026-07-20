@@ -40,12 +40,23 @@ const MOMENTS = [
   },
 ]
 
-const STARS = [
-  { x: '22%', y: '28%', r: 3 }, { x: '58%', y: '18%', r: 2 }, { x: '38%', y: '42%', r: 4.5 },
-  { x: '70%', y: '38%', r: 2.5 }, { x: '50%', y: '55%', r: 3 }, { x: '28%', y: '62%', r: 2 },
-  { x: '66%', y: '60%', r: 3.5 }, { x: '45%', y: '72%', r: 2 }, { x: '78%', y: '20%', r: 2 },
-  { x: '15%', y: '48%', r: 2.5 }, { x: '60%', y: '80%', r: 2 }, { x: '35%', y: '20%', r: 2 },
-]
+// Same spiral placement math as the real Constellation page: angle sweeps
+// 4 full rotations outward from centre, y compressed for an elliptical
+// galaxy shape. Pure math, no Math.random — deterministic so server and
+// client render identically (avoids hydration mismatches).
+const REMEMBER_STAR_COUNT = 34
+const REMEMBER_STARS = Array.from({ length: REMEMBER_STAR_COUNT }, (_, i) => {
+  const total = REMEMBER_STAR_COUNT
+  const angle = (i / total) * Math.PI * 2 * 4
+  const radius = (i / (total - 1)) * 44
+  const isReply = i % 5 === 0
+  return {
+    x: 50 + Math.cos(angle) * radius,
+    y: 50 + Math.sin(angle) * radius * 0.62,
+    r: isReply ? 3.4 : 1.7,
+    isReply,
+  }
+})
 
 function PhoneFrame({ children }: { children: React.ReactNode }) {
   return (
@@ -135,21 +146,32 @@ function NoticeMock() {
 }
 
 function RememberMock() {
+  const points = REMEMBER_STARS.map((s) => `${s.x},${s.y}`).join(' ')
   return (
     <div className="flex-1 relative">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(160,80,255,0.18),transparent_65%)]" />
-      {STARS.map((s, i) => (
-        <span
-          key={i}
-          className="absolute rounded-full bg-white"
-          style={{
-            left: s.x, top: s.y, width: s.r * 2, height: s.r * 2,
-            boxShadow: '0 0 6px rgba(200,138,255,0.85)',
-          }}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(160,80,255,0.22)_0%,rgba(100,40,200,0.1)_40%,transparent_70%)]" />
+      <svg viewBox="0 0 100 100" className="absolute inset-0 w-full h-full" preserveAspectRatio="none">
+        <polyline
+          points={points}
+          fill="none"
+          stroke="rgba(200,138,255,0.12)"
+          strokeWidth="0.3"
         />
-      ))}
+        {REMEMBER_STARS.map((s, i) => (
+          <g key={i}>
+            <circle
+              cx={s.x} cy={s.y} r={s.r * 2.4}
+              fill={s.isReply ? 'rgba(255,245,220,0.28)' : 'rgba(200,138,255,0.22)'}
+            />
+            <circle
+              cx={s.x} cy={s.y} r={s.r}
+              fill={s.isReply ? 'rgba(255,250,240,0.95)' : 'rgba(220,155,255,0.92)'}
+            />
+          </g>
+        ))}
+      </svg>
       <p className="absolute bottom-1 inset-x-0 text-center font-mono text-[6.5px] tracking-[0.15em] uppercase text-[rgba(179,136,255,0.55)]">
-        12 stars in your constellation
+        {REMEMBER_STAR_COUNT} stars in your constellation
       </p>
     </div>
   )
