@@ -9,6 +9,7 @@ import SectionLabel from '@/components/ui/SectionLabel'
 import Button from '@/components/ui/Button'
 import BeginPracticeButton from '@/components/ui/BeginPracticeButton'
 import ValueStack from '@/components/ui/ValueStack'
+import AudioSample from '@/components/ui/AudioSample'
 import { captureAbandonedEmail } from '@/lib/checkout'
 
 const EASE = [0.22, 1, 0.36, 1] as const
@@ -254,9 +255,10 @@ export default function TheTransmissionPage() {
                   Get Transmission One — Free
                 </Button>
               </form>
-              <p className="font-mono text-[9px] tracking-[0.15em] uppercase mt-4" style={{ color: 'rgba(210,175,255,0.4)' }}>
+              <p className="font-mono text-[9px] tracking-[0.15em] uppercase mt-4 mb-6" style={{ color: 'rgba(210,175,255,0.4)' }}>
                 The opening Transmission, unlocked instantly
               </p>
+              <AudioSample />
             </motion.div>
           </div>
 
