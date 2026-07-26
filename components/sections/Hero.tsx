@@ -20,7 +20,7 @@ const ITEM = {
 const STATS = [
   { value: '21',  label: 'Portals for the Inner World' },
   { value: '4',   label: 'Phases Back to Yourself' },
-  { value: '365', label: 'Days to Feel the Shift' },
+  { value: '365', label: 'Days, Fully Guided' },
 ]
 
 export default function Hero() {
