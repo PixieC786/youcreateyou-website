@@ -133,7 +133,7 @@ export default function CreatorFieldPage() {
               How it actually works
             </span>
             <h2 className="font-display text-[clamp(1.8rem,3.5vw,2.75rem)] font-light italic text-[#f0ecff] mt-4">
-              Four moments. One field.
+              Five moments. One field.
             </h2>
           </div>
           <CreatorFieldExplorer />

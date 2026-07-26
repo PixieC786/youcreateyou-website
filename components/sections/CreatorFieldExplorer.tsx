@@ -23,8 +23,16 @@ const MOMENTS = [
     color: 'rgba(179,136,255,0.12)',
   },
   {
-    id: 'notice',
+    id: 'give',
     step: '03',
+    name: 'Give',
+    tagline: 'Sometimes the truest thing is unprompted.',
+    description: `A quiet 💜 next to anyone's name — no post required. Once a day per person, so it stays a real gesture, not a habit.`,
+    color: 'rgba(255,120,170,0.12)',
+  },
+  {
+    id: 'notice',
+    step: '04',
     name: 'Notice',
     tagline: 'A letter, not a headline.',
     description: `When someone responds, you're told — never shown. What was said stays sealed until you choose to open it, wherever you are.`,
@@ -32,7 +40,7 @@ const MOMENTS = [
   },
   {
     id: 'remember',
-    step: '04',
+    step: '05',
     name: 'Remember',
     tagline: 'Every reply becomes a star.',
     description: `A private, growing map of every moment someone truly saw you — yours alone, filling in one act of love at a time.`,
@@ -106,6 +114,30 @@ function RespondMock() {
         <p className="font-display italic text-[10.5px] text-[rgba(240,236,255,0.82)] leading-snug">
           I've felt that too — showing up is the whole thing 💜
         </p>
+      </div>
+    </>
+  )
+}
+
+function GiveMock() {
+  return (
+    <>
+      <FieldHeader />
+      <div className="flex items-baseline gap-2 mb-4">
+        <span className="font-display italic text-[11px] text-[rgba(200,166,255,0.88)]">Sparkle</span>
+        <span className="font-mono text-[6.5px] tracking-[0.08em] uppercase border border-[rgba(255,120,170,0.35)] rounded px-1.5 py-0.5 text-[rgba(255,150,190,0.9)]">
+          💜 Send love
+        </span>
+      </div>
+      <div className="rounded-lg border border-[rgba(255,120,170,0.2)] bg-[rgba(255,120,170,0.04)] p-2.5 mb-3">
+        <p className="font-display italic text-[10px] text-[rgba(240,236,255,0.4)] leading-snug">
+          write something from your heart... (optional)
+        </p>
+      </div>
+      <div className="text-center">
+        <span className="font-mono text-[7.5px] tracking-[0.1em] uppercase border border-[rgba(255,120,170,0.4)] rounded-full px-3 py-1.5 text-[rgba(255,160,195,0.9)]">
+          Send with love ✦
+        </span>
       </div>
     </>
   )
@@ -219,6 +251,7 @@ function RememberMock() {
 const MOCKS: Record<string, () => JSX.Element> = {
   share: ShareMock,
   respond: RespondMock,
+  give: GiveMock,
   notice: NoticeMock,
   remember: RememberMock,
 }
