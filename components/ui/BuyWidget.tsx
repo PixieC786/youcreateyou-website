@@ -47,44 +47,15 @@ export default function BuyWidget() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 30, scale: 0.96 }}
           transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          className="fixed inset-x-4 bottom-4 sm:inset-x-auto sm:bottom-5 sm:right-5 z-[80] sm:w-[340px] rounded-2xl overflow-hidden"
+          className="fixed inset-x-4 bottom-4 sm:inset-x-auto sm:bottom-5 sm:right-5 z-[80] sm:w-[260px] rounded-xl overflow-hidden"
           style={{
-            background: 'radial-gradient(ellipse 140% 100% at 20% -10%, rgba(170,110,255,0.32) 0%, rgba(90,45,170,0.16) 38%, rgba(18,13,32,0.98) 72%), #150f28',
-            border: '1px solid rgba(210,175,255,0.28)',
+            background: '#150f28',
+            border: '1px solid rgba(210,175,255,0.16)',
+            boxShadow: '0 12px 32px rgba(0,0,0,0.45)',
           }}
           role="dialog"
           aria-label="The Transmission — Ebook and App bundle"
         >
-          {/* Breathing glow — gives the card a living, magical quality instead of a flat static box */}
-          <motion.div
-            aria-hidden
-            className="absolute inset-0 pointer-events-none rounded-2xl"
-            animate={{
-              boxShadow: [
-                '0 0 40px rgba(170,110,255,0.22), 0 20px 60px rgba(0,0,0,0.55)',
-                '0 0 70px rgba(190,130,255,0.38), 0 20px 60px rgba(0,0,0,0.55)',
-                '0 0 40px rgba(170,110,255,0.22), 0 20px 60px rgba(0,0,0,0.55)',
-              ],
-            }}
-            transition={{ repeat: Infinity, duration: 4.5, ease: 'easeInOut' }}
-          />
-
-          {/* Scattered sparkle stars for atmosphere */}
-          <div aria-hidden className="absolute inset-0 pointer-events-none overflow-hidden rounded-2xl">
-            <motion.span
-              className="absolute text-[8px]"
-              style={{ top: '12%', right: '18%', color: 'rgba(220,190,255,0.7)' }}
-              animate={{ opacity: [0.2, 0.9, 0.2] }}
-              transition={{ repeat: Infinity, duration: 2.6, ease: 'easeInOut' }}
-            >✦</motion.span>
-            <motion.span
-              className="absolute text-[6px]"
-              style={{ top: '55%', left: '8%', color: 'rgba(220,190,255,0.55)' }}
-              animate={{ opacity: [0.15, 0.7, 0.15] }}
-              transition={{ repeat: Infinity, duration: 3.4, ease: 'easeInOut', delay: 0.8 }}
-            >✦</motion.span>
-          </div>
-
           <button
             onClick={dismiss}
             aria-label="Close"
@@ -96,65 +67,38 @@ export default function BuyWidget() {
             </svg>
           </button>
 
-          <div className="relative p-6">
+          <div className="relative p-4">
             <span
-              className="font-mono text-[10px] tracking-[0.2em] uppercase mb-3 flex items-center gap-2"
-              style={{ color: 'rgba(220,195,255,0.7)' }}
+              className="font-mono text-[9px] tracking-[0.16em] uppercase mb-2 block"
+              style={{ color: 'rgba(220,195,255,0.6)' }}
             >
-              <span style={{ color: 'rgba(200,150,255,0.9)' }}>✦</span>
-              App + Ebook &quot;The Transmission&quot;
+              App + Ebook — The Transmission
             </span>
 
-            <h3
-              className="font-display font-light italic leading-[1.2] mb-3 text-[1.35rem]"
-              style={{ color: '#f8f5ff' }}
-            >
-              Begin your practice.
-            </h3>
-
             <div className="flex items-baseline gap-2 mb-3">
-              <span className="font-display text-[1.9rem] font-light" style={{ color: '#f8f5ff' }}>$79</span>
-              <span className="font-mono text-[11px]" style={{ color: 'rgba(220,195,255,0.65)' }}>one time</span>
+              <span className="font-display text-[1.3rem] font-light" style={{ color: '#f8f5ff' }}>$79</span>
+              <span className="font-mono text-[10px]" style={{ color: 'rgba(220,195,255,0.55)' }}>one time</span>
             </div>
 
-            <div className="flex flex-col gap-2 mb-4">
-              <p className="font-mono text-[11px] tracking-[0.05em]" style={{ color: 'rgba(220,205,255,0.6)' }}>
-                ✦ Not available anywhere else
-              </p>
-              <p className="font-mono text-[11px] tracking-[0.05em]" style={{ color: 'rgba(220,205,255,0.6)' }}>
-                ✦ Pay in 4 interest-free with Klarna
-              </p>
-              <p className="font-mono text-[11px] tracking-[0.05em]" style={{ color: 'rgba(220,205,255,0.6)' }}>
-                ✦ Buy today, get the audiobook free when it ships
-              </p>
-            </div>
-
-            <motion.button
+            <button
               onClick={buyNow}
               disabled={loading}
-              className="w-full py-[15px] rounded-full font-mono text-[11px] tracking-[0.2em] uppercase transition-opacity duration-300 hover:opacity-90"
+              className="w-full py-[10px] rounded-full font-mono text-[10px] tracking-[0.16em] uppercase transition-opacity duration-300 hover:opacity-90"
               style={{
-                background: 'linear-gradient(135deg, rgba(175,110,255,0.95), rgba(130,65,220,0.95))',
+                background: 'rgba(175,110,255,0.14)',
+                border: '1px solid rgba(210,175,255,0.3)',
                 color: '#f8f5ff',
                 opacity: loading ? 0.65 : 1,
               }}
-              animate={{
-                boxShadow: [
-                  '0 0 22px rgba(170,110,255,0.35)',
-                  '0 0 34px rgba(190,130,255,0.55)',
-                  '0 0 22px rgba(170,110,255,0.35)',
-                ],
-              }}
-              transition={{ repeat: Infinity, duration: 2.6, ease: 'easeInOut' }}
             >
-              {loading ? 'Opening checkout…' : 'Begin Your Practice'}
-            </motion.button>
+              {loading ? 'Opening…' : 'Begin Your Practice'}
+            </button>
 
             <p
-              className="font-mono text-[10px] tracking-[0.08em] mt-3 text-center"
-              style={{ color: 'rgba(210,175,255,0.45)' }}
+              className="font-mono text-[9px] tracking-[0.06em] mt-2 text-center"
+              style={{ color: 'rgba(210,175,255,0.4)' }}
             >
-              90-day guarantee · Your data stays with you
+              90-day guarantee
             </p>
           </div>
         </motion.div>
