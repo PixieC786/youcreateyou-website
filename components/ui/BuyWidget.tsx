@@ -4,31 +4,29 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { beginCheckout } from '@/lib/checkout'
 
+const SHOW_AT_SCROLL_DEPTH = 0.75
+
 export default function BuyWidget() {
-  const [pastMap, setPastMap] = useState(false)
+  const [nearEnd, setNearEnd] = useState(false)
   const [dismissed, setDismissed] = useState(false)
   const [loading, setLoading] = useState(false)
 
-  // Shows once the visitor has scrolled past the Constellation map, hides
-  // while the map is in view (its own buttons live in the same corner) and
-  // hides again above the map. Re-passing the map resets a manual dismiss.
+  // Shows once the visitor has scrolled through most of the page (75% depth)
+  // rather than a fixed section, so it appears near the end of any page's
+  // scroll instead of popping up early on longer pages.
   useEffect(() => {
-    const target = document.getElementById('constellation-map')
-    if (!target) return
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setPastMap(false)
-          setDismissed(false)
-        } else {
-          setPastMap(entry.boundingClientRect.top < 0)
-        }
-      },
-      { threshold: 0.15 }
-    )
-    observer.observe(target)
-    return () => observer.disconnect()
+    const onScroll = () => {
+      const scrollable = document.documentElement.scrollHeight - window.innerHeight
+      const depth = scrollable > 0 ? window.scrollY / scrollable : 0
+      setNearEnd(depth >= SHOW_AT_SCROLL_DEPTH)
+    }
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    window.addEventListener('resize', onScroll)
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+      window.removeEventListener('resize', onScroll)
+    }
   }, [])
 
   const dismiss = () => setDismissed(true)
@@ -41,7 +39,7 @@ export default function BuyWidget() {
 
   return (
     <AnimatePresence>
-      {pastMap && !dismissed && (
+      {nearEnd && !dismissed && (
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
