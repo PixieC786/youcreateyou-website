@@ -14,6 +14,9 @@ export async function beginCheckout(email?: string): Promise<void> {
         plan: 'ebook_app',
         email: email && email.trim() ? email.trim() : null,
         returnUrl: 'https://app.youcreateyou.life',
+        // If they back out of Stripe without paying, send them back to the
+        // actual page they were reading — not a bare app paywall with no context.
+        cancelUrl: typeof window !== 'undefined' ? window.location.href : undefined,
       }),
     })
     const data = await res.json()
