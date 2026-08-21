@@ -71,7 +71,7 @@ const STAGES = [
   {
     num: '04', name: 'Radiance', sub: 'EXPRESSION',
     star: 'Energy radiates outward.\nLight changes everything around it.',
-    ycy: 'Your inner world creates your outer world.',
+    ycy: 'Your inner world meets the outer one.',
     symbol: (
       <svg width="68" height="68" viewBox="0 0 80 80" fill="none">
         <circle cx="40" cy="40" r="35" stroke="#CFA8FF" strokeWidth="0.5" opacity="0.16"/>
@@ -430,7 +430,7 @@ export default function StarLifeCycle() {
             fontSize: '0.8rem',
             color: 'rgba(207,168,255,0.38)',
           }}>
-            Your inner world is where the new reality begins.
+            Your inner world is where the practice begins.
           </p>
         </motion.div>
 

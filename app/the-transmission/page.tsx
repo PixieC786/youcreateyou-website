@@ -94,7 +94,7 @@ const FAQS = [
   },
   {
     q: 'Is there a physical or audio version?',
-    a: 'Not yet. Right now it’s ebook + app. An audiobook is coming — buy today and it’s yours free the moment it ships, no extra charge. Wait, and the bundle becomes $97 with the audiobook included from the start.',
+    a: 'Not yet. Right now it’s ebook + app. An audiobook is coming — buy today and it’s yours free the moment it ships, no extra charge. Wait, and the bundle becomes $147 with the audiobook included from the start.',
   },
 ]
 
@@ -523,6 +523,9 @@ export default function TheTransmissionPage() {
             </BeginPracticeButton>
             <p className="font-mono text-[9px] tracking-[0.15em] uppercase" style={{ color: 'rgba(210,175,255,0.4)' }}>
               Ebook + lifetime app access · read inside the app · one time
+            </p>
+            <p className="font-mono text-[9px] tracking-[0.15em] uppercase" style={{ color: 'rgba(200,166,255,0.55)' }}>
+              $147 once the audiobook ships — yours free today if you buy now
             </p>
             <Link
               href="/the-transmission/preview"

@@ -108,11 +108,11 @@ export default function AboutPage() {
           <Beat delay={0.06} text="You Create You was built to find that someone." />
 
           <Para delay={0.04}>
-            Not a program. Not a brand. A practice of remembering.
-            Twenty-one portals. Four phases. 365 days. One question underneath all of them:
+            Not a program. Not a brand. A practice of remembering,
+            three hundred and sixty-five days a year. One question underneath all of it:
           </Para>
 
-          <Beat delay={0.06} text="What if the version of you who has everything is not who you become — but who you already are?" />
+          <Beat delay={0.06} text="What if the version of you who was here all along is not who you become — but who you already are?" />
 
           {/* Pull quote */}
           <motion.div

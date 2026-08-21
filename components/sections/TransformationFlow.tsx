@@ -44,7 +44,7 @@ const STEPS = [
   },
   {
     num: '04', label: 'Radiate',
-    phrase: 'The practice is personal. The effect is planetary.',
+    phrase: 'The practice is personal. It doesn\'t stop with you.',
     color: '#ff8eb4', shadow: 'rgba(255,100,155,0.5)',
     symbol: (
       <svg width="50" height="50" viewBox="0 0 50 50">
@@ -93,9 +93,9 @@ export default function TransformationFlow() {
           transition={{ duration: 0.75, ease: EASE }}
           className="text-center mb-16 md:mb-20"
         >
-          <p className="label-line justify-center mb-5">The five parts of the journey</p>
+          <p className="label-line justify-center mb-5">The five parts of the book</p>
           <p className="font-body text-[rgba(235,228,255,0.38)] text-sm max-w-[38ch] mx-auto leading-relaxed">
-            The book. The app. One ecosystem.<br/>One complete path back to yourself.
+            Five parts to read.<br/>One daily practice in the app to live them.
           </p>
         </motion.div>
 

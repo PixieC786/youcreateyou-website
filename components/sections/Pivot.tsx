@@ -126,21 +126,6 @@ export default function Pivot() {
             </motion.div>
           ))}
         </div>
-
-        {/* Science note */}
-        <motion.div
-          initial={{ opacity: 0, y: 14 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-60px' }}
-          transition={{ delay: 0.45, duration: 0.7, ease: EASE }}
-          className="max-w-lg mx-auto mt-10 text-center"
-        >
-          <p className="font-display italic text-[clamp(1rem,1.8vw,1.3rem)] text-[rgba(240,236,255,0.55)] leading-[1.65]">
-            "Your brain cannot distinguish between a vividly imagined
-            experience and a real one. We use this fact — deliberately,
-            every single day."
-          </p>
-        </motion.div>
       </div>
     </section>
   )

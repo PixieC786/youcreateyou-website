@@ -8,10 +8,10 @@ const EASE = [0.22, 1, 0.36, 1] as const
 
 const INCLUDES = [
   'The Transmission ebook — the full book, right inside the app, no download',
-  '21 portals across 4 phases: Remember, Return, Create, Radiate',
+  'A daily practice, not a bonus feature — moving through Remember, Return, Create, Radiate, one portal at a time',
   'Inner Cinema — inhabit your future self from within',
-  'Fear Alchemist — turn what holds you back into fuel',
-  'The Witness — dissolve the thoughts that are not yours',
+  'Fear Alchemist — meet what holds you back, instead of running from it',
+  'The Witness — hear the thoughts that aren\'t yours, without obeying them',
   'The Frequency of Thanks — the state that changes everything',
 ]
 
@@ -44,7 +44,7 @@ export default function Pricing() {
             transition={{ duration: 0.8, ease: EASE, delay: 0.08 }}
             className="font-display text-[clamp(2rem,5vw,3rem)] font-light italic text-[rgba(240,236,255,0.95)] leading-[1.3] mb-4"
           >
-            The version of you<br />who has everything — begins here.
+            The version of you<br />who was here all along — meet yourself.
           </motion.h2>
 
 
@@ -88,10 +88,13 @@ export default function Pricing() {
           >
             <button
               onClick={() => beginCheckout()}
-              className="inline-block font-mono text-[10px] tracking-[0.22em] uppercase text-[rgba(220,190,255,0.95)] bg-[rgba(155,90,230,0.15)] border border-[rgba(179,136,255,0.4)] rounded-full px-12 py-[18px] hover:bg-[rgba(155,90,230,0.28)] hover:border-[rgba(179,136,255,0.7)] transition-all duration-300 mb-5"
+              className="inline-block font-mono text-[10px] tracking-[0.22em] uppercase text-[rgba(220,190,255,0.95)] bg-[rgba(155,90,230,0.15)] border border-[rgba(179,136,255,0.4)] rounded-full px-12 py-[18px] hover:bg-[rgba(155,90,230,0.28)] hover:border-[rgba(179,136,255,0.7)] transition-all duration-300 mb-3"
             >
               Begin Your Practice
             </button>
+            <p className="font-mono text-[9px] tracking-[0.15em] uppercase text-[rgba(200,166,255,0.55)] mb-5">
+              $147 once the audiobook ships — yours free today if you buy now
+            </p>
           </motion.div>
 
         </div>

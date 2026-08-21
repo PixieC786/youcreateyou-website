@@ -23,7 +23,7 @@ const TOOLS = [
     phase: 'Phase II — Return',
     name: 'Fear Alchemist',
     tagline: 'Every fear contains its opposite gift.',
-    description: 'A 6-stage guided somatic process that transmutes what holds you back into the exact fuel you need for expansion. Named "the most powerful 20 minutes" by our community.',
+    description: 'A 6-stage guided somatic process for meeting what holds you back — not to force it away, but to understand what it has been protecting.',
     stages: ['Name It', 'Feel It', 'Question It', 'The Messenger', 'The Alchemy', 'One Step Forward'],
     color: 'rgba(140,80,255,0.12)',
   },
@@ -40,8 +40,8 @@ const TOOLS = [
     id: 'gratitude',
     phase: 'Phase IV — Radiate',
     name: 'The Frequency of Thanks',
-    tagline: 'What you appreciate, appreciates.',
-    description: 'A daily gratitude practice with miracle morning sequencing and heart-pulse activation. The portal that compounds faster than any other in the practice.',
+    tagline: 'A daily practice of noticing what\'s already here.',
+    description: 'A daily gratitude practice with miracle morning sequencing and heart-pulse activation.',
     stages: ['The Past', 'The Present', "Today's Miracles", 'Already Received', 'The Transmission', 'Receive'],
     color: 'rgba(124,77,255,0.1)',
   },
@@ -70,7 +70,7 @@ export default function AppShowcase() {
             transition={{ duration: 0.8, ease: EASE }}
             className="font-display text-[clamp(2rem,4.5vw,3.5rem)] font-light italic text-[#f0ecff] mt-6 leading-[1.12]"
           >
-            21 portals. 4 phases.
+            A daily practice.
             <br />
             <span className="text-gradient">One direction: back to yourself.</span>
           </motion.h2>

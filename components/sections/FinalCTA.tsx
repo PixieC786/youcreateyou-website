@@ -103,7 +103,7 @@ export default function FinalCTA() {
           style={{ letterSpacing: '-0.01em', color: '#f8f5ff' }}
         >
           The version of you
-          <br />who has everything
+          <br />who was here all along
           <br /><span className="text-gradient">is waiting.</span>
         </motion.h2>
 
@@ -114,8 +114,8 @@ export default function FinalCTA() {
           transition={{ delay: 0.18, duration: 0.75, ease: EASE }}
           className="font-body text-[rgba(235,228,255,0.65)] text-[clamp(1rem,1.25vw,1.1rem)] max-w-[38ch] leading-[1.85] mb-12"
         >
-          21 portals. One direction: back to yourself.
-          One practice, lifetime access — nothing to renew, ever.
+          One practice, one direction: back to yourself.
+          Lifetime access — nothing to renew, ever.
         </motion.p>
 
         <motion.div

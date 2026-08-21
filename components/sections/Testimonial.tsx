@@ -15,21 +15,21 @@ const TESTIMONIALS = [
     initials: 'SR',
   },
   {
-    quote: 'The Fear Alchemist is unlike anything I\'ve encountered. I went in dreading a decision I\'d avoided for two years. Twenty minutes later I had complete clarity. The fear was just gone.',
+    quote: 'The Fear Alchemist is unlike anything I\'ve encountered. I went in dreading a decision I\'d avoided for two years. Twenty minutes later, I could finally see what the fear had actually been protecting. That changed everything.',
     name: 'Marcus T.',
     title: 'Entrepreneur · New York',
     initials: 'MT',
   },
   {
-    quote: 'Creative Visualisation is genuinely transcendent. I use it every morning. My life has been measurably, visibly different since I started. Not metaphorically.',
+    quote: 'The Inner Cinema is genuinely something else. I use it every morning. It\'s changed how I show up in ways I actually notice now — not overnight, just steadily.',
     name: 'Amara K.',
     title: 'Coach · Toronto',
     initials: 'AK',
   },
   {
-    quote: 'I was sceptical about the quantum creation stuff. Then I used Heart Coherence daily for two weeks and my resting HRV improved by 23%. Whatever is happening, the science is real.',
+    quote: 'I was the biggest skeptic in my friend group. Two weeks of Heart Coherence in, and I still don\'t have language for what shifted — but something did.',
     name: 'Daniel S.',
-    title: 'Researcher · Berlin',
+    title: 'Berlin',
     initials: 'DS',
   },
 ]

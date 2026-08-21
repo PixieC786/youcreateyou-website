@@ -29,12 +29,18 @@ export default function CreatorField() {
 
         <div className="text-center mb-14 md:mb-18">
           <SectionLabel text="The Creator Field" />
+          {/* Same full-bleed breakout + scale as the Hero headline (margin,
+              not transform, so it doesn't fight this element's own y-animation). */}
           <motion.h2
             initial={{ opacity: 0, y: 22 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-80px' }}
             transition={{ duration: 0.8, ease: EASE }}
-            className="font-display text-[clamp(2rem,4.5vw,3.5rem)] font-light italic text-[#f0ecff] mt-6 leading-[1.12]"
+            className="font-display text-[clamp(2.75rem,6.5vw,6.5rem)] font-light italic text-[#f0ecff] mt-6 leading-[1.08] px-2"
+            style={{
+              marginLeft: 'calc(50% - 50vw)',
+              marginRight: 'calc(50% - 50vw)',
+            }}
           >
             Share your becoming.
             <br />
@@ -45,7 +51,7 @@ export default function CreatorField() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.7, ease: EASE, delay: 0.1 }}
-            className="font-body text-[rgba(240,236,255,0.55)] text-[15px] leading-[1.8] max-w-[56ch] mx-auto mt-6"
+            className="font-body text-[rgba(240,236,255,0.55)] text-[15px] leading-[1.8] max-w-[90ch] mx-auto mt-6"
           >
             Not a wall for performing. A field built around one idea: the moment someone
             shares something true, the worst thing that can happen isn&apos;t a bad reply —

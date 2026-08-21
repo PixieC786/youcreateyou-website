@@ -119,8 +119,8 @@ export default function Recognition() {
               backgroundClip: 'text',
             }}
           >
-            The version of you who has everything you want already exists.
-            This practice bridges the gap.
+            The version of you who was here all along already exists.
+            This practice helps you remember.
           </p>
         </motion.div>
 

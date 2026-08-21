@@ -5,7 +5,6 @@ import Link from 'next/link'
 const NAV_LINKS = [
   { href: '/the-transmission', label: 'The Book' },
   { href: '/practice', label: 'The Practice' },
-  { href: '/science',  label: 'The Science' },
   { href: '/journal',  label: 'Journal' },
   { href: '/about',    label: 'About' },
   { href: '/start',    label: 'Begin' },
@@ -34,10 +33,13 @@ export default function Footer() {
             >
               You Create You
             </Link>
+            <p className="font-display italic text-[13.5px] text-[rgba(220,185,255,0.55)] leading-[1.6] max-w-[28ch] mb-3">
+              The practice that brings you back to yourself.
+            </p>
             <p className="font-body text-[13px] text-[rgba(240,236,255,0.38)] leading-[1.85] max-w-[28ch]">
               A 365-day practice rooted in ancient wisdom,
               modern science, and one understanding:
-              your inner world creates your outer world.
+              your inner world meets the outer one.
             </p>
             <p className="font-mono text-[9px] tracking-[0.2em] uppercase text-[rgba(179,136,255,0.38)] mt-5">
               app.youcreateyou.life

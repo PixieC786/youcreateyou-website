@@ -79,35 +79,39 @@ export default function Hero() {
           animate="show"
           className="flex flex-col items-center w-full"
         >
-          {/* Eyebrow badge */}
-          <motion.div variants={ITEM} className="mb-8 md:mb-10">
-            <div className="inline-flex items-center gap-3 px-5 py-2.5 rounded-full border border-[rgba(210,175,255,0.25)] bg-[rgba(210,175,255,0.07)]"
-              style={{ boxShadow: '0 0 20px rgba(180,120,255,0.1), inset 0 1px 0 rgba(255,255,255,0.06)' }}
-            >
-              <span className="w-1.5 h-1.5 rounded-full bg-[rgba(220,185,255,0.9)] animate-breathe" style={{ boxShadow: '0 0 6px rgba(210,175,255,0.8)' }} />
-              <span className="font-mono text-[10px] tracking-[0.28em] uppercase text-[rgba(220,185,255,0.82)]">
-                You already know who you&apos;re becoming
-              </span>
-            </div>
-          </motion.div>
-
-          {/* Headline — luminous, warm */}
+          {/* Headline — luminous, warm. Breaks out to full viewport width (via
+              margin, not transform, so it doesn't fight framer-motion's own
+              y-animation on this element) so it can run much bigger than the
+              container-content column would otherwise allow. The section
+              above has overflow-hidden, so the negative margins can't cause
+              page-level horizontal scroll. */}
           <motion.h1
             variants={ITEM}
-            className="font-display font-light italic text-[clamp(2.85rem,7.5vw,6rem)] leading-[1.06] mb-4 max-w-[18ch]"
-            style={{ letterSpacing: '-0.01em', color: '#f8f5ff' }}
+            className="font-display font-light italic text-[clamp(2.75rem,6.5vw,6.5rem)] leading-[1.08] mb-4 px-2"
+            style={{
+              letterSpacing: '-0.01em',
+              color: '#f8f5ff',
+              marginLeft: 'calc(50% - 50vw)',
+              marginRight: 'calc(50% - 50vw)',
+            }}
           >
             The version of you
             <br />
-            who has everything —
+            who was here all along
             <br />
             <span className="text-gradient">exists.</span>
           </motion.h1>
 
-          {/* Sub-headline — identity mirror */}
+          {/* Sub-headline — identity mirror. Same full-bleed breakout as the
+              headline (margin, not transform) — this sentence is long enough
+              that it needs the extra width to sit on one line at a bigger size. */}
           <motion.p
             variants={ITEM}
-            className="font-body text-[rgba(235,228,255,0.68)] text-[clamp(1rem,1.5vw,1.18rem)] max-w-[40ch] leading-[1.85] mb-6"
+            className="font-body text-[rgba(235,228,255,0.68)] text-[clamp(1.05rem,1.85vw,1.55rem)] leading-[1.85] mb-6 px-2 whitespace-normal min-[1600px]:whitespace-nowrap"
+            style={{
+              marginLeft: 'calc(50% - 50vw)',
+              marginRight: 'calc(50% - 50vw)',
+            }}
           >
             Not a new you. The real one.
             The one you&apos;ve always sensed underneath the noise — waiting to be lived.

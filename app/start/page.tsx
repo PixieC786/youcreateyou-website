@@ -67,7 +67,7 @@ export default function StartPage() {
           style={{ color: '#f8f5ff' }}
         >
           The version of you<br />
-          who has everything —<br />
+          who was here all along<br />
           <span className="text-gradient">exists.</span>
         </motion.h1>
 

@@ -200,8 +200,8 @@ export default function ExitIntentPopup() {
                       className="font-body text-[0.9rem] leading-[1.85] mb-8"
                       style={{ color: 'rgba(240,236,255,0.48)' }}
                     >
-                      Receive the Fear Alchemist transmission — the complete
-                      6-stage practice from the book. Free.
+                      Receive the Fear Alchemist — the practice paired with
+                      Transmission Seven, Fear Is Not the Enemy. Free.
                     </p>
 
                     <form onSubmit={submit} className="flex flex-col gap-3">

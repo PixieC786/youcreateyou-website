@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import SectionLabel from '@/components/ui/SectionLabel'
 import BeginPracticeButton from '@/components/ui/BeginPracticeButton'
 import Card from '@/components/ui/Card'
@@ -26,8 +27,8 @@ const ALL_TOOLS = [
   { phase: '03', name: 'The Creation Field', desc: 'Feel the future into form. A 7-stage journey into the field where your inner state and outer reality meet.' },
   { phase: '03', name: 'The Inner Cinema', desc: 'Not a mental movie watched from the outside. A felt reality inhabited from within. The most powerful portal in the practice.' },
   { phase: '04', name: 'The Frequency of Thanks', desc: 'The real kind of gratitude does not feel like appreciation — it feels like the chest opening. This is how you find it.' },
-  { phase: '04', name: 'Heart Coherence', desc: 'When your heart and mind finally agree, something shifts at every level. Build that inner harmony — measurably.' },
-  { phase: '04', name: 'Manifestation Garden', desc: 'Plant it. Water it. Trust it. A visual practice for planting intentions and watching them grow over 33 days.' },
+  { phase: '04', name: 'Heart Coherence', desc: 'When your heart and mind finally agree, something shifts. Build that inner harmony, one session at a time.' },
+  { phase: '04', name: 'Manifestation Garden', desc: 'Plant it. Water it. Tend it daily. A visual practice for holding intentions with attention over 33 days.' },
   { phase: '04', name: 'The Flowing Quality', desc: 'The flowing quality — what was taken and what returns. Reclaim the full spectrum of your nature.' },
   { phase: '04', name: 'The Directing Quality', desc: 'The directing quality — what was taken and what returns. Reclaim the full spectrum of your nature.' },
   { phase: '04', name: 'Fun Is the Frequency', desc: 'Joy is not a reward. It is a practice. A daily portal for wonder, lightness, and the frequency that changes everything.' },
@@ -44,10 +45,14 @@ export default function PracticePage() {
   const phases = ['01', '02', '03', '04']
 
   return (
-    <main className="pt-24 pb-16">
+    <main className="pt-24 pb-16 overflow-hidden">
       <div className="container-content mb-8 text-center">
         <SectionLabel text="The full practice" />
-        <h1 className="font-display text-5xl sm:text-6xl font-light italic text-[#f0ecff] mt-6 mb-6 leading-snug">
+        {/* Same full-bleed breakout + scale as the Hero and Creator Field headlines. */}
+        <h1
+          className="font-display text-[clamp(2.75rem,6.5vw,6.5rem)] font-light italic text-[#f0ecff] mt-6 mb-6 leading-[1.08] px-2"
+          style={{ marginLeft: 'calc(50% - 50vw)', marginRight: 'calc(50% - 50vw)' }}
+        >
           21 portals. One complete system.
         </h1>
         <p className="font-body text-[rgba(240,236,255,0.5)] text-lg max-w-xl mx-auto leading-relaxed mb-10">
@@ -60,6 +65,33 @@ export default function PracticePage() {
       </div>
 
       <TransformationFlow />
+
+      {/* Big full-bleed break — the app itself, before the portal grid */}
+      <section className="relative py-16 md:py-24 overflow-hidden">
+        <div
+          aria-hidden
+          className="absolute inset-0 pointer-events-none"
+          style={{ background: 'radial-gradient(ellipse 70% 60% at 50% 50%, rgba(140,70,255,0.1) 0%, transparent 70%)' }}
+        />
+        <div className="relative mx-auto w-full max-w-[1200px] px-6">
+          <div
+            className="relative rounded-2xl overflow-hidden mx-auto"
+            style={{
+              aspectRatio: '1915 / 991',
+              boxShadow: '0 40px 100px rgba(0,0,0,0.6), 0 0 80px rgba(140,70,255,0.14)',
+              border: '1px solid rgba(210,175,255,0.12)',
+            }}
+          >
+            <Image
+              src="/images/app-home-screen.png"
+              alt="You Create You — app home screen"
+              fill
+              sizes="(max-width: 1200px) 90vw, 1200px"
+              className="object-contain"
+            />
+          </div>
+        </div>
+      </section>
 
       {phases.map(phase => (
         <section key={phase} className="pb-10">
