@@ -20,3 +20,6 @@ Thumbs.db
 *.swp
 
 .vercel
+
+# TypeScript incremental build info
+tsconfig.tsbuildinfo
