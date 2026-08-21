@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from 'next'
+import { Suspense } from 'react'
 import Script from 'next/script'
 import { Cormorant_Garamond, Inter, DM_Mono } from 'next/font/google'
 import './globals.css'
@@ -8,6 +9,7 @@ import StarField from '@/components/ui/StarField'
 import CustomCursor from '@/components/ui/CustomCursor'
 import ExitIntentPopup from '@/components/ui/ExitIntentPopup'
 import BuyWidget from '@/components/ui/BuyWidget'
+import GoogleAnalytics from '@/components/ui/GoogleAnalytics'
 
 const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
@@ -140,7 +142,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', '${GA_MEASUREMENT_ID}');
+            // page_view is sent by <GoogleAnalytics />, once per route.
+            gtag('config', '${GA_MEASUREMENT_ID}', { send_page_view: false });
           `}
         </Script>
       </head>
@@ -157,6 +160,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <div className="fixed inset-0 pointer-events-none" style={{ zIndex: 0 }} aria-hidden>
           <StarField density={1.3} connectDistance={115} showLines={true} />
         </div>
+        <Suspense fallback={null}>
+          <GoogleAnalytics measurementId={GA_MEASUREMENT_ID} />
+        </Suspense>
         <CustomCursor />
         <ExitIntentPopup />
         <BuyWidget />
