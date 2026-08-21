@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from 'next'
+import Script from 'next/script'
 import { Cormorant_Garamond, Inter, DM_Mono } from 'next/font/google'
 import './globals.css'
 import Nav from '@/components/layout/Nav'
@@ -32,17 +33,16 @@ const dmMono = DM_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: 'You Create You — The version of you who has everything exists.',
+    default: 'You Create You — The version of you who was here all along exists.',
     template: '%s | You Create You',
   },
   description:
-    'Not a new you. The real one. A daily practice for rewiring your mind, reclaiming your identity, and creating the life you actually want.',
+    'The practice that brings you back to yourself. Not a new you. The real one. A daily practice for rewiring your mind, reclaiming your identity, and creating the life you actually want.',
   keywords: [
     'conscious creation',
     'identity work',
     'deep belief change',
     'manifestation',
-    'neuroscience',
     'daily practice',
     'self concept',
     'consciousness portals',
@@ -55,9 +55,9 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://youcreateyou.life',
     siteName: 'You Create You',
-    title: 'You Create You — The version of you who has everything exists.',
+    title: 'You Create You — The version of you who was here all along exists.',
     description:
-      'Not a new you. The real one. A daily practice for rewiring your mind, reclaiming your identity, and creating the life you actually want.',
+      'The practice that brings you back to yourself. Not a new you. The real one. A daily practice for rewiring your mind, reclaiming your identity, and creating the life you actually want.',
     images: [
       {
         url: 'https://youcreateyou.life/icon-512.png',
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary',
-    title: 'You Create You — The version of you who has everything exists.',
+    title: 'You Create You — The version of you who was here all along exists.',
     description: 'Not a new you. The real one. A daily practice for rewiring your mind, reclaiming your identity, and creating the life you actually want.',
     images: ['https://youcreateyou.life/icon-512.png'],
   },
@@ -107,12 +107,15 @@ const ORGANIZATION_JSON_LD = {
   url: 'https://youcreateyou.life',
   logo: 'https://youcreateyou.life/icon-512.png',
   description:
-    'Not a new you. The real one. A daily practice for rewiring your mind, reclaiming your identity, and creating the life you actually want.',
+    'The practice that brings you back to yourself. Not a new you. The real one. A daily practice for rewiring your mind, reclaiming your identity, and creating the life you actually want.',
   sameAs: [
     'https://www.instagram.com/youcreateyou_/',
     'https://www.instagram.com/zirkaray/',
   ],
 }
+
+// GA4 measurement ID — a public identifier, shipped to the browser by design.
+const GA_MEASUREMENT_ID = 'G-WDQF1QEM1B'
 
 const WEBSITE_JSON_LD = {
   '@context': 'https://schema.org',
@@ -127,6 +130,20 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       lang="en"
       className={`${cormorant.variable} ${inter.variable} ${dmMono.variable}`}
     >
+      <head>
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="ga4-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_MEASUREMENT_ID}');
+          `}
+        </Script>
+      </head>
       <body className="bg-space text-[#f0ecff] font-body antialiased" suppressHydrationWarning>
         <script
           type="application/ld+json"
