@@ -107,6 +107,13 @@ export default function TermsPage() {
             personal reflection and self-inquiry only. Always consult a doctor, therapist,
             or qualified professional for any condition that requires real care.
           </P>
+          <P>
+            The Quantum Creation and Frequency Tuner practices, AI-generated reflections
+            (I AM), and other tools in the app are offered for personal reflection,
+            self-exploration, and entertainment. They are{' '}
+            <Strong>not scientific, medical, psychological, financial, or professional
+            claims</Strong>, and results are not guaranteed.
+          </P>
         </div>
 
         <div className="my-8" style={{ borderTop: '1px solid rgba(179,136,255,0.1)' }} />
