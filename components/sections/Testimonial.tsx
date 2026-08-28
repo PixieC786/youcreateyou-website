@@ -3,42 +3,39 @@
 import { useState, useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import SectionLabel from '@/components/ui/SectionLabel'
+import { supabase, type YCYReview } from '@/lib/supabase'
 
 const EASE = [0.22, 1, 0.36, 1] as const
 const DURATION = 14000
 
-const TESTIMONIALS = [
-  {
-    quote: 'I\'ve done years of therapy, every journaling app, two retreats. Nothing touched this. The Identity Rebirth ceremony made me cry in the best possible way. I finally feel like myself.',
-    name: 'Sophia R.',
-    title: 'Designer · London',
-    initials: 'SR',
-  },
-  {
-    quote: 'The Fear Alchemist is unlike anything I\'ve encountered. I went in dreading a decision I\'d avoided for two years. Twenty minutes later, I could finally see what the fear had actually been protecting. That changed everything.',
-    name: 'Marcus T.',
-    title: 'Entrepreneur · New York',
-    initials: 'MT',
-  },
-  {
-    quote: 'The Inner Cinema is genuinely something else. I use it every morning. It\'s changed how I show up in ways I actually notice now — not overnight, just steadily.',
-    name: 'Amara K.',
-    title: 'Coach · Toronto',
-    initials: 'AK',
-  },
-  {
-    quote: 'I was the biggest skeptic in my friend group. Two weeks of Heart Coherence in, and I still don\'t have language for what shifted — but something did.',
-    name: 'Daniel S.',
-    title: 'Berlin',
-    initials: 'DS',
-  },
-]
+function initialsFor(name: string): string {
+  return name.trim().split(/\s+/).slice(0, 2).map(w => w[0]?.toUpperCase() ?? '').join('') || '?'
+}
 
 export default function Testimonial() {
+  const [testimonials, setTestimonials] = useState<{ quote: string; name: string; rating: number; initials: string }[]>([])
   const [active, setActive] = useState(0)
   const [progress, setProgress] = useState(0)
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null)
   const startRef = useRef<number>(Date.now())
+
+  useEffect(() => {
+    supabase
+      .from('ycy_reviews')
+      .select('id, name, rating, review_text, created_at')
+      .order('created_at', { ascending: false })
+      .then(({ data }: { data: YCYReview[] | null }) => {
+        if (!data || data.length === 0) return
+        setTestimonials(
+          data.map(r => ({
+            quote: r.review_text,
+            name: r.name,
+            rating: r.rating,
+            initials: initialsFor(r.name),
+          }))
+        )
+      })
+  }, [])
 
   const start = () => {
     startRef.current = Date.now()
@@ -47,7 +44,7 @@ export default function Testimonial() {
       const pct = Math.min((elapsed / DURATION) * 100, 100)
       setProgress(pct)
       if (elapsed >= DURATION) {
-        setActive(prev => (prev + 1) % TESTIMONIALS.length)
+        setActive(prev => (prev + 1) % testimonials.length)
         setProgress(0)
         startRef.current = Date.now()
       }
@@ -66,10 +63,13 @@ export default function Testimonial() {
   }
 
   useEffect(() => {
+    if (testimonials.length === 0) return
     start()
     return stop
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, [testimonials])
+
+  if (testimonials.length === 0) return null
 
   return (
     <section className="section-pad relative overflow-hidden" style={{ background: 'rgba(10,8,20,0.5)' }}>
@@ -114,22 +114,22 @@ export default function Testimonial() {
               className="text-center mb-10"
             >
               <blockquote className="font-display italic text-[clamp(1.15rem,2.2vw,1.55rem)] font-light text-[rgba(240,236,255,0.78)] leading-[1.6] mb-10">
-                {TESTIMONIALS[active].quote}
+                {testimonials[active].quote}
               </blockquote>
 
               {/* Avatar + attribution */}
               <div className="flex flex-col items-center gap-3">
                 <div className="w-10 h-10 rounded-full border border-[rgba(179,136,255,0.2)] bg-[rgba(179,136,255,0.08)] flex items-center justify-center">
                   <span className="font-mono text-[10px] tracking-[0.08em] text-[rgba(179,136,255,0.7)]">
-                    {TESTIMONIALS[active].initials}
+                    {testimonials[active].initials}
                   </span>
                 </div>
                 <div>
                   <p className="font-mono text-[10px] tracking-[0.22em] uppercase text-[rgba(179,136,255,0.65)]">
-                    {TESTIMONIALS[active].name}
+                    {testimonials[active].name}
                   </p>
                   <p className="font-mono text-[9px] tracking-[0.15em] uppercase text-[rgba(240,236,255,0.2)] mt-1">
-                    {TESTIMONIALS[active].title}
+                    {'★'.repeat(testimonials[active].rating)}
                   </p>
                 </div>
               </div>
@@ -138,7 +138,7 @@ export default function Testimonial() {
 
           {/* Progress dots with auto-advance indicator */}
           <div className="flex justify-center items-center gap-3">
-            {TESTIMONIALS.map((_, i) => (
+            {testimonials.map((_, i) => (
               <button
                 key={i}
                 onClick={() => goTo(i)}
