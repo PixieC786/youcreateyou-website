@@ -3,6 +3,8 @@ import CreatorField from '@/components/sections/CreatorField'
 import Constellations from '@/components/sections/Constellations'
 import Recognition from '@/components/sections/Recognition'
 import AppShowcase from '@/components/sections/AppShowcase'
+import Testimonial from '@/components/sections/Testimonial'
+import ReviewForm from '@/components/sections/ReviewForm'
 import Pricing from '@/components/sections/Pricing'
 import FinalCTA from '@/components/sections/FinalCTA'
 
@@ -20,6 +22,8 @@ export default function HomePage() {
       <CreatorField />
       <Recognition />
       <AppShowcase />
+      <Testimonial />
+      <ReviewForm />
       <Pricing />
       <FinalCTA />
     </main>
