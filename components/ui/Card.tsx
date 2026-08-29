@@ -36,7 +36,7 @@ export default function Card({ title, body, icon, label, delay = 0, className }:
       <div className="absolute -top-8 -right-8 w-24 h-24 rounded-full bg-[radial-gradient(circle,rgba(179,136,255,0.08)_0%,transparent_70%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
       {icon && (
-        <div className="mb-5 text-[rgba(179,136,255,0.65)] group-hover:text-[rgba(200,166,255,0.85)] transition-colors duration-300">
+        <div className="mb-5 w-10 h-10 text-[rgba(179,136,255,0.65)] group-hover:text-[rgba(200,166,255,0.85)] transition-colors duration-300 [&>svg]:w-full [&>svg]:h-full">
           {icon}
         </div>
       )}

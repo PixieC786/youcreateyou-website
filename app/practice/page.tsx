@@ -3,6 +3,7 @@ import SectionLabel from '@/components/ui/SectionLabel'
 import BeginPracticeButton from '@/components/ui/BeginPracticeButton'
 import Card from '@/components/ui/Card'
 import TransformationFlow from '@/components/sections/TransformationFlow'
+import { PORTAL_ICONS } from '@/components/ui/PortalIcons'
 
 export const metadata = {
   title: 'The Practice — You Create You',
@@ -104,6 +105,7 @@ export default function PracticePage() {
               {ALL_TOOLS.filter(t => t.phase === phase).map((tool, i) => (
                 <Card
                   key={tool.name}
+                  icon={PORTAL_ICONS[ALL_TOOLS.indexOf(tool)]}
                   label={`Phase ${phase}`}
                   title={tool.name}
                   body={tool.desc}
