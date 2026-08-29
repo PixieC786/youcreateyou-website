@@ -78,7 +78,7 @@ const FAQS = [
   },
   {
     q: 'Is this a subscription?',
-    a: '$79, one time. Lifetime access to the ebook and every portal in the app — nothing to cancel, nothing that renews.',
+    a: '$97, one time. Lifetime access to the ebook and every portal in the app — nothing to cancel, nothing that renews.',
   },
   {
     q: 'What if it doesn’t work for me?',

@@ -136,7 +136,7 @@ export default function TermsPage() {
         <H3>Pricing</H3>
         <P>
           The Transmission ebook and lifetime access to the app are sold together as a single
-          <Strong> $79, one-time payment</Strong>. This is not a subscription — there is nothing
+          <Strong> $97, one-time payment</Strong>. This is not a subscription — there is nothing
           to renew, and nothing that auto-charges you again.
         </P>
 

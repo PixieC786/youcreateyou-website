@@ -10,7 +10,7 @@ const ITEMS = [
 ]
 
 const TOTAL = ITEMS.reduce((sum, item) => sum + item.value, 0)
-const PRICE = 79
+const PRICE = 97
 const SAVINGS = TOTAL - PRICE
 
 export default function ValueStack({ className }: { className?: string }) {
