@@ -75,10 +75,7 @@ export default function Recognition() {
         </div>
 
         {/* Statement list — warmer numbers, more readable text */}
-        <div
-          className="flex flex-col gap-0 px-[clamp(20px,6vw,120px)]"
-          style={{ marginLeft: 'calc(50% - 50vw)', marginRight: 'calc(50% - 50vw)' }}
-        >
+        <div className="max-w-5xl mx-auto flex flex-col gap-0">
           {STATEMENTS.map(({ num, text }, i) => (
             <motion.div
               key={num}
@@ -89,12 +86,12 @@ export default function Recognition() {
               className="group flex gap-6 md:gap-8 items-start py-6 border-b border-[rgba(210,175,255,0.09)] last:border-b-0 cursor-default"
             >
               {/* Number — warmer at rest, luminous on hover */}
-              <span className="font-display italic text-[2.5rem] font-light leading-none flex-shrink-0 pt-1 select-none text-gradient opacity-70 group-hover:opacity-100 transition-opacity duration-400"
+              <span className="font-display italic text-[clamp(2.5rem,5vw,4rem)] font-light leading-none flex-shrink-0 pt-1 select-none text-gradient opacity-70 group-hover:opacity-100 transition-opacity duration-400"
               >
                 {num}
               </span>
               {/* Text — readable, warms on hover */}
-              <p className="font-display italic text-[clamp(1.15rem,2vw,1.45rem)] font-light leading-[1.52] transition-colors duration-400"
+              <p className="font-display italic text-[clamp(1.4rem,2.8vw,2rem)] font-light leading-[1.52] transition-colors duration-400"
                 style={{ color: 'rgba(235,228,255,0.62)' }}
                 onMouseEnter={e => (e.currentTarget.style.color = 'rgba(248,244,255,0.85)')}
                 onMouseLeave={e => (e.currentTarget.style.color = 'rgba(235,228,255,0.62)')}
