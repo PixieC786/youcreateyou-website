@@ -75,7 +75,10 @@ export default function Recognition() {
         </div>
 
         {/* Statement list — warmer numbers, more readable text */}
-        <div className="max-w-2xl mx-auto flex flex-col gap-0">
+        <div
+          className="flex flex-col gap-0 px-[clamp(20px,6vw,120px)]"
+          style={{ marginLeft: 'calc(50% - 50vw)', marginRight: 'calc(50% - 50vw)' }}
+        >
           {STATEMENTS.map(({ num, text }, i) => (
             <motion.div
               key={num}
