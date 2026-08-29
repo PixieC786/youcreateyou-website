@@ -18,10 +18,12 @@ const SOCIALS = [
   {
     href: 'https://www.instagram.com/youcreateyou_/',
     label: 'Follow @youcreateyou_ on Instagram',
+    handle: '@youcreateyou_',
   },
   {
     href: 'https://www.instagram.com/zirkaray/',
     label: 'Follow @zirkaray on Instagram',
+    handle: '@zirkaray',
   },
 ]
 
@@ -56,17 +58,22 @@ export default function Footer() {
               A 365-day practice rooted in ancient wisdom, modern science, and one
               understanding: your inner world meets the outer one.
             </p>
-            <div className="flex items-center gap-3">
-              {SOCIALS.map(({ href, label }) => (
+            <div className="flex items-center gap-5">
+              {SOCIALS.map(({ href, label, handle }) => (
                 <a
                   key={href}
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="w-9 h-9 flex items-center justify-center rounded-full border border-[rgba(179,136,255,0.16)] text-[rgba(179,136,255,0.55)] hover:text-[rgba(200,166,255,0.9)] hover:border-[rgba(179,136,255,0.4)] transition-colors duration-200"
+                  className="group flex flex-col items-center gap-2"
                 >
-                  <InstagramIcon />
+                  <span className="w-9 h-9 flex items-center justify-center rounded-full border border-[rgba(179,136,255,0.16)] text-[rgba(179,136,255,0.55)] group-hover:text-[rgba(200,166,255,0.9)] group-hover:border-[rgba(179,136,255,0.4)] transition-colors duration-200">
+                    <InstagramIcon />
+                  </span>
+                  <span className="font-mono text-[9px] tracking-[0.05em] text-[rgba(240,236,255,0.35)] group-hover:text-[rgba(240,236,255,0.65)] transition-colors duration-200">
+                    {handle}
+                  </span>
                 </a>
               ))}
             </div>
