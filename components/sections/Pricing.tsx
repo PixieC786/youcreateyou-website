@@ -156,7 +156,7 @@ export default function Pricing() {
                 <li className="flex items-start gap-3">
                   <span aria-hidden className="mt-[3px] flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-[11px]" style={{ background: 'rgba(179,136,255,0.16)', color: 'rgba(210,175,255,0.95)' }}>✓</span>
                   <span>
-                    <span className="font-body text-[15px]" style={{ color: 'rgba(240,236,255,0.88)' }}>Ebook</span>
+                    <span className="font-body text-[15px]" style={{ color: 'rgba(240,236,255,0.88)' }}>Ebook Access</span>
                     <span className="block font-body text-[13px] leading-[1.6] text-[rgba(235,228,255,0.5)] mt-0.5">Inside the app</span>
                     <span className="flex flex-wrap items-center gap-x-4 gap-y-2 mt-2.5">
                       <Link href="/the-transmission/preview" className="inline-flex items-center gap-1.5 font-mono text-[10px] tracking-[0.14em] uppercase text-[rgba(200,166,255,0.85)] hover:text-[#f0ecff] underline underline-offset-4 decoration-[rgba(179,136,255,0.35)] transition-colors duration-200">
@@ -171,7 +171,18 @@ export default function Pricing() {
                 </li>
                 <li className="flex items-start gap-3">
                   <span aria-hidden className="mt-[3px] flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-[11px]" style={{ background: 'rgba(179,136,255,0.16)', color: 'rgba(210,175,255,0.95)' }}>✓</span>
-                  <span className="font-body text-[15px]" style={{ color: 'rgba(240,236,255,0.88)' }}>Audiobook</span>
+                  <span>
+                    <span className="font-body text-[15px]" style={{ color: 'rgba(240,236,255,0.88)' }}>Audiobook Access</span>
+                    <span className="block font-body text-[13px] leading-[1.6] text-[rgba(235,228,255,0.5)] mt-0.5">Inside the app</span>
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span aria-hidden className="mt-[3px] flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-[11px]" style={{ background: 'rgba(240,236,255,0.06)', color: 'rgba(240,236,255,0.35)' }}>✕</span>
+                  <span className="font-body text-[15px]" style={{ color: 'rgba(240,236,255,0.35)', textDecoration: 'line-through', textDecorationColor: 'rgba(240,236,255,0.25)' }}>Limited Edition Hardcover</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span aria-hidden className="mt-[3px] flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-[11px]" style={{ background: 'rgba(240,236,255,0.06)', color: 'rgba(240,236,255,0.35)' }}>✕</span>
+                  <span className="font-body text-[15px]" style={{ color: 'rgba(240,236,255,0.35)', textDecoration: 'line-through', textDecorationColor: 'rgba(240,236,255,0.25)' }}>The Journal</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span aria-hidden className="mt-[3px] flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-[11px]" style={{ background: 'rgba(179,136,255,0.16)', color: 'rgba(210,175,255,0.95)' }}>✓</span>
@@ -230,6 +241,10 @@ export default function Pricing() {
               <p className="font-body text-[13px] text-[rgba(235,228,255,0.5)] mb-6">No subscription. Lifetime access.</p>
 
               <ul className="space-y-4 mb-8">
+                <li className="flex items-start gap-3">
+                  <span aria-hidden className="mt-[3px] flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-[11px]" style={{ background: 'rgba(179,136,255,0.16)', color: 'rgba(210,175,255,0.95)' }}>✓</span>
+                  <span className="font-body text-[15px]" style={{ color: 'rgba(240,236,255,0.88)' }}>App Lifetime Access</span>
+                </li>
                 <li className="flex items-start gap-3">
                   <span aria-hidden className="mt-[3px] flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-[11px]" style={{ background: 'rgba(179,136,255,0.16)', color: 'rgba(210,175,255,0.95)' }}>✓</span>
                   <span>
