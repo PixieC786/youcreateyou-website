@@ -3,10 +3,10 @@
 import Link from 'next/link'
 
 const NAV_LINKS = [
-  { href: '/the-transmission', label: 'The Book' },
-  { href: '/journal',  label: 'Journal' },
-  { href: '/about',    label: 'About' },
-  { href: '/start',    label: 'Begin' },
+  { href: 'https://zirkaray.com', label: 'The Book' },
+  { href: '/journal',             label: 'Journal' },
+  { href: '/about',               label: 'About' },
+  { href: '/start',               label: 'Begin' },
 ]
 
 const LEGAL_LINKS = [

@@ -7,8 +7,8 @@ import Button from '@/components/ui/Button'
 import { beginCheckout } from '@/lib/checkout'
 
 const NAV_LINKS = [
-  { href: '/the-transmission', label: 'The Book' },
-  { href: '/about',            label: 'About' },
+  { href: 'https://zirkaray.com', label: 'The Book' },
+  { href: '/about',               label: 'About' },
 ]
 
 const EASE = [0.22, 1, 0.36, 1] as const
