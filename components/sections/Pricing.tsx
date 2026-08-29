@@ -229,7 +229,7 @@ export default function Pricing() {
                 <span className="font-display italic text-[2.6rem]" style={{ color: 'rgba(200,166,255,1)' }}>$197</span>
                 <span className="font-mono text-[11px] tracking-[0.2em] text-[rgba(235,228,255,0.45)] ml-2">USD · one time</span>
               </p>
-              <p className="font-body text-[13px] text-[rgba(235,228,255,0.5)] mb-6">One-time. No subscription. Lifetime access.</p>
+              <p className="font-body text-[13px] text-[rgba(235,228,255,0.5)] mb-6">No subscription. Lifetime access.</p>
 
               <ul className="space-y-4 mb-8">
                 <li className="flex items-start gap-3">
