@@ -4,7 +4,6 @@ import Link from 'next/link'
 
 const EXPLORE_LINKS = [
   { href: 'https://zirkaray.com', label: 'The Book' },
-  { href: '/journal',             label: 'Journal' },
   { href: '/about',               label: 'About' },
   { href: '/start',               label: 'Begin' },
 ]
@@ -13,11 +12,6 @@ const MORE_LINKS = [
   { href: '/privacy', label: 'Privacy Policy' },
   { href: '/terms',   label: 'Terms of Service' },
   { href: 'mailto:hello@youcreateyou.life', label: 'Contact' },
-]
-
-const LEGAL_LINKS = [
-  { href: '/privacy', label: 'Privacy' },
-  { href: '/terms',   label: 'Terms' },
 ]
 
 const SOCIALS = [
@@ -130,21 +124,10 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="border-t border-[rgba(179,136,255,0.06)] pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="border-t border-[rgba(179,136,255,0.06)] pt-8 flex items-center justify-center">
           <p className="font-mono text-[9px] tracking-[0.18em] uppercase text-[rgba(240,236,255,0.2)]">
             You Create You &copy; {new Date().getFullYear()} — All realities reserved.
           </p>
-          <div className="flex items-center gap-6">
-            {LEGAL_LINKS.map(({ href, label }) => (
-              <Link
-                key={href}
-                href={href}
-                className="font-mono text-[9px] tracking-[0.15em] uppercase text-[rgba(240,236,255,0.2)] hover:text-[rgba(240,236,255,0.5)] transition-colors duration-200"
-              >
-                {label}
-              </Link>
-            ))}
-          </div>
         </div>
       </div>
     </footer>
