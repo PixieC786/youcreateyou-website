@@ -6,7 +6,7 @@ import clsx from 'clsx'
 
 interface ButtonProps {
   children: React.ReactNode
-  variant?: 'primary' | 'secondary' | 'ghost'
+  variant?: 'primary' | 'secondary' | 'ghost' | 'solid'
   size?: 'sm' | 'md' | 'lg'
   href?: string
   external?: boolean
@@ -46,6 +46,14 @@ const VARIANT: Record<string, string> = {
     'text-[rgba(240,236,255,0.45)]',
     'hover:text-[rgba(240,236,255,0.78)]',
     'underline-offset-4 hover:underline decoration-[rgba(179,136,255,0.3)]',
+  ].join(' '),
+  solid: [
+    'bg-[rgba(175,110,255,0.95)]',
+    'border border-[rgba(210,175,255,0.4)]',
+    'text-[#150f28]',
+    'font-medium',
+    'hover:bg-[rgba(190,130,255,1)]',
+    'hover:shadow-[0_0_28px_rgba(179,136,255,0.4),0_0_60px_rgba(179,136,255,0.15)]',
   ].join(' '),
 }
 

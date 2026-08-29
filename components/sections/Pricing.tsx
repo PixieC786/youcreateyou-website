@@ -186,7 +186,7 @@ export default function Pricing() {
 
               <Button
                 onClick={() => beginCheckout()}
-                variant="primary"
+                variant="solid"
                 size="lg"
                 className="w-full justify-center mt-auto"
               >
