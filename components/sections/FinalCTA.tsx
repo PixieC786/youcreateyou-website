@@ -102,9 +102,9 @@ export default function FinalCTA() {
           className="font-display font-light italic text-[clamp(2.75rem,7vw,5.5rem)] leading-[1.07] mb-7 max-w-[14ch]"
           style={{ letterSpacing: '-0.01em', color: '#f8f5ff' }}
         >
-          The version of you
-          <br />who was here all along
-          <br /><span className="text-gradient">is waiting.</span>
+          Nothing is missing.
+          <br />You&apos;re just ready
+          <br /><span className="text-gradient">to remember.</span>
         </motion.h2>
 
         <motion.p
@@ -114,8 +114,7 @@ export default function FinalCTA() {
           transition={{ delay: 0.18, duration: 0.75, ease: EASE }}
           className="font-body text-[rgba(235,228,255,0.65)] text-[clamp(1rem,1.25vw,1.1rem)] max-w-[38ch] leading-[1.85] mb-12"
         >
-          One practice, one direction: back to yourself.
-          Lifetime access — nothing to renew, ever.
+          One practice. Lifetime access — nothing to renew, ever.
         </motion.p>
 
         <motion.div

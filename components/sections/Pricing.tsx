@@ -106,7 +106,7 @@ export default function Pricing() {
             transition={{ duration: 0.8, ease: EASE }}
             className="font-display text-[clamp(2rem,5vw,3rem)] font-light italic text-[rgba(240,236,255,0.95)] leading-[1.3] mt-6"
           >
-            The version of you<br />who was here all along.
+            One decision.<br />A lifetime of practice.
           </motion.h2>
         </div>
 

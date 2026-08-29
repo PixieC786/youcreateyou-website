@@ -119,8 +119,8 @@ export default function Recognition() {
               backgroundClip: 'text',
             }}
           >
-            The version of you who was here all along already exists.
-            This practice helps you remember.
+            You are not becoming someone new.
+            You are remembering someone real.
           </p>
         </motion.div>
 
