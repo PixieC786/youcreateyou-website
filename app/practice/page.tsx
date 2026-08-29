@@ -1,7 +1,6 @@
 import SectionLabel from '@/components/ui/SectionLabel'
 import BeginPracticeButton from '@/components/ui/BeginPracticeButton'
 import Card from '@/components/ui/Card'
-import TransformationFlow from '@/components/sections/TransformationFlow'
 import { PORTAL_ICONS } from '@/components/ui/PortalIcons'
 import AppScreens from '@/components/ui/AppScreens'
 
@@ -65,8 +64,6 @@ export default function PracticePage() {
         </BeginPracticeButton>
       </div>
 
-      <TransformationFlow />
-
       {/* Big full-bleed break — the app itself, before the portal grid */}
       <section className="relative py-16 md:py-24 overflow-hidden">
         <div
@@ -74,7 +71,15 @@ export default function PracticePage() {
           className="absolute inset-0 pointer-events-none"
           style={{ background: 'radial-gradient(ellipse 70% 60% at 50% 50%, rgba(140,70,255,0.1) 0%, transparent 70%)' }}
         />
-        <AppScreens />
+        <div className="relative container-site">
+          <div className="text-center mb-12">
+            <SectionLabel text="Inside the app" />
+            <h2 className="font-display text-3xl italic font-light text-[#f0ecff] mt-4">
+              Step inside a portal.
+            </h2>
+          </div>
+          <AppScreens />
+        </div>
       </section>
 
       {phases.map(phase => (
