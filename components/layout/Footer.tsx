@@ -55,8 +55,8 @@ export default function Footer() {
               You Create You
             </Link>
             <p className="font-body text-[13px] text-[rgba(240,236,255,0.4)] leading-[1.85] max-w-[30ch] mb-6">
-              A 365-day practice rooted in ancient wisdom, modern science, and one
-              understanding: your inner world meets the outer one.
+              A 365-day practice for remembering the version of you who was here
+              all along.
             </p>
             <div className="flex items-center gap-5">
               {SOCIALS.map(({ href, label, handle }) => (
