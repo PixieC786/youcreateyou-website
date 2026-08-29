@@ -234,7 +234,10 @@ export default function Pricing() {
               <ul className="space-y-4 mb-8">
                 <li className="flex items-start gap-3">
                   <span aria-hidden className="mt-[3px] flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-[11px]" style={{ background: 'rgba(179,136,255,0.16)', color: 'rgba(210,175,255,0.95)' }}>✓</span>
-                  <span className="font-body text-[15px]" style={{ color: 'rgba(240,236,255,0.88)' }}>Ebook Access</span>
+                  <span>
+                    <span className="font-body text-[15px]" style={{ color: 'rgba(240,236,255,0.88)' }}>Ebook Access</span>
+                    <span className="block font-body text-[13px] leading-[1.6] text-[rgba(235,228,255,0.5)] mt-0.5">Inside the app</span>
+                  </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span aria-hidden className="mt-[3px] flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-[11px]" style={{ background: 'rgba(179,136,255,0.16)', color: 'rgba(210,175,255,0.95)' }}>✓</span>
