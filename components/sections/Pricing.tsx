@@ -164,7 +164,7 @@ export default function Pricing() {
                           <path d="M2 4h7a3 3 0 0 1 3 3v13a2.5 2.5 0 0 0-2.5-2.5H2z" />
                           <path d="M22 4h-7a3 3 0 0 0-3 3v13a2.5 2.5 0 0 1 2.5-2.5H22z" />
                         </svg>
-                        Read Chapter 1
+                        Read Transmission 1
                       </Link>
                     </span>
                   </span>
@@ -235,6 +235,15 @@ export default function Pricing() {
                   <span>
                     <span className="font-body text-[15px]" style={{ color: 'rgba(240,236,255,0.88)' }}>Ebook Access</span>
                     <span className="block font-body text-[13px] leading-[1.6] text-[rgba(235,228,255,0.5)] mt-0.5">Inside the app</span>
+                    <span className="flex flex-wrap items-center gap-x-4 gap-y-2 mt-2.5">
+                      <Link href="/the-transmission/preview" className="inline-flex items-center gap-1.5 font-mono text-[10px] tracking-[0.14em] uppercase text-[rgba(200,166,255,0.85)] hover:text-[#f0ecff] underline underline-offset-4 decoration-[rgba(179,136,255,0.35)] transition-colors duration-200">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M2 4h7a3 3 0 0 1 3 3v13a2.5 2.5 0 0 0-2.5-2.5H2z" />
+                          <path d="M22 4h-7a3 3 0 0 0-3 3v13a2.5 2.5 0 0 1 2.5-2.5H22z" />
+                        </svg>
+                        Read Transmission 1
+                      </Link>
+                    </span>
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
