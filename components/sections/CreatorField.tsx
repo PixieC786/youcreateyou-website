@@ -1,6 +1,5 @@
 'use client'
 
-import Link from 'next/link'
 import { motion } from 'framer-motion'
 import SectionLabel from '@/components/ui/SectionLabel'
 import Button from '@/components/ui/Button'
@@ -73,13 +72,6 @@ export default function CreatorField() {
           <Button onClick={() => beginCheckout()} variant="primary" size="lg">
             Step Into The Field
           </Button>
-          <Link
-            href="/creator-field"
-            className="group font-mono text-[10px] tracking-[0.2em] uppercase text-[rgba(200,166,255,0.55)] hover:text-[rgba(200,166,255,0.9)] transition-colors duration-300"
-          >
-            This is the whole story
-            <span className="inline-block ml-1.5 transition-transform duration-300 group-hover:translate-x-1">→</span>
-          </Link>
         </motion.div>
 
       </div>
