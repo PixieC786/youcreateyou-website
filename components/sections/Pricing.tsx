@@ -142,10 +142,11 @@ export default function Pricing() {
               <h3 className="font-display italic font-light text-[1.75rem] text-[#f0ecff] leading-tight mb-1">App + Ebook</h3>
               <p className="font-body text-[13px] text-[rgba(235,228,255,0.5)] mb-5">Lifetime access, digital only</p>
 
-              <p className="mb-6">
+              <p className="mb-2">
                 <span className="font-display italic text-[2.6rem]" style={{ color: 'rgba(200,166,255,1)' }}>$97</span>
                 <span className="font-mono text-[11px] tracking-[0.2em] text-[rgba(235,228,255,0.45)] ml-2">USD · one time</span>
               </p>
+              <p className="font-body text-[13px] text-[rgba(235,228,255,0.5)] mb-6">$147 once the audiobook ships — yours free today if you buy now</p>
 
               <ul className="space-y-4 mb-8">
                 <li className="flex items-start gap-3">
@@ -170,10 +171,7 @@ export default function Pricing() {
                 </li>
                 <li className="flex items-start gap-3">
                   <span aria-hidden className="mt-[3px] flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-[11px]" style={{ background: 'rgba(179,136,255,0.16)', color: 'rgba(210,175,255,0.95)' }}>✓</span>
-                  <span>
-                    <span className="font-body text-[15px]" style={{ color: 'rgba(240,236,255,0.88)' }}>Audiobook</span>
-                    <span className="block font-body text-[13px] leading-[1.6] text-[rgba(235,228,255,0.5)] mt-0.5">Free when it ships, since you bought today</span>
-                  </span>
+                  <span className="font-body text-[15px]" style={{ color: 'rgba(240,236,255,0.88)' }}>Audiobook</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span aria-hidden className="mt-[3px] flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-[11px]" style={{ background: 'rgba(179,136,255,0.16)', color: 'rgba(210,175,255,0.95)' }}>✓</span>
