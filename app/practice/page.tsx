@@ -1,9 +1,9 @@
-import Image from 'next/image'
 import SectionLabel from '@/components/ui/SectionLabel'
 import BeginPracticeButton from '@/components/ui/BeginPracticeButton'
 import Card from '@/components/ui/Card'
 import TransformationFlow from '@/components/sections/TransformationFlow'
 import { PORTAL_ICONS } from '@/components/ui/PortalIcons'
+import AppScreens from '@/components/ui/AppScreens'
 
 export const metadata = {
   title: 'The Practice — You Create You',
@@ -74,24 +74,7 @@ export default function PracticePage() {
           className="absolute inset-0 pointer-events-none"
           style={{ background: 'radial-gradient(ellipse 70% 60% at 50% 50%, rgba(140,70,255,0.1) 0%, transparent 70%)' }}
         />
-        <div className="relative mx-auto w-full max-w-[1200px] px-6">
-          <div
-            className="relative rounded-2xl overflow-hidden mx-auto"
-            style={{
-              aspectRatio: '1915 / 991',
-              boxShadow: '0 40px 100px rgba(0,0,0,0.6), 0 0 80px rgba(140,70,255,0.14)',
-              border: '1px solid rgba(210,175,255,0.12)',
-            }}
-          >
-            <Image
-              src="/images/app-home-screen.png"
-              alt="You Create You — app home screen"
-              fill
-              sizes="(max-width: 1200px) 90vw, 1200px"
-              className="object-contain"
-            />
-          </div>
-        </div>
+        <AppScreens />
       </section>
 
       {phases.map(phase => (
