@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 
 export async function POST(req: Request) {
-  const { email } = await req.json()
+  const { name, email } = await req.json()
 
   if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     return NextResponse.json({ error: 'Invalid email' }, { status: 400 })
@@ -13,6 +13,9 @@ export async function POST(req: Request) {
   }
 
   const body: Record<string, unknown> = { email }
+  if (name) {
+    body.fields = { name }
+  }
   if (process.env.MAILERLITE_WAITLIST_GROUP_ID) {
     body.groups = [process.env.MAILERLITE_WAITLIST_GROUP_ID]
   }

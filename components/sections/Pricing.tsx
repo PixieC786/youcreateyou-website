@@ -23,6 +23,7 @@ const CARD_STYLE = (highlight: boolean) => ({
 })
 
 function WaitlistForm() {
+  const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [website, setWebsite] = useState('') // honeypot
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
@@ -30,10 +31,12 @@ function WaitlistForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     if (website) return
-    if (!email.trim()) return
+    if (!name.trim() || !email.trim()) return
 
     setStatus('submitting')
-    const { error } = await supabase.from('zirkaray_waitlist').insert({ email: email.trim() })
+    const { error } = await supabase
+      .from('zirkaray_waitlist')
+      .insert({ name: name.trim(), email: email.trim() })
     if (error) {
       setStatus('error')
       return
@@ -41,9 +44,10 @@ function WaitlistForm() {
     fetch('/api/waitlist', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email: email.trim() }),
+      body: JSON.stringify({ name: name.trim(), email: email.trim() }),
     }).catch(() => {})
     setStatus('success')
+    setName('')
     setEmail('')
   }
 
@@ -65,6 +69,14 @@ function WaitlistForm() {
         onChange={e => setWebsite(e.target.value)}
         className="absolute -left-[9999px] w-px h-px opacity-0"
         aria-hidden="true"
+      />
+      <input
+        type="text"
+        required
+        placeholder="Your first name"
+        value={name}
+        onChange={e => setName(e.target.value)}
+        className="bg-[rgba(179,136,255,0.05)] border border-[rgba(179,136,255,0.18)] rounded-lg px-5 py-3.5 font-body text-[15px] text-[rgba(240,236,255,0.9)] placeholder:text-[rgba(240,236,255,0.35)] focus:outline-none focus:border-[rgba(179,136,255,0.45)] transition-colors"
       />
       <input
         type="email"
